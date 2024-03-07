@@ -2,8 +2,8 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class App {
+    static int user_action;
     public static void main(String[] args) {
-        int user_action;
         Scanner in = new Scanner(System.in);
         in.useLocale(Locale.US);
 
@@ -40,9 +40,8 @@ public class App {
                 default:
                     break;
             }
-
-                in.close();
             } while (user_action != 4);
+            in.close();
     }
     
 }
