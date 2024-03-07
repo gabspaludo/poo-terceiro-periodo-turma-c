@@ -1,74 +1,128 @@
-package main;
+    package main;
 
-import java.util.Scanner;
+    import java.util.Scanner;
 
-public class PlantCalculator {
-    private static Scanner scanner = new Scanner(System.in);
+    public class PlantCalculator {
+        private static Scanner scanner = new Scanner(System.in);
+        private static boolean validEntry = false;
 
-    public static void main(String[] args){
-        int option;
-        int confirm;
-    
+        public static void main(String[] args) {
+            int option = 0;
+            int confirm = 0;
 
-        do {
-            exibitMenu();
-            option = scanner.nextInt();
-            confirm = scanner.nextInt();
+            do {
+                validEntry = false;
 
-            switch(option){
-                case 1:
-                    calculateTotalPrice();
-                    break;
-                case 2:
-                    calculateChange();
-                    break;
-                case 3:
-                    do {
-                        System.out.println("Você realmente deseja fechar a aplicação?");
-                        System.out.println("[1]Sim");
-                        System.out.println("[2]Não");
-                        switch(confirm){
-                            case 1:
-                                System.out.println("Fechando aplicação.");
-                                break;
-                            default:
-                                System.out.println("Opção inválida, tente novamente.");
-                                break;
-                        }
-                    } while (!(confirm == 1 || confirm == 2));
-                    break;
-                default:
-                    System.out.println("Opção inválida, tente novamente.");
-                    break;
+                while (!validEntry) {
+                    exibitMenu();
+                    option = getValidInputInt("Escolha uma opção:", 3);
+
+                    switch (option) {
+                        case 1:
+                            calculateTotalPrice();
+                            validEntry = true;
+                            break;
+                        case 2:
+                            calculateChange();
+                            break;
+                        case 3:
+                            confirm = getValidInputInt("Você realmente deseja fechar a aplicação?\n[1] - Sim\n[2] - Não", 2);
+                            switch (confirm) {
+                                case 1:
+                                    System.out.println("Fechando aplicação.");
+                                    break;
+                                case 2:
+                                    validEntry = true;
+                                    break;
+                                default:
+                                    System.out.println("Opção inválida, tente novamente.");
+                                    break;
+                            }
+                            break;
+                        default:
+                            System.out.println("Opção inválida, tente novamente.");
+                            break;
+                    }
+                }
+            } while (!(option == 3 && confirm == 1));
+
+            scanner.close();
+        }
+
+        private static void exibitMenu() {
+            System.out.println("Escolha uma opção:");
+            System.out.println("[1] - Calcular Preço Total");
+            System.out.println("[2] - Calcular Troco");
+            System.out.println("[3] - Sair");
+        }
+
+        private static int getValidInputInt(String prompt) {
+            int input = 0;
+            validEntry = false;
+
+            while (!validEntry) {
+                System.out.println(prompt);
+
+                try {
+                    input = scanner.nextInt();
+                    validEntry = true;
+                } catch (java.util.InputMismatchException e) {
+                    System.out.println("Você precisa digitar um número inteiro.");
+                    scanner.nextLine();
+                }
             }
-        } while(!(option == 3 && confirm == 1));
-        scanner.close();
-    }   
 
-    private static void exibitMenu(){
-        System.out.println("Escolha uma opção:");
-        System.out.println("[1] - Calcular Preço Total");
-        System.out.println("[2] - Calcular Troco");
-        System.out.println("[3] - Sair");
+            return input;
+        }
+
+        private static double getValidInputDouble(String prompt) {
+            double input = 0.0;
+            validEntry = false;
+
+            while (!validEntry) {
+                System.out.println(prompt);
+
+                try {
+                    input = scanner.nextDouble();
+                    validEntry = true;
+                } catch (java.util.InputMismatchException e) {
+                    System.out.println("Você precisa digitar um número decimal.");
+                    scanner.nextLine();
+                }
+            }
+
+            return input;
+        }
+
+        private static int getValidInputInt(String prompt, int maxOption) {
+            int input = getValidInputInt(prompt);
+
+            while (input < 1 || input > maxOption) {
+                System.out.println("Opção inválida, tente novamente.");
+                input = getValidInputInt(prompt);
+            }
+
+            return input;
+        }
+
+        private static void calculateTotalPrice() {
+            int quantity = getValidInputInt("Digite a quantidade da planta:");
+            double price = getValidInputDouble("Digite o preço unitário da planta:");
+
+            double total = quantity * price;
+            System.out.printf("O preço total da venda é: %.2f\n", total);
+
+            validEntry = false;
+        }
+
+        private static void calculateChange() {
+            System.out.print("Digite o valor recebido pelo cliente: R$ ");
+            double amountReceived = getValidInputDouble("");
+            double totalValue = getValidInputDouble("Digite o valor total da compra: R$ ");
+
+            double change = amountReceived - totalValue;
+            System.out.printf("O troco a ser dado ao cliente é: %.2f\n", change);
+
+            validEntry = false;
+        }
     }
-
-    private static void calculateTotalPrice(){
-        System.out.println("Digite a quantidade da planta:");
-        int quantity = scanner.nextInt();
-        System.out.println("Digite o preço unitário da planta:");
-        double price = scanner.nextDouble();
-
-        double precoTotal = quantity * price;
-        System.out.println("O preço total da venda é: " + price);
-    }
-
-    private static void calculateChange(){
-        System.out.println("Digite o valor recebido pelo cliente:");
-        double amountReceived = scanner.nextDouble();
-        System.out.println("Digite o valor total da compra:");
-        double totalValue = scanner.nextDouble();
-
-        double change = amountReceived - totalValue;
-        System.out.println("O troco a ser dado ao cliente é: " + change);
-    }
-}
