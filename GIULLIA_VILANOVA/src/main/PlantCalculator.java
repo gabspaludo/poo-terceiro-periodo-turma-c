@@ -3,9 +3,9 @@ package main;
 import java.util.Scanner;
 
 public class PlantCalculator {
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
-        private static Scanner scanner = new Scanner(System.in);
         int option;
         int confirm;
     
