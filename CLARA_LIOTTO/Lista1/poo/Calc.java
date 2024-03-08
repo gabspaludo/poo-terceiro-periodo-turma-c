@@ -1,4 +1,4 @@
- package poo-terceiro-periodo-turma-c.CLARA_LIOTTO.Lista1;
+package poo;
 
 import java.util.Scanner;
 
@@ -67,5 +67,3 @@ public class Calc {
         }
     }
 }
-    
-
