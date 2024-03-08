@@ -28,7 +28,7 @@ REMOVER USUÁRIO DO GIT DA MÁQUINA CASO NÃO ESTEJA NO SEU COMPUTADOR PESSOAL
 
 > git config --global --unset user.name
 
-> git config --global --unset user.email
+>   
 
 BUSCAR POR Gerenciador de Credenciais no windows e remover o acesso dado ao GIT
 
