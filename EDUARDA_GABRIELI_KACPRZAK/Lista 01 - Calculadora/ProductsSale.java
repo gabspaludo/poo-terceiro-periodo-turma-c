@@ -1,4 +1,4 @@
--public class ProductsSale { 
+public class ProductsSale { 
     private int quantity;
     private double price;
 
