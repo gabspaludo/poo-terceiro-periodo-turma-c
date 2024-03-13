@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
 public class Calculadora {  
-  private static int option;
-  private static double price; // Preço da planta
+
   private static int quantity; // Quantidade comprada
   private static double totalPrice; // Preço * Quantidade
-  private static double amountPaid; // Valor pago pelo cliente
-  private static double[][] sales = new double[100][3];
-  private static int salesCount = 0;
+  
+  private static double[][] sales = new double[100][3]; // Matriz de vendas
+  private static int salesCount = 0; // Quantidade de vendas
   
   @SuppressWarnings("resource")
   public static void main(String[] args) {
@@ -15,7 +14,12 @@ public class Calculadora {
     Scanner menu = new Scanner(System.in);
     Scanner flowersQuantity = new Scanner(System.in);
     Scanner pricePaid = new Scanner(System.in);
+    
+    double price; // Preço da planta
+    double amountPaid; // Valor pago pelo cliente
 
+    int option;
+    
     while (true) {
       showMenu();
 
@@ -35,12 +39,13 @@ public class Calculadora {
           System.out.print("Quantas Rosas foram compradas? ");
           quantity = flowersQuantity.nextInt();
           totalPrice = calculateTotal(price, quantity); 
-          saveSell(sales, quantity, totalPrice);
-
+          
           System.out.print("Valor pago pelo cliente: ");
           amountPaid = pricePaid.nextDouble();
-
+          
           calculateTroco(totalPrice, amountPaid);
+
+          saveSell(sales, quantity, totalPrice);
           break;
         case 2:
           price = 10.50;
@@ -48,11 +53,12 @@ public class Calculadora {
           System.out.print("Quantos Girassóis foram comprados? ");
           quantity = flowersQuantity.nextInt();
           totalPrice = calculateTotal(price, quantity);
-          saveSell(sales, quantity, totalPrice);
-
+          
           System.out.print("Valor pago pelo cliente: ");
           amountPaid = pricePaid.nextDouble();
           calculateTroco(totalPrice, amountPaid);
+
+          saveSell(sales, quantity, totalPrice);
           break;
         case 3:
           price = 15.75;
@@ -60,11 +66,12 @@ public class Calculadora {
           System.out.print("Quantas Orquídeas foram compradas? ");
           quantity = flowersQuantity.nextInt();
           totalPrice = calculateTotal(price, quantity);
-          saveSell(sales, quantity, totalPrice);
-
+          
           System.out.print("Valor pago pelo cliente: ");
           amountPaid = pricePaid.nextDouble();
           calculateTroco(totalPrice, amountPaid);
+
+          saveSell(sales, quantity, totalPrice);
           break;
         case 4:
           price = 14.00;
@@ -72,11 +79,12 @@ public class Calculadora {
           System.out.print("Quantos Lírios foram comprados? ");
           quantity = flowersQuantity.nextInt();
           totalPrice = calculateTotal(price, quantity);
-          saveSell(sales, quantity, totalPrice);
-
+          
           System.out.print("Valor pago pelo cliente: ");
           amountPaid = pricePaid.nextDouble();
           calculateTroco(totalPrice, amountPaid);
+
+          saveSell(sales, quantity, totalPrice);
           break;
         case 5:
           price = 8.50;
@@ -84,11 +92,12 @@ public class Calculadora {
           System.out.print("Quantas Violetas foram compradas? ");
           quantity = flowersQuantity.nextInt();
           totalPrice = calculateTotal(price, quantity);
-          saveSell(sales, quantity, totalPrice);
-
+          
           System.out.print("Valor pago pelo cliente: ");
           amountPaid = pricePaid.nextDouble();
           calculateTroco(totalPrice, amountPaid);
+
+          saveSell(sales, quantity, totalPrice);
           break;
         case 6:
           showSells(sales, salesCount);
@@ -141,6 +150,9 @@ public class Calculadora {
   }
 
   public static void saveSell(double[][] sales, int quantity, double totalPrice) {
+    /*
+    Quantidade | Total | Desconto
+    */
     sales[salesCount][0] = quantity;
     sales[salesCount][1] = totalPrice;
     sales[salesCount][2] = totalPrice * 0.05;
@@ -148,7 +160,7 @@ public class Calculadora {
   }
 
   public static void showSells(double[][] sales, int salesCount) {
-    System.out.println("Registro de Vendas:");
+    System.out.println("\n---- Registro de Vendas ---- ");
     for (int i = 0; i < salesCount; i++) {
       System.out.println(
         "Venda " + (i + 1) + 
