@@ -53,7 +53,7 @@ public class Calculadora2 {
         double precoTotal = quantidade * precoUnitario;
         double desconto = 0.0;
 
-        if (quantidade > 10) {
+        if (quantidade >= 10) {
             desconto = 0.05 * precoTotal;
             precoTotal -= desconto;
             System.out.println("Desconto de 5% aplicado!");
