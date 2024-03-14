@@ -45,9 +45,7 @@ public class ProductsSale {
     public double calculateChange(double amountReceived) {
         return price - amountReceived;
     }
-
     
-
     public class ShowDiscount {
         private boolean discountApplied;
 
