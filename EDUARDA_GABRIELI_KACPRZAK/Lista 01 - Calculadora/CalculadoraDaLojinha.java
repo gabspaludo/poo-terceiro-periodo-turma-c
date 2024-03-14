@@ -8,7 +8,7 @@ public class CalculadoraDaLojinha {
         Scanner scan = new Scanner(System.in);
         scan.useLocale(Locale.US);
         ProductsSale sale = new ProductsSale(0, 0.0, 0.0);
-        ProductsSale MySales = new ProductsSale(0, 0.0, 0.0);
+        ProductsSale MySales = new ProductsSale(0, 0.0, 0.0); //verificar se vai ser utilizado
         ProductsSale changeSale = new ProductsSale(0, 0, 0);
         
         ArrayList<ProductsSale> recordSales = new ArrayList<ProductsSale>();
