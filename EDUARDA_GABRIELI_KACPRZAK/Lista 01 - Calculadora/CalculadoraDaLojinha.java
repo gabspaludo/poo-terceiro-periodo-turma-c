@@ -11,7 +11,7 @@ public class CalculadoraDaLojinha {
         ProductsSale MySales = new ProductsSale(0, 0.0, 0.0);
         ProductsSale changeSale = new ProductsSale(0, 0, 0);
         
-        ArrayList<ProductsSale> recordSales = new ArrayList<>();
+        ArrayList<ProductsSale> recordSales = new ArrayList<ProductsSale>();
 
         int choice = 0;
         double amountReceived = 0;
@@ -50,6 +50,7 @@ public class CalculadoraDaLojinha {
                             sale.setPrice(scan.nextDouble());
 
                             discountApplied = sale.getQuantity() >= 10;
+
                             if (discountApplied) {
 
                                 discount = 0.05 * sale.totalAmount();
@@ -68,8 +69,11 @@ public class CalculadoraDaLojinha {
                                 System.out.println("\nResumo da compra: ");
                                 System.out.printf("%nQnt. de produtos comprados: %d ", sale.getQuantity());
                                 System.out.printf("%nTotal da compra: R$%.2f ", sale.totalAmount());
+
                             }
-                            recordSales.add(MySales);
+
+                            recordSales.add(sale);
+                            
                             break;
 
                         case 2:
@@ -92,6 +96,7 @@ public class CalculadoraDaLojinha {
                                 System.out.printf("%nQtd. recebida pelo cliente: R$%.2f ", amountReceived);
                                 System.out.printf("%n");
                                 System.out.printf("%nTroco do cliente: R$%.2f ", change);
+                            
 
                             }
                             recordSales.add(changeSale);
@@ -115,13 +120,17 @@ public class CalculadoraDaLojinha {
                                 if (sale.getChange() > 0){
                                     System.out.printf("Troco do cliente: R$%.2f%n", sale.getChange());
                                 }
+                                
                                 if (discountApplied) {
                                     System.out.println("Esta venda atendeu requisitos P/ DESCONTO!");
                                     System.out.printf("Valor total com Desconto Aplicado: R$%.2f%n ", sale.getDiscountOffered());
+
                                 } else {
                                     System.out.printf("\nSem desconto.");
                                     System.out.printf("Total da venda: R$%.2f%n", sale.totalAmount());
-                                    System.out.printf("%n");                               
+                                    System.out.printf("%n");
+
+                                                                        
                                 }
                             }
 
@@ -133,11 +142,13 @@ public class CalculadoraDaLojinha {
                             System.out.println("Fechando...");
                             System.out.println("\n-------------------------------------------");
                             System.out.printf("%n%n");
+
                             break;
 
                         default:
                             System.out.printf("%n%n%n");
                             System.out.printf("Algo deu errado. Confira se os dados inseridos estão corretos.");
+
                             break;
                     }
                 } catch (InputMismatchException e) {
@@ -148,5 +159,6 @@ public class CalculadoraDaLojinha {
             }
         }
         scan.close();
+
     }
 }
