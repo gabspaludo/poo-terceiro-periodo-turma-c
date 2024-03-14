@@ -36,11 +36,16 @@ public class Java {
         String menu_digitar;
         ArrayList<String> arrayList = new ArrayList<>();
         int tamanho;
+        Double quantidade_total_final = 0.0;
+        Double venda_total_final = 0.0;
+        Double descontos_total_final = 0.0;
+
         
 
         while (menu != 3) { // Condição corrigida para continuar o loop até que o usuário escolha a opção 3 (Sair)
             menu_digitar = JOptionPane.showInputDialog("---MENU--\n[1] - CALCULAR PRECO TOTAL\n[2] - CALCULAR TROCO\n[3] - SAIR");
             menu = Double.parseDouble(menu_digitar);
+
 
             if (menu == 1) {
                 String verify = "nao";
@@ -54,23 +59,29 @@ public class Java {
                 // quantidade do produto
                 String quantidade_total = JOptionPane.showInputDialog("Insira a quantidade: ");
                 double quantidade = Double.parseDouble(quantidade_total);
+                quantidade_total_final = quantidade_total_final + quantidade;
                 // conta
                 double total = valor * quantidade;
 
                 // verificador de desconto
                 if (quantidade >= 10){
+                    descontos_total_final =  descontos_total_final + (0.05*total);
                     total = total * 0.95;
                     
                     verify = "sim";
                 }
+                venda_total_final = venda_total_final + total;
                 String preco_final = String.valueOf(total);
+
 
                 JOptionPane.showMessageDialog(null, "O preço total é: " + total);
                 String vendaString = "\nVenda número: "+ tamanhoString + "\nQuantidade: "+ quantidade_total+ "\nValor aplicado: R$"+ valor_total + "\nDesconto aplicado: "+ verify+"\nPreco final: "+ preco_final +"\n-------------\n";
                 arrayList.add(vendaString);
                 JOptionPane.showMessageDialog(null, "Venda registrada");
                 JOptionPane.showMessageDialog(null, arrayList);
-
+                JOptionPane.showMessageDialog(null, "Vendas totais: R$"+ venda_total_final);
+                JOptionPane.showMessageDialog(null, "Quantidade de flores vendidas: "+ quantidade_total_final);
+                JOptionPane.showMessageDialog(null, "Desconto dados: R$"+ descontos_total_final );
                 
             } else if (menu == 2) {
                 String troco_total = JOptionPane.showInputDialog("Insira o valor da compra: ");
