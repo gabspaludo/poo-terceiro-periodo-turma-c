@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Calculadora {  
+public class CalculadoraMelhorada {  
 
   private static int quantity; // Quantidade comprada
   private static double totalPrice; // Preço * Quantidade
@@ -120,8 +120,8 @@ public class Calculadora {
     System.out.println("| 4 - Lírio:           R$ 14.00         |");
     System.out.println("| 5 - Violeta:         R$ 8.50          |");
     System.out.println("|---------------------------------------|");
-    System.out.println("| 0 - Sair do Menu                      |");
     System.out.println("| 6 - Ver Registro de Vendas            |");
+    System.out.println("| 0 - Sair do Menu                      |");
     System.out.println("|---------------------------------------|");
   }
 
