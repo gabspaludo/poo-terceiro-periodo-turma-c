@@ -1,6 +1,6 @@
 package list1.test;
 
-import list1.domain.Calculator;
+import list1.util.Calculator01;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.Scanner;
@@ -42,7 +42,7 @@ public class CalculatorTest01 {
         System.out.print("Preço unitario: ");
         double unitaryValue = new Scanner(System.in).nextDouble();
 
-        String value = Calculator.calculatePriceTotal(quantity, unitaryValue);
+        String value = Calculator01.calculatePriceTotal(quantity, unitaryValue);
         System.out.println("Valor total: " + value);
     }
 
@@ -52,7 +52,7 @@ public class CalculatorTest01 {
         System.out.print("Valor total da compra: ");
         double amount = new Scanner(System.in).nextDouble();
 
-        String value = Calculator.calculateChange(amountReceived, amount);
+        String value = Calculator01.calculateChange(amountReceived, amount);
         System.out.println("Valor do troco: " + value);
     }
 }

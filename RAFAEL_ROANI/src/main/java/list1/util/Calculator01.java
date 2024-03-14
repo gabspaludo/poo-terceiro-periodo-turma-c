@@ -1,4 +1,4 @@
-package list1.domain;
+package list1.util;
 
 import java.text.NumberFormat;
 
