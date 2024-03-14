@@ -1,12 +1,14 @@
 import java.util.Scanner;
 
 public class Sale {
-    private double valor;
-    private int quantity;
-    private double payment;
-    private double total;
-    private double change;
-    private double discount;
+    double valor;
+    int quantity;
+    double payment;
+    double total;
+    double change;
+    double discount;
+    static Sale[] sales;
+    int saleQuantity;
     Scanner sc = new Scanner(System.in);
 
     public Sale() {
@@ -18,6 +20,7 @@ public class Sale {
         this.payment = sc.nextDouble();
 
         calculatingChange();
+        sales = new Sale[saleQuantity];
     }
 
     //Esta função foi utilizada para realizar o cadastro do pedido, multiplicando o valor do produto pela quantidade do mesmo.
@@ -52,5 +55,14 @@ public class Sale {
         } else {
             System.out.println("O troco que ficou para o cliente é de " + Math.abs(this.change) + " reais.");
         }
+    }
+
+    //Função que aumenta o array original com base num novo array, que tem os mesmos
+    //valores que o array original, porém, com +1 de tamanho.
+
+    public static Sale[] increaseArraySize(Sale[] array) {
+        Sale[] newArray = new Sale[array.length + 1];
+        System.arraycopy(array, 0, newArray, 0, array.length);
+        return newArray;
     }
 }
