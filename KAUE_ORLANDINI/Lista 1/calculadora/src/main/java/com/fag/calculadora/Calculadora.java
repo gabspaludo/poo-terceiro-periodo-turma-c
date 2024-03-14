@@ -1,8 +1,16 @@
 package com.fag.calculadora;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Calculadora {
+
+    private static ArrayList<Double> vendas = new ArrayList<>();
+    private static ArrayList<Double> quantidades = new ArrayList<>();
+    private static ArrayList<Double> descontos = new ArrayList<>();
+    static int i = 0;
+
+    static double indiceVendas = 0;
 
     public static void main(String[] args) {
 
@@ -21,8 +29,11 @@ public class Calculadora {
                 calculartroco(scanner);
                 break;
             case 3:
+                mostrarvendas();
+                return;
+            case 4:
                 System.out.println("calculadora encerrada.");
-                return; 
+                return;     
             default:
                 System.out.println("opcao invalida");
                     
@@ -31,49 +42,71 @@ public class Calculadora {
       
     }
 
-    private static void exibirMenu(){
-        System.out.println("[1]:calcular preco total");
-        System.out.println("[2]:calcular troco");
-        System.out.println("[3]:sair");
-    }
+public static void exibirMenu(){
+    System.out.println("[1]:calcular preco total");
+    System.out.println("[2]:calcular troco");
+    System.out.println("[3]:mostrar vendas");
+    System.out.println("[4]:sair");
+}
     
-private static void calcularpreco(Scanner scanner) {
+public static void calcularpreco(Scanner scanner) {
+    
     System.out.println("digite a quantidade de itens: ");
     double quantidade = scanner.nextInt();
 
     System.out.println("digite o preco do produto: ");
     double precoproduto = scanner.nextDouble();
 
-    double valortotal = ValorTotal.calcular(quantidade, precoproduto);
+    double descontoAplicado = 0;
+
+    double valortotal = quantidade * precoproduto;
+
+    if (quantidade>=11) {
+        valortotal = valortotal * 0.95;
+        descontoAplicado = valortotal * 0.05;
+    } else {
+        valortotal = quantidade * precoproduto;
+    }
 
     System.out.println("Valor Total: R$" + valortotal);
+    
+    descontos.add(descontoAplicado);
+    vendas.add(valortotal);
+    quantidades.add(quantidade);
+    
 }
 
-private static void calculartroco(Scanner scanner){ 
+
+
+public static void calculartroco(Scanner scanner){ 
     System.out.println("Digite o valor pago:");
     double valorpago = scanner.nextDouble();
     
     System.out.println("digite o valor da compra");
     double valordacompra = scanner.nextDouble();
 
-    double valortroco = ValorTroco.calcular(valorpago, valordacompra);
+    double valortroco = valorpago - valordacompra;
     
     System.out.println("o valor do troco é de: R$" + valortroco);
 }
 
-}
 
-class ValorTotal{
 
-    public static double calcular(double quantidade, double precoproduto){
-        return quantidade * precoproduto;
+public static void mostrarvendas() {
+    if (vendas.isEmpty()) {
+        System.out.println("Nenhuma venda registrada.");
+        return;
     }
+
+    System.out.println("----- Vendas Registradas -----");
+        for (int i = 0; i < vendas.size(); i++) {
+            System.out.printf("Venda %d: Quantidade: %.2f, Valor: R$%.2f, Desconto: R$%.2f\n",
+                    i + 1, quantidades.get(i), vendas.get(i), descontos.get(i));
+}
+} 
 }
 
-class ValorTroco{
 
-    public static double calcular(double valorpago, double valordacompra){
-        return valorpago - valordacompra;
-    }
-}
+
+
  
