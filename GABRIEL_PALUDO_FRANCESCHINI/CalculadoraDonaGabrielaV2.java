@@ -88,7 +88,7 @@ public class CalculadoraDonaGabrielaV2 {
             if (desconto[indiceVenda+1]==1) {
                 System.out.println("\nA compra de índice " + (indiceVenda + 1) + " teve o valor total de " + vendaArmazenadaValor[indiceVenda+1] + " reais, foram vendidas " +nPlantasVendidas[indiceVenda+1]+" plantas e houve 5% de desconto.\n");
             } else {
-                System.out.println("\nA compra de índice " + (indiceVenda + 1) + " teve o valor total de " + vendaArmazenadaValor[indiceVenda+1] + " reais, foram vendidas " +nPlantasVendidas[indiceVenda+1]+" plantas e não houve de desconto.\n");
+                System.out.println("\nA compra de índice " + (indiceVenda + 1) + " teve o valor total de " + vendaArmazenadaValor[indiceVenda+1] + " reais, foram vendidas " +nPlantasVendidas[indiceVenda+1]+" plantas e não houve desconto.\n");
             }
           }
         break;
