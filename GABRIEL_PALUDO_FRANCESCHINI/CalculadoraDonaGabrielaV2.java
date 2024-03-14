@@ -39,6 +39,7 @@ public class CalculadoraDonaGabrielaV2 {
     double[] vendaArmazenadaValor = new double[99];
     int nPlantas, Calculadora, i=0, indiceVenda=0, compraFeita;
     int[] desconto= new int [99];
+    int[] nPlantasVendidas = new int [99];
 
     do {
       System.out.println("Calculadora da Dona Gabrielinha");
@@ -69,6 +70,7 @@ public class CalculadoraDonaGabrielaV2 {
               }
             System.out.println("A compra foi finalizada com sucesso, e seu índice é " + i);
             vendaArmazenadaValor[i]=precinho;
+            nPlantasVendidas[i]=nPlantas;
           break;
         }
 
@@ -84,9 +86,9 @@ public class CalculadoraDonaGabrielaV2 {
         case 3:
           for (indiceVenda=0; indiceVenda<i; indiceVenda++) {
             if (desconto[indiceVenda+1]==1) {
-                System.out.println("\nA compra de índice " + (indiceVenda + 1) + " teve o valor total de " + vendaArmazenadaValor[indiceVenda+1] + " reais, e houve 5% de desconto.\n");
+                System.out.println("\nA compra de índice " + (indiceVenda + 1) + " teve o valor total de " + vendaArmazenadaValor[indiceVenda+1] + " reais, foram vendidas " +nPlantasVendidas[indiceVenda+1]+" plantas e houve 5% de desconto.\n");
             } else {
-                System.out.println("\nA compra de índice " + (indiceVenda + 1) + " teve o valor total de " + vendaArmazenadaValor[indiceVenda+1] + " reais, e não houve de desconto.\n");
+                System.out.println("\nA compra de índice " + (indiceVenda + 1) + " teve o valor total de " + vendaArmazenadaValor[indiceVenda+1] + " reais, foram vendidas " +nPlantasVendidas[indiceVenda+1]+" plantas e não houve de desconto.\n");
             }
           }
         break;
