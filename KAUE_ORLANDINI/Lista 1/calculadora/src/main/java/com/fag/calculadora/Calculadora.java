@@ -30,7 +30,7 @@ public class Calculadora {
                 break;
             case 3:
                 mostrarvendas();
-                return;
+                break;
             case 4:
                 System.out.println("calculadora encerrada.");
                 return;     
@@ -98,12 +98,12 @@ public static void mostrarvendas() {
         return;
     }
 
-    System.out.println("----- Vendas Registradas -----");
+    System.out.println("Vendas Registradas");
         for (int i = 0; i < vendas.size(); i++) {
             System.out.printf("Venda %d: Quantidade: %.2f, Valor: R$%.2f, Desconto: R$%.2f\n",
                     i + 1, quantidades.get(i), vendas.get(i), descontos.get(i));
-}
-} 
+    }
+  } 
 }
 
 
