@@ -8,7 +8,9 @@ public class CalculadoraDaLojinha {
         Scanner scan = new Scanner(System.in);
         scan.useLocale(Locale.US);
         ProductsSale sale = new ProductsSale(0, 0.0, 0.0);
+        ProductsSale MySales = new ProductsSale(0, 0.0, 0.0);
         ProductsSale changeSale = new ProductsSale(0, 0, 0);
+        
         ArrayList<ProductsSale> recordSales = new ArrayList<>();
 
         int choice = 0;
@@ -16,6 +18,7 @@ public class CalculadoraDaLojinha {
         double change;
         double discount = 0;
         double discountOffered = 0;
+        boolean discountApplied = false;
 
         String opc = "S";
         while (opc.equals("S") || opc.equals("s")) {
@@ -46,7 +49,8 @@ public class CalculadoraDaLojinha {
                             System.out.printf("%nDigite o preço unitário do produto: R$");
                             sale.setPrice(scan.nextDouble());
 
-                            if (sale.getQuantity() >= 10) {
+                            discountApplied = sale.getQuantity() >= 10;
+                            if (discountApplied) {
 
                                 discount = 0.05 * sale.totalAmount();
 
@@ -64,15 +68,11 @@ public class CalculadoraDaLojinha {
                                 System.out.println("\nResumo da compra: ");
                                 System.out.printf("%nQnt. de produtos comprados: %d ", sale.getQuantity());
                                 System.out.printf("%nTotal da compra: R$%.2f ", sale.totalAmount());
-
                             }
-
-                            recordSales.add(sale);
-
+                            recordSales.add(MySales);
                             break;
 
                         case 2:
-
                             System.out.printf("%nDigite o valor da compra: R$");
                             changeSale.setPrice(scan.nextDouble());
 
@@ -92,34 +92,36 @@ public class CalculadoraDaLojinha {
                                 System.out.printf("%nQtd. recebida pelo cliente: R$%.2f ", amountReceived);
                                 System.out.printf("%n");
                                 System.out.printf("%nTroco do cliente: R$%.2f ", change);
-                            
 
                             }
                             recordSales.add(changeSale);
+                            recordSales.add(MySales);
                             break;
 
                         case 3:
                             System.out.println("\n-------------------------------------------");
                             System.out.println("\n Registro de vendas:");
                             System.out.println("\n-------------------------------------------");
-                            for (int i = 0; i < recordSales.size(); i++) {
 
-                                ProductsSale MySales = recordSales.get(i);
+                            for (int i = 0; i < recordSales.size(); i++) {
+                                //tirei o ProducsSale sale = recordSales.get(i); mas ainda não testei
+                                recordSales.get(i);
                                 System.out.printf("%n");
                                 System.out.println("Venda " + (i + 1) + ":");
                                 System.out.printf("Quantidade de plantas vendidas: %d%n", sale.getQuantity());
                                 System.out.printf("Valor de venda por plantas: R$%.2f%n", sale.getPrice());
                                 System.out.printf("Valor recebido pelo cliente: R$%.2f%n", amountReceived);
-                                System.out.printf("Troco do cliente: R$%.2f%n", sale.getChange());
-
-                                if (sale.isDiscountApplied() <= 0) {
-                                    System.out.printf("%nSem desconto.");
-                                    System.out.printf("Total da venda: R$%.2f%n", sale.totalAmount());
-                                    System.out.printf("%n");
-                                } else {
+                                
+                                if (sale.getChange() > 0){
+                                    System.out.printf("Troco do cliente: R$%.2f%n", sale.getChange());
+                                }
+                                if (discountApplied) {
                                     System.out.println("Esta venda atendeu requisitos P/ DESCONTO!");
-                                    System.out.printf("Valor total com Desconto Aplicado: R$%.2f%n ",
-                                            sale.getDiscountOffered());
+                                    System.out.printf("Valor total com Desconto Aplicado: R$%.2f%n ", sale.getDiscountOffered());
+                                } else {
+                                    System.out.printf("\nSem desconto.");
+                                    System.out.printf("Total da venda: R$%.2f%n", sale.totalAmount());
+                                    System.out.printf("%n");                               
                                 }
                             }
 
@@ -131,13 +133,11 @@ public class CalculadoraDaLojinha {
                             System.out.println("Fechando...");
                             System.out.println("\n-------------------------------------------");
                             System.out.printf("%n%n");
-
                             break;
 
                         default:
                             System.out.printf("%n%n%n");
                             System.out.printf("Algo deu errado. Confira se os dados inseridos estão corretos.");
-
                             break;
                     }
                 } catch (InputMismatchException e) {
@@ -148,6 +148,5 @@ public class CalculadoraDaLojinha {
             }
         }
         scan.close();
-
     }
 }
