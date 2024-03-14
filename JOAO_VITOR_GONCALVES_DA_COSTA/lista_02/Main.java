@@ -1,6 +1,6 @@
 package lista_02;
 
-import lista_02.classes.menu.*;;
+import lista_02.classes.menu.Menu;
 
 public class Main {
   public static void main(String[] args) {
