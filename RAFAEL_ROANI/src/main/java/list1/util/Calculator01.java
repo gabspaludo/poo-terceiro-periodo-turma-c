@@ -2,7 +2,7 @@ package list1.util;
 
 import java.text.NumberFormat;
 
-public class Calculator {
+public class Calculator01 {
     public static String calculatePriceTotal(int quantity, double unitaryValue) {
         if (quantity <= 0 || unitaryValue <= 0) {
             throw new IllegalArgumentException("Os valores devem ser maiores que 0");
