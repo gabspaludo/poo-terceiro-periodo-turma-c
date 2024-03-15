@@ -45,14 +45,6 @@ public class Calculadora {
   public void setTrocoDoCliente(double valor_pago) { // passando só o valor pago como parámetro, pois eu já tenho o
                                                      // atributo preço da venda que contem o valor total do produto
     this.troco_do_cliente = calcularTroco(valor_pago);
-
-    if (this.troco_do_cliente < 0) {
-      System.out.println("Está faltando R$" + String.format(" %.2f", this.troco_do_cliente * -1));
-    } else if (this.troco_do_cliente > 0) {
-      System.out.println("Devolva R$" + String.format(" %.2f", this.troco_do_cliente));
-    } else {
-      System.out.println("Não precisa de troco");
-    }
   }
 }
 
