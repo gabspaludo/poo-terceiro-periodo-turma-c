@@ -58,7 +58,6 @@ public class Calculadora {
                     double valor_pagado = valor_pago.nextDouble();
                     double troco_cliente = valor_pagado - total;
                     System.out.println("O valor de troco é de: " +troco_cliente);
-
                     break;
 
 
