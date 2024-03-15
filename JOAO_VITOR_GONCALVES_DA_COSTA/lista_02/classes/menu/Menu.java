@@ -1,7 +1,5 @@
 package lista_02.classes.menu;
 
-import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 import lista_02.classes.calculadora.Calculadora;
@@ -14,12 +12,12 @@ public class Menu {
   public double preco_pago_pelo_cliente;
   public int quantidade_vendida;
   public double preco_do_produto;
-  public ArrayList<Produto> todos_produtos_vendidos = new ArrayList<>();
+  public int vetor_index = 0;
+  public Produto produtos_vendidos[] = new Produto[20];
 
   public void iniciarMenu() {
     Calculadora calc = new Calculadora();
     Scanner ler_dados = new Scanner(System.in);
-    ler_dados.useLocale(Locale.US);
 
     do {
       System.out.println("--- Escolha uma opção --- ");
@@ -41,7 +39,7 @@ public class Menu {
           this.quantidade_vendida = ler_dados.nextInt();
           ler_dados.nextLine();
 
-          System.out.println("Qual o valor dos produtos? !(escreva no formato n.n caso seja decimal)!");
+          System.out.println("Qual o valor dos produtos? !(escreva no formato n,n caso seja decimal)!");
 
           this.preco_do_produto = ler_dados.nextDouble();
           ler_dados.nextLine();
@@ -49,14 +47,18 @@ public class Menu {
 
           produto_vendido.setValues(this.nome_do_produto, this.quantidade_vendida,
               calc.preco_da_venda, calc.desconto_em_reais);
-          this.todos_produtos_vendidos.add(produto_vendido);
 
+          produtos_vendidos[this.vetor_index] = produto_vendido;
+          this.vetor_index++;
+          System.out.println("Apenas mais " + (20 - this.vetor_index) + " produtos podem ser adicionados ao histórico");
           break;
         case 2:
-          if (this.todos_produtos_vendidos.isEmpty())
+          if (this.produtos_vendidos.length == 0)
             System.out.println("Não há produtos adicionados");
           else
-            this.todos_produtos_vendidos.forEach(produto -> System.out.println(produto));
+            for (int num = 0; num < this.vetor_index; num++) {
+              System.out.println(produtos_vendidos[num]);
+            }
           break;
         case 3:
           if (calc.preco_da_venda == 0.0) {
