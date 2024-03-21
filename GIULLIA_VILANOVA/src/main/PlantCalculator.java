@@ -8,6 +8,11 @@
         private static boolean validEntry = false;
         private static ArrayList<SalesRecord> salesRecords = new ArrayList<>();
 
+        private static final int MAX_MONTH = 12;
+        private static final int MAX_DAY = 31;
+
+        private static double[][] salesCalendar = new double[MAX_MONTH][MAX_DAY];
+
         public static void main(String[] args) {
             int option = 0;
             int confirm = 0;
@@ -17,43 +22,35 @@
 
                 while (!validEntry) {
                     exibitMenu();
-                    option = getValidInputInt("Escolha uma opção:", 4);
+                    option = getValidInputInt("Escolha uma opção:", 6);
 
                     switch (option) {
-                        case 1:
-                            calculateTotalPrice();
+                        case 1 -> {
+                            calculateTotalPrice(); 
                             validEntry = true;
-                            break;
+                        }
 
-                        case 2:
-                            calculateChange();
-                            break;
+                        case 2 -> calculateChange();
 
-                        case 3:
-                            exibitSalesRecord();
-                            break;
+                        case 3 -> exibitSalesRecord();
 
-                        case 4:
+                        case 4 -> saveTotalSales();
+
+                        case 5 -> viewDailyTotalSales();
+
+                        case 6 -> {
                             confirm = getValidInputInt("Você realmente deseja fechar a aplicação?\n[1] - Sim\n[2] - Não", 2);
                             switch (confirm) {
-                                case 1:
-                                    System.out.println("Fechando aplicação.");
-                                    break;
-                                case 2:
-                                    validEntry = true;
-                                    break;
-                                default:
-                                    System.out.println("Opção inválida, tente novamente.");
-                                    break;
+                                case 1 -> System.out.println("Fechando aplicação.");
+                                case 2 -> validEntry = true;
+                                default -> System.out.println("Opção inválida, tente novamente.");
                             }                            
-                            break;
+                        }
 
-                        default:
-                            System.out.println("Opção inválida, tente novamente.");
-                            break;
+                        default -> System.out.println("Opção inválida, tente novamente.");
                     }
                 }
-            } while (!(option == 4 && confirm == 1));
+            } while (!(option == 6 && confirm == 1));
 
             scanner.close();
         }
@@ -63,7 +60,9 @@
             System.out.println("[1] - Calcular Preço Total");
             System.out.println("[2] - Calcular Troco");
             System.out.println("[3] - Exibir Registro de Vendas");
-            System.out.println("[4] - Sair");
+            System.out.println("[4] - Salvar Vendas Totais em Um Dia");
+            System.out.println("[5] - Consultar Vendas Totais em Um Dia");
+            System.out.println("[6] - Sair");
         }
 
         private static int getValidInputInt(String prompt) {
@@ -97,6 +96,25 @@
                     validEntry = true;
                 } catch (java.util.InputMismatchException e) {
                     System.out.println("Você precisa digitar um número decimal.");
+                    scanner.nextLine();
+                }
+            }
+
+            return input;
+        }
+
+        private static String getValidInputStr(String prompt) {
+            String input = "";
+            validEntry = false;
+
+            while (!validEntry) {
+                System.out.println(prompt);
+
+                try {
+                    input = new Scanner(System.in).next();
+                    validEntry = true;
+                } catch (java.util.InputMismatchException e) {
+                    System.out.println("Você precisa digitar 's' ou 'n'");
                     scanner.nextLine();
                 }
             }
@@ -177,6 +195,25 @@
                     System.out.println("Não houve desconto nesta venda.");
                 }
                 System.out.println("\n");
+            }
+        }
+
+        private static void saveTotalSales() {
+            int day = getValidInputInt("Informe o dia da venda: ", 30) - 1;
+            int month = getValidInputInt("Informe o mês da venda: ", 12) - 1;
+            double value = getValidInputDouble("Informe o valor total feito em vendas neste dia: R$");
+
+            salesCalendar[month][day] = value;
+        }
+
+        private static void viewDailyTotalSales() {
+            int day = getValidInputInt("Informe o dia das vendas que deseja consultar o valor: ", 30) - 1;
+            int month = getValidInputInt("Informe o mês da vendas que deseja consultar o valor: ", 12) - 1;
+            
+            if (salesCalendar[month][day] == 0) {
+                System.out.println("Nenhum valor foi passado para o dia que você selecionou.");
+            } else {
+                System.out.printf("O valor total vendido no dia informado é: R$%.2f\n", salesCalendar[month][day]);
             }
         }
     }
