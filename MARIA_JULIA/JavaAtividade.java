@@ -36,14 +36,19 @@ public class JavaAtividade{
         String menuDigitar;
         ArrayList<String> arrayList = new ArrayList<>();
         int tamanho;
-        Double quantidadeTotalFinal = 0.0;
-        Double vendaTotalFinal = 0.0;
-        Double descontosTotalFinal = 0.0;
-
+        double quantidadeTotalFinal = 0.0;
+        double vendaTotalFinal = 0.0;
+        double descontosTotalFinal = 0.0;
+        double[][] ano = new double[11][30];
+        double[] mes = {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0};
+        for (int i = 0; i < 11; i++) {
+            ano[i] = mes.clone(); 
+        }
         
 
-        while (menu != 3) { // Condição corrigida para continuar o loop até que o usuário escolha a opção 3 (Sair)
-            menuDigitar = JOptionPane.showInputDialog("---MENU--\n[1] - CALCULAR PRECO TOTAL\n[2] - CALCULAR TROCO\n[3] - SAIR");
+        while (menu != 5) { // Condição corrigida para continuar o loop até que o usuário escolha a opção 3 (Sair)
+            menuDigitar = JOptionPane.showInputDialog("---MENU--\n[1] - CALCULAR PRECO TOTAL\n[2] - CALCULAR TROCO\n" + //
+                                "[3] - CADASTRAR VENDA\n[4] - CONSULTAR DIA DE VENDAS \n[5] - SAIR");
             menu = Double.parseDouble(menuDigitar);
 
 
@@ -100,7 +105,57 @@ public class JavaAtividade{
                 }
 
                 JOptionPane.showMessageDialog(null, "O troco é: " + troco);
+            } else if (menu == 3) {
+                
+                String valorCompra = JOptionPane.showInputDialog("INSIRA O VALOR DA COMPRA: ");
+                double valorCompraDouble = Double.parseDouble(valorCompra);
+
+                String mesCompra = JOptionPane.showInputDialog("INSIRA O MES DA COMPRA: ");
+                int mesUser = Integer.parseInt(mesCompra);
+
+                String diaCompra = JOptionPane.showInputDialog("INSIRA O DIA DA COMPRA: ");
+                int diaUser =  Integer.parseInt(diaCompra);
+
+
+
+                for (int i = 0; i < 11; i++) {
+                    for (int j = 0; j < 30; j++) {
+                        if (i == mesUser-1 && j == diaUser-1) {
+                            ano[i][j] += valorCompraDouble; // Modifica o valor do dia desejado
+                        }
+                    }
+                }
+                StringBuilder calendario = new StringBuilder();
+                for (double[] semana : ano) {
+                    calendario.append("MES:");
+                    for (double diaAtual : semana) {
+                        if (diaAtual == 0.0){
+                            String diaDisplay = "   ";
+                            calendario.append(diaDisplay).append(" | ");
+                        } else {
+                            calendario.append(diaAtual).append(" | ");
+                        }
+                    }
+                    calendario.append("\n");
+                }
+
+                JOptionPane.showMessageDialog(null, calendario.toString(), "Registro", JOptionPane.PLAIN_MESSAGE);
+            }else if (menu == 4) {
+                String mesCompra = JOptionPane.showInputDialog("Insira o mês da consulta: ");
+                int mesUser = Integer.parseInt(mesCompra);
+
+                String diaCompra = JOptionPane.showInputDialog("Insira o dia da consulta: ");
+                int diaUser = Integer.parseInt(diaCompra);
+
+                if (mesUser >= 1 && mesUser <= 12 && diaUser >= 1 && diaUser <= 30) {
+                    double vendasDia = ano[mesUser - 1][diaUser - 1];
+                    JOptionPane.showMessageDialog(null, "Vendas do dia " + diaUser + " do mês " + mesUser + ": R$" + vendasDia, "Consulta de Vendas", JOptionPane.PLAIN_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Data inválida! Por favor, insira um mês de 1 a 12 e um dia de 1 a 30.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
             }
+
+            
         }
     }
 }
