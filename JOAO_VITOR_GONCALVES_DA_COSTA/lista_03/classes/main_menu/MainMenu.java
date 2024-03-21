@@ -318,7 +318,6 @@ public class MainMenu {
             + String.format("%.2f", valor_total_em_vendas_no_dia));
     System.out.println("\n");
   }
-
 }
 
 // Dona Gabrielinha está utilizando o sistema e isso melhorou muito sua
