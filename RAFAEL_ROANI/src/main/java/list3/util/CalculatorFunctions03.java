@@ -1,14 +1,19 @@
 package list3.util;
 
-import list2.domain.Sale;
-import list2.respository.CalculatorRepository02;
+import list3.respository.CalculatorRepository03;
+import list3.domain.Sale03;
 import lombok.extern.log4j.Log4j2;
 
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.Scanner;
+
 @Log4j2
-public class CalculatorFunctions02 {
+public class CalculatorFunctions03 {
     private static final double DISCOUNT = 0.05; // discount / 100;
 
-    public static double calculatePriceTotal(int quantity, double unitaryValue) throws IllegalArgumentException {
+    public static double calculatePriceTotal(int quantity, double unitaryValue) throws IllegalArgumentException, DateTimeException {
         if (quantity <= 0 || unitaryValue <= 0) {
             throw new IllegalArgumentException("Os valores devem ser maiores que 0");
         }
@@ -16,13 +21,14 @@ public class CalculatorFunctions02 {
         return calculateDiscountOrReturnTotal(quantity, unitaryValue);
     }
 
-    private static double calculateDiscountOrReturnTotal(int quantity, double unitaryValue) {
+    private static double calculateDiscountOrReturnTotal(int quantity, double unitaryValue) throws DateTimeException, IllegalArgumentException {
         log.info("checking if there is a discount...");
         if (quantity <= 0 || unitaryValue <= 0)
             throw new IllegalArgumentException("Os valores devem ser maiores que 0");
 
         double discount = 0;
         double total;
+
         if (quantity > 10) {
             log.info("applying discount :)");
             discount = (quantity * unitaryValue) * DISCOUNT;
@@ -31,15 +37,30 @@ public class CalculatorFunctions02 {
             log.info("discount not available :|");
             total = quantity * unitaryValue;
         }
+        System.out.println("Deseja salvar a venda? S/N");
+        String option = new Scanner(System.in).next();
 
-        Sale sale = Sale.builder()
-                .valueSale(total)
+        if (option.equalsIgnoreCase("S")) {
+            saveSaleByDayAndMonth(quantity, total, discount);
+        }
+        return total;
+    }
+
+    private static void saveSaleByDayAndMonth(int quantity, double total, double discount) throws DateTimeException {
+        System.out.print("Qual o dia da venda: ");
+        int day = new Scanner(System.in).nextInt();
+
+        System.out.print("Qual o mes da venda: ");
+        int month = new Scanner(System.in).nextInt();
+
+        Sale03 sale = Sale03.Sale03Builder.builder()
                 .quantity(quantity)
+                .valueSale(total)
                 .discount(discount)
+                .dateOfSale(LocalDate.of(2024, month, day))
                 .build();
 
-        CalculatorRepository02.save(sale);
-        return total;
+        CalculatorRepository03.save(sale);
     }
 
     public static double calculateChange(double amountReceived, double amount) throws IllegalArgumentException {

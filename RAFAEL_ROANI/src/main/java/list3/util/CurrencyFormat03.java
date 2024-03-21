@@ -2,7 +2,7 @@ package list3.util;
 
 import java.text.NumberFormat;
 
-public class CurrencyFormat {
+public class CurrencyFormat03 {
     private static final NumberFormat CURRENCY_FORMAT = NumberFormat.getCurrencyInstance();
 
     public static String format(double valueToFormat) {

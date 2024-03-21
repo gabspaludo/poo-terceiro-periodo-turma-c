@@ -1,7 +1,7 @@
 package list2.util;
 
-import list2.domain.Sale;
-import list2.respository.CalculatorRepository02;
+import list3.domain.Sale03;
+import list3.respository.CalculatorRepository03;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -32,13 +32,13 @@ public class CalculatorFunctions02 {
             total = quantity * unitaryValue;
         }
 
-        Sale sale = Sale.builder()
+        Sale03 sale = Sale03.Sale03Builder.builder()
                 .valueSale(total)
                 .quantity(quantity)
                 .discount(discount)
                 .build();
 
-        CalculatorRepository02.save(sale);
+        CalculatorRepository03.save(sale);
         return total;
     }
 

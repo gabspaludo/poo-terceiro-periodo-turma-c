@@ -1,14 +1,15 @@
 package list3.test;
 
-import list2.respository.CalculatorRepository02;
-import list2.util.CalculatorFunctions02;
-import list2.util.CurrencyFormat;
+import list3.respository.CalculatorRepository03;
+import list3.util.CalculatorFunctions03;
+import list3.util.CurrencyFormat03;
 import lombok.extern.log4j.Log4j2;
 
+import java.time.DateTimeException;
 import java.util.Scanner;
 
 @Log4j2
-public class CalculatorTest02 {
+public class CalculatorTest03 {
 
     public static void main(String[] args) {
         log.info("Starting program...");
@@ -17,7 +18,7 @@ public class CalculatorTest02 {
             if (option == 0) break;
             try {
                 switchOptionsCalculator(option);
-            } catch (IllegalArgumentException e) {
+            } catch (IllegalArgumentException | DateTimeException e) {
                 log.warn(e.getMessage());
             }
         }
@@ -50,8 +51,8 @@ public class CalculatorTest02 {
         System.out.print("Preço unitario: ");
         double unitaryValue = new Scanner(System.in).nextDouble();
 
-        double value = CalculatorFunctions02.calculatePriceTotal(quantity, unitaryValue);
-        String valueFormat = CurrencyFormat.format(value);
+        double value = CalculatorFunctions03.calculatePriceTotal(quantity, unitaryValue);
+        String valueFormat = CurrencyFormat03.format(value);
         System.out.println("Valor total: " + valueFormat);
     }
 
@@ -62,11 +63,11 @@ public class CalculatorTest02 {
         System.out.print("Valor total da compra: ");
         double amount = new Scanner(System.in).nextDouble();
 
-        double value = CalculatorFunctions02.calculateChange(amountReceived, amount);
-        String valueFormat = CurrencyFormat.format(value);
+        double value = CalculatorFunctions03.calculateChange(amountReceived, amount);
+        String valueFormat = CurrencyFormat03.format(value);
         System.out.println("Valor do troco: " + valueFormat);
     }
     private static void printSales() {
-        CalculatorRepository02.printSales();
+        CalculatorRepository03.printSales();
     }
 }
