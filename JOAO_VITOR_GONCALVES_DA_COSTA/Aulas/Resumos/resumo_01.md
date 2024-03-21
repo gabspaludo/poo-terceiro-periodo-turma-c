@@ -2,11 +2,11 @@
 
 É uma liguagem de marcação simples e fácil, uma forma mais fácil de escrever html.
 
-## Funcionalidades
+**negrito**  ** ** ou __ __
 
-\*\* \*\* \_\_ \_\_
+*italico*  * * ou _ _
 
-**negrito**
-**italico**
+***negrito e italico***  *** *** ___ ___
+
 
 ---
