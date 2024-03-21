@@ -10,6 +10,7 @@
 
         private static final int MAX_MONTH = 12;
         private static final int MAX_DAY = 31;
+        //
 
         private static double[][] salesCalendar = new double[MAX_MONTH][MAX_DAY];
 
@@ -103,6 +104,7 @@
             return input;
         }
 
+        @SuppressWarnings({ "unused", "resource" })
         private static String getValidInputStr(String prompt) {
             String input = "";
             validEntry = false;
