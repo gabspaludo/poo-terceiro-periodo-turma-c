@@ -7,7 +7,7 @@ public class calculadora2Java {
 
     public static void main(String[] args) { 
         Scanner opcaoUsuario = new Scanner(System.in);
-        Scanner precoPlanta = new Scanner(System.in);
+        Scanner precoPlanta = new Scanner(System.in);  
         Scanner quantidadePlantas = new Scanner(System.in);
 
         double total = 0; 
