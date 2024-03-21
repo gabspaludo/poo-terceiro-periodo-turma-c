@@ -27,11 +27,44 @@ public class Lista1{
         return n1 - n2;
     }
 
+    public static boolean testarCalendario(int diaMes,int condicao){
+        boolean teste = ((diaMes<=0 || diaMes>condicao) ? true : false);
+        return teste;
+    }
+    public static int getDia(Scanner read){
+        boolean continuarGet = true;
+        int diaCalendario = 0;
+
+        while(continuarGet == true){
+            System.out.println("Escolha o dia que você quer armazenar: ");
+            diaCalendario = read.nextInt();
+            continuarGet = testarCalendario(diaCalendario, 30);
+        }
+        return diaCalendario;
+    }
+
+    public static int getMes(Scanner read){
+        boolean continuarGet = true;
+        int mesCalendario = 0;
+
+        while(continuarGet == true){
+            System.out.println("Escolha o mês que você quer armazenar, utilize números para se referir ao mês. ");
+            mesCalendario = read.nextInt();
+            continuarGet = testarCalendario(mesCalendario, 12);
+        }
+        return mesCalendario;
+    }
+    public static int getQtd(Scanner read){
+        System.out.println("Digite a quantidade que vendeu neste dia: ");
+        int qtdCalendario = read.nextInt();
+        return qtdCalendario;
+    }
+    
     public static void main(String[] args){
 
         int qtdVendas = 0;
         Vendas[] armazemDeVendas = new Vendas[50];
-
+        int[][] calendarioVendas = new int[12][30];
         Scanner read = new Scanner(System.in);
         boolean continuar = true;
 
@@ -41,6 +74,8 @@ public class Lista1{
             System.out.println("1-Calcular preco de venda");
             System.out.println("2-Calcular troco");
             System.out.println("3-Histórico de vendas");
+            System.out.println("4-Armazenar vendas");
+            System.out.println("5-Verificar vendas");
             System.out.println("0-Sair");
             int escolha;
             escolha = read.nextInt();
@@ -91,14 +126,25 @@ public class Lista1{
                         System.out.println("============================");
                     }
                 break;
+                case 4:
+                    calendarioVendas[getMes(read)-1][getDia(read)-1] = getQtd(read);
+                    System.out.println("Armazenado com sucesso"); 
+                break;
+                case 5:
+                    int mesCalendario = getMes(read);
+                    int diaCalendario = getDia(read);
+                    System.out.println("VENDAS DO MÊS "+mesCalendario+" DO DIA "+diaCalendario);
+                    System.out.println("Quantidade de vendas: "+calendarioVendas[mesCalendario-1][diaCalendario-1]);
+                break;
                 case 0:
                     System.out.println("Saindo da aplicação");
-                    continuar = false;    
+                    continuar = false;   
                 break;
                 default:
                     System.out.println("Erro, número indisponível");
                 break;
             }
         }
+        read.close();
     }
 }
