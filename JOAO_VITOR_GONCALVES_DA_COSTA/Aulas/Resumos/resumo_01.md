@@ -2,11 +2,20 @@
 
 É uma liguagem de marcação simples e fácil, uma forma mais fácil de escrever html.
 
-**negrito**  ** ** ou __ __
+## Formatações
 
-*italico*  * * ou _ _
+- **negrito** -> \*\* \*\* ou \_\_ \_\_
 
-***negrito e italico***  *** *** ___ ___
+- _italico_ -> \* \* ou \_ \_
 
+- **_negrito e italico_** -> **\* \*** **\_ \_**
 
----
+\--- -> escreve uma linha para separar
+
+\# -> usadas para criar tópicos
+
+\``` -> usado para colocar blocos de códico
+
+```
+console.log("A")
+```
