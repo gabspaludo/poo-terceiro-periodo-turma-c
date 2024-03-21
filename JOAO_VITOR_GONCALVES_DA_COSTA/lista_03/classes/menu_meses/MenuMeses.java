@@ -2,6 +2,7 @@ package lista_03.classes.menu_meses;
 
 public class MenuMeses {
   public static String nomeDoMes(int numeroDoMes) {
+    System.out.println(numeroDoMes);
     switch (numeroDoMes) {
       case 1:
         return "Janeiro"; // 31
@@ -33,8 +34,52 @@ public class MenuMeses {
     }
   }
 
+  public static int diasDoMes(int numeroDoMes) {
+    switch (numeroDoMes) {
+      case 1:
+        return 31; //
+      case 2:
+        return 28; //
+      case 3:
+        return 31; //
+      case 4:
+        return 30; //
+      case 5:
+        return 31; //
+      case 6:
+        return 30; //
+      case 7:
+        return 31; //
+      case 8:
+        return 31; //
+      case 9:
+        return 30; //
+      case 10:
+        return 31; //
+      case 11:
+        return 30; //
+      case 12:
+        return 31; //
+      default:
+        System.out.println("Mes não encontrado");
+        return 0; //
+    }
+  }
+
   public int selecionarMes(int number) {
     return --number;
+  }
+
+  public static int validarDiaEscolhidoPeloUsuário(int dia, int total_de_dias) {
+    if (dia > total_de_dias) {
+      System.out.println("Dia maior que o limite, selecionado o último dia do mês");
+      return total_de_dias - 1;
+    } else if (dia <= 0) {
+      System.out.println("Dia menor que o limite, selecionado o primeiro dia do mês");
+      return 0;
+    } else {
+      return dia - 1;
+    }
   }
 }
 
