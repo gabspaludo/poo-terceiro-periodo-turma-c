@@ -1,3 +1,4 @@
+
 ## Paradigmas de Programação 
 
  * Paradigmas de programação são diferentes estilos ou abordagens para resolver problemas de programação.
@@ -53,4 +54,35 @@
 
 ---
 Em conclusão, Sua flexibilidade permite aos desenvolvedores escolher a abordagem mais adequada para cada problema específico, resultando em sistemas bem estruturados, modulares e eficientes.
+
+
+## Mark Down
+### ExemplosExemplos que foram ministrados na aula de hoje.
+
+# Título Principal 
+## Subtítulo
+### Sub-subtítulo
+---
+Negrito e Itálico 
+--
+**Negrito** ou __negrito__
+*Itálico* ou _italico_
+---
+```java 
+public void teste() {
+    //teste 
+}
+
+* Topico 1
+* Topico 2
+* Topico 3
+```
+> IMPORTANTE 
+
+Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de
+impressos, e vem sendo utilizado desde o século XVI, quando um impressor
+desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de
+modelos de tipos. 
+
+
 
