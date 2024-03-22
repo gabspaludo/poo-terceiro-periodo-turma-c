@@ -50,3 +50,37 @@ Imperativo:
 1. Ir para cozinha
 2. Obtenha açúcar e chá Mate-leão
 3. Misture-os e aqueça no fogo até ferver
+4. Coloque isso em um copo e traga para mim
+
+Declarativo
+1. Chá, Mate leao, Quente
+
+# Programação Orientada a Objetos (POO)
+
+- Criada na década de 1970
+- Alan Kay foi o principal criador
+- Baeada em objetos com propriedades e métodos
+- Em POO todos os componentes são representados como objetos
+- Linguagens: PHP, Java, C#, JS, Python e Ruby
+
+## Pilares da POO
+
+- Herança: criação de novas classes extendidas da classe pai
+- Polimorfismo: capacidade de uma classe ser reutilizada várias vezes
+- Encapsulamento: gerenciar o acesso de propriedades, atributos e métodos
+- Abstração: esconder os detalhes e mostrar o que importa
+
+## Benefícios da POO
+
+- Reutilização de código: a POO permite aproveitar classes e objetos já existentes
+- Modularidade: incentiva a divisão de código em módulos independentes
+- Flexibilidade e escalabilidade: oferece flexibilidade no design de software, cirar e modigicar funcionalidades não afetando o resto do sistema
+- Organização e coesão do código: trás um código mais organizado e coeso
+
+# Extra sobre Java
+
+Java é uma linguagem que aceita multiplos paradigmas de programação, como exemplo: 
+- Procedural
+- Estruturado
+- POO
+Portanto vemos que java é uma linguagem ampla em que podemos trabalhar de formas diferentes e conforme a necessidade do projeto.
