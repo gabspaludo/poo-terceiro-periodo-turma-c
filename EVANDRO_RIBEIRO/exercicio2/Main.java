@@ -1,19 +1,20 @@
-package exercicio1;
+package exercicio2;
 
 import java.util.Scanner;
 
 public class Main {
-    String qualPlanta;
-    float qntdPlanta;
-    float valorPlanta;
-    float valorFinal;
-    Scanner scanner;
-    float recebido;
-    float produto;
-    float trocoFalta;
-    float trocoSobra;
-    String escolha;
-    float desconto;
+    public static String qualPlanta;
+    public float qntdPlanta;
+    public float valorPlanta;
+    public float valorFinal;
+    public Scanner scanner;
+    public float recebido;
+    public float produto;
+    public float trocoFalta;
+    public float trocoSobra;
+    public String escolha;
+    public static String vetorNomes[] = new String[10];
+    public static int vetor_index = 0;
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -22,36 +23,42 @@ public class Main {
         do{
             System.out.println("[1] - Calcular Preço Total");
             System.out.println("[2] - Calcular Troco");
-            System.out.println("[3] - Histórico de vendas");
+            System.out.println("[3] - Histórico de Vendas");
             System.out.println("[4] - Sair");
             main.escolha = main.scanner.nextLine();
             
             if (main.escolha.equals("1")) {
             System.out.println("Qual planta foi vendida?");
-            main.qualPlanta = main.scanner.nextLine();
+            Main.qualPlanta = main.scanner.nextLine();
 
-            System.out.println("Quantas " + main.qualPlanta + "(s) foram vendidas?");
+
+            System.out.println("Quantas " + Main.qualPlanta + "(s) foram vendidas?");
             main.qntdPlanta = main.scanner.nextFloat();
             main.scanner.nextLine();
 
-            System.out.println("Qual é o valor da(o) " + main.qualPlanta + "? (Caso seja valor quebrado use 'n,n') ");
+            System.out.println("Qual é o valor da(o) " + Main.qualPlanta + "? (Caso seja valor quebrado use 'n,n') ");
             main.valorPlanta = main.scanner.nextFloat();
             main.scanner.nextLine();    
 
             main.valorFinal = main.qntdPlanta * main.valorPlanta;
 
-                if(main.qntdPlanta > 10) {
-                    main.valorFinal = (float) (main.valorFinal - (main.valorFinal * 0.05));
-                    System.out.println("Parabéns, por comprar mais de 10 plantas você recebeu um desconto! ");
-                    System.out.println("O valor das(os) " + main.qualPlanta + " com desconto é de " + main.valorFinal + " reais");
-                } else {
+            if (main.qntdPlanta > 10) {
+                main.valorFinal = (float) (main.valorFinal - (main.valorFinal * 0.05));
+                System.out.println("Parabéns! Por comprar mais de 10 " + Main.qualPlanta + "(s) você ganhou 5% de desconto, o valor é de: " + main.valorFinal );
+                System.out.println("[2] - Calcular Troco");
+                System.out.println("[3] - Histórico de Vendas");
+                System.out.println("[4] - Sair");
+                main.escolha = main.scanner.nextLine();
+            } else {
+                System.out.println("O valor da(o) " + Main.qualPlanta + " é " + main.valorFinal + " reais");
+                System.out.println("[2] - Calcular Troco");
+                System.out.println("[3] - Histórico de Vendas");
+                System.out.println("[4] - Sair");
+                main.escolha = main.scanner.nextLine();
+            }
 
-                    System.out.println("O valor das(os) " + main.qualPlanta + " é de " + main.valorFinal + " reais");
-                  }
-            System.out.println("[2] - Calcular Troco");
-            System.out.println("[3] - Histórico de vendas");
-            System.out.println("[4] - Sair");
-            main.escolha = main.scanner.nextLine();
+            vetorNomes[vetor_index] = "venda " + (vetor_index+1)+ ": " + " planta: " + qualPlanta + ", " + main.qntdPlanta + " unidades, " + main.valorFinal + " reais ";
+            vetor_index++;
 
             if (main.escolha.equals("2")) {
                 System.out.println("Qual o valor de dinheiro recebido?");
@@ -67,7 +74,11 @@ public class Main {
                     System.out.println("O troco é de: " + troco1 + " reais!");
                 }
                 
-            } else if (main.escolha.equals("4")) {
+            } else if (main.escolha.equals("3")){
+                for (int i = 0;  i < vetor_index; i++){
+                    System.out.println(vetorNomes[i]);
+                }
+            }    else if (main.escolha.equals("4")) {
                 System.out.println("Obrigado por usar a calculadora! Saindo...");
                 
             } else {
@@ -91,11 +102,16 @@ public class Main {
                     main.trocoSobra = main.recebido - main.produto;
                     System.out.println("O troco é de " + main.trocoSobra + " reais!");
                 }
-            } else if (main.escolha.equals("4")){
-                System.out.println("Obrigado por usar a calculadora, saindo...");
-            } else {
+                } else if (main.escolha.equals("3")){
+                    System.out.println("Você ainda não fez nenhuma venda!");
+                
+                }else if (main.escolha.equals("4")){
+                System.out.println("Saindo...");
+                
+                } else {
                 System.out.println("Opção inválida");
             }
         } while (!main.escolha.equals("4"));
+        
     }
 }
