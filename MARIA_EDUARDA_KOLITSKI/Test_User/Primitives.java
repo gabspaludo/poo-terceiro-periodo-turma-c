@@ -3,7 +3,7 @@ package MARIA_EDUARDA_KOLITSKI.Test_User;
 public class Primitives {
     public static void main(String[] args) {
         byte valorUm = 1;
-        byte valorSemInicializar;
+        //byte valorSemInicializar;
 
         System.out.println(valorUm);
         //System.out.println(valorSemInicializar);
@@ -34,7 +34,7 @@ public class Primitives {
         boolean valorTrue = letraA == 'A';
         System.out.println(valorTrue);
 
-        boolean valorTrue = letraA == 'B';
-        System.out.println(valorTrue);
+        boolean valorTru = letraA == 'B';
+        System.out.println(valorTru);
     }
 }
