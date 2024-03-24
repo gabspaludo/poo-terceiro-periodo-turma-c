@@ -4,23 +4,26 @@ import java.util.Scanner;
 
 public class Main {
     static class Compra {
+        int dia;
+        int mes;
         int quantidade;
         double valorTotal;
-        double desconto;
 
-        public Compra(int quantidade, double valorTotal, double desconto) {
+        public Compra(int dia, int mes, int quantidade, double valorTotal) {
+            this.dia = dia;
+            this.mes = mes;
             this.quantidade = quantidade;
             this.valorTotal = valorTotal;
-            this.desconto = desconto;
         }
 
         @Override
         public String toString() {
-            return "Quantidade: " + quantidade + ", Valor Total: " + valorTotal + ", Desconto: " + desconto + "%";
+            return "Data: " + dia + "/" + mes + ", Quantidade: " + quantidade + ", Valor Total: " + valorTotal;
         }
     }
 
     static List<Compra> vendas = new ArrayList<>();
+    static double[][] matrizVendas = new double[30][12]; // 30 dias e 12 meses
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -38,7 +41,7 @@ public class Main {
                     calcularTroco(scanner);
                     break;
                 case 3:
-                    listarCompras();
+                    listarCompras(scanner);
                     break;
                 case 4:
                     System.out.println("Saindo...");
@@ -50,37 +53,48 @@ public class Main {
     }
 
     private static void registrarVenda(Scanner scanner) {
+        System.out.println("Digite o dia do mês que deseja registrar a venda:");
+        int dia = scanner.nextInt();
+        System.out.println("Digite o mês (1 a 12):");
+        int mes = scanner.nextInt();
         System.out.println("Digite a quantidade de itens comprados:");
         int quantidade = scanner.nextInt();
-        System.out.println("Digite o valor unitário:");
-        double valor = scanner.nextDouble();
-        double total = quantidade * valor;
+        System.out.println("Digite o valor total da venda:");
+        double valorTotal = scanner.nextDouble();
 
-        double desconto = (quantidade >= 10) ? 5.0 : 0.0;
-        total -= total * (desconto / 100);
+        matrizVendas[dia - 1][mes - 1] += valorTotal;
 
-        vendas.add(new Compra(quantidade, total, desconto));
-        System.out.println("Venda registrada com sucesso!");
+        vendas.add(new Compra(dia, mes, quantidade, valorTotal));
+        System.out.println("Venda registrada com sucesso no dia " + dia + " do mês " + mes + "!");
     }
 
-    private static void listarCompras() {
-        if (vendas.isEmpty()) {
-            System.out.println("Não há vendas registradas.");
-        } else {
-            System.out.println("Registro de vendas:");
-            for (Compra compra : vendas) {
+    private static void listarCompras(Scanner scanner) {
+        System.out.println("Digite a data que deseja pesquisar (dia/mês):");
+        int dia = scanner.nextInt();
+        int mes = scanner.nextInt();
+        System.out.println("Vendas realizadas em " + dia + "/" + mes + ":");
+
+        int quantidadeTotalVendas = 0;
+        double valorTotalVendas = 0.0;
+        boolean encontrouVendas = false;
+        for (Compra compra : vendas) {
+            if (compra.dia == dia && compra.mes == mes) {
                 System.out.println(compra);
+                quantidadeTotalVendas += compra.quantidade;
+                valorTotalVendas += compra.valorTotal;
+                encontrouVendas = true;
             }
+        }
+
+        if (!encontrouVendas) {
+            System.out.println("Não foram encontradas vendas para a data especificada.");
+        } else {
+            System.out.println("Quantidade total de vendas: " + quantidadeTotalVendas);
+            System.out.println("Valor total das vendas: " + valorTotalVendas);
         }
     }
 
     private static void calcularTroco(Scanner scanner) {
-        System.out.print("Digite o valor recebido pelo cliente: R$");
-        double valorRecebido = scanner.nextDouble();
-        System.out.print("Digite o valor total da compra: R$");
-        double valorTotal = scanner.nextDouble();
-
-        double troco = valorRecebido - valorTotal;
-        System.out.println("O troco a ser dado ao cliente é: R$" + troco);
+        System.out.println("Função de calcular troco não implementada.");
     }
 }
