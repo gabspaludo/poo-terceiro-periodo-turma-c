@@ -1,3 +1,5 @@
+package main;
+
 public class ProductsSale {
     private int quantity;
     private double price;
