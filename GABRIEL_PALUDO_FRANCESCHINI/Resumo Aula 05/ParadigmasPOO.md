@@ -5,8 +5,6 @@
 ## Paradigmas de programação
 Conjunto de regras e conceitos que servem para melhor escrita e organização dos códigos.
 
----
-
 ### Imperativo
 Organiza o código como se fosse uma sequência de instruções, e cada declaração indica o que deve ser feito e como deve ser feito.
 
