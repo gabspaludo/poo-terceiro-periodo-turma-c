@@ -34,7 +34,7 @@ Criado em 1970 por Alan Kay, é realizado a partir da criação de objetos que p
 * **Polimorfismo:** Capacidade de um objeto se passar por outro compatível.
 * **Encapsulamento:** Gerenciamento do acesso a atributos e métodos.
 * **Abstração:** Representação de conceitos essenciais do mundo real.
-* 
+
 ### Vantagens da POO
 * **Reutilização de código:** Permite aproveitar classes e objetos já existentes.
 * **Modularidade:** Divisão do código em módulos independentes.
