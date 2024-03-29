@@ -45,5 +45,8 @@ Difirente do anterior descreve o que deve ser feito, não como fazer, é focado 
 
   **Abstração**: Forma de conceitos essenciais do mundo real.
 
+### Benefícios
+
+Reutilização de código, modularização,  flexibilidade e escalaridade, organização e coesão do código, entre outros.
 
 
