@@ -42,4 +42,11 @@ Criada por Alan Kay em 1970 ela  se baseia na criação de objetos nas quais pos
 
 ## Benefícios
 
-° Reutilização 
+° Reutilização de código: Permite que a POO aproveite classes e objetos já existentes
+
+° Modularidade: Incentiva  a divisão do código em módulos independentes.
+
+° Flexibilidade e escalabilidade: A POO oferece flexibilidade no design do software, permitindo adicionar novas funcionalidades e modificar o comportamento dos objetos sem afetar outras partes do sistema.
+
+° Organização e coesão do código: Ao adotar a POO, o código se torna mais organizado e coeso. Através do encapsulação e abstração, a lógica de programação é estruturada de maneira clara e compreensível.
+
