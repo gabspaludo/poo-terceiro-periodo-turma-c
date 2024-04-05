@@ -1,12 +1,7 @@
 package lista04;
 
-public class Vendedor {
-  String nome;
-  Integer idade;
+public class Vendedor extends Pessoa {
   Loja loja = new Loja();
-  String cidade;
-  String bairro;
-  String rua;
   Float salarioBase;
   Float[] salarioRecebido = new Float[3];
 

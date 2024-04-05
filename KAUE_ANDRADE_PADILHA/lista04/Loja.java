@@ -2,11 +2,11 @@ package lista04;
 
 public class Loja {
   String nome;
-  String razaoSocial;
-  Integer cnpj;
   String cidade;
   String bairro;
   String rua;
+  String razaoSocial;
+  Integer cnpj;
   Vendedor[] vendedores = new Vendedor[10];
   Cliente[] clientes = new Cliente[10];
 
