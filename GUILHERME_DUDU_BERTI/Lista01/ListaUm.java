@@ -1,4 +1,4 @@
-package GUILHERME_DUDU_BERTI.Lista01;
+package Lista01;
 
 import java.util.Scanner;
 
