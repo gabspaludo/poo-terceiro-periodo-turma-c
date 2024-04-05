@@ -31,13 +31,33 @@ public class Loja {
     System.out.println("Endereço da loja: ".concat(this.getEndereco()));
   }
 
-  public void contarClientes() {
+  public void contarClientesDaLoja() {
     System.out.println("Quantidade total de clientes: " + clientesDaLoja.length);
   }
 
-  public void contarVendedores() {
+  public void contarVendedoresDaLoja() {
     System.out.println("Quantidade total de vendedores: " + vendedoresDaLoja.length);
   }
+
+  // public void mostrarVendedoresDaLoja() {
+  // System.out.println("Vendedores da loja
+  // ".concat(this.getNomeFantasia()).concat(":"));
+  // for (int i = 0; i < this.vendedoresDaLoja.length; i++) {
+  // this.vendedoresDaLoja[i].apresentarse();
+  // }
+  // System.out.println("\n");
+  // System.out.println("<------------>");
+  // }
+
+  // public void mostrarClientesDaLoja() {
+  // System.out.println("Clientes da loja
+  // ".concat(this.getNomeFantasia()).concat(":"));
+  // for (int i = 0; i < this.clientesDaLoja.length; i++) {
+  // this.clientesDaLoja[i].apresentarse();
+  // }
+  // System.out.println("\n");
+  // System.out.println("<------------>");
+  // }
 
   public void adicionarVendedores(Vendedor... vendedores) {
     if (vendedores.length == this.vendedoresDaLoja.length) {

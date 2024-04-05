@@ -51,12 +51,12 @@ public class Vendedor extends Pessoa {
       mediaDosSalarios += salarioRecebido[i];
     }
     System.out.println("A média dos últimos " + this.salariosRecebidosLength
-        + " salários recebidos é R$" + String.format("%.2f", mediaDosSalarios));
+        + " salários recebidos é R$ " + String.format("%.2f", mediaDosSalarios / this.salariosRecebidosLength));
   }
 
   public void calcularBonus() {
     double bonus = this.salarioBase * this.getValorParaMultiplicarParaCalcularBonus();
-    System.out.println("O valor adicionar que ele deve receber é R$" + String.format("%.2f", bonus));
+    System.out.println("O valor adicional que ele deve receber é R$ " + String.format("%.2f", bonus));
   }
 
   // GETTERS
