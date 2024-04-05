@@ -15,16 +15,11 @@ public class Pessoa {
     this.idade = idade;
   }
 
-  public void getPessoa() {
-    System.out.println("Nome da pessoa: ".concat(nome));
-    System.out.println("Bairro da pessoa: ".concat(bairro));
-    System.out.println("Nome da pessoa: ".concat(cidade));
-    System.out.println("Nome da pessoa: ".concat(rua));
-    System.out.println("Nome da pessoa: " + idade);
-  }
-
-  public void amar() {
-    System.out.println("true");
+  public void apresentarse() {
+    System.out.println("Prazer eu sou o "
+        .concat(this.getNome())
+        .concat(" e tenho " + this.getIdade())
+        .concat(" anos de idade."));
   }
 
   public String getBairro() {
