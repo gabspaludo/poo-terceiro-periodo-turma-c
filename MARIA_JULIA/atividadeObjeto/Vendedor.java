@@ -29,8 +29,11 @@ public class Vendedor {
         double media = 0;
         for (double i : salarioRecebido){
             media = media + i;
-            System.out.println(media);
         }
+        media = media/3;
+        System.out.println(media);
+
+
         
     }
     public void calcularBonus() {
