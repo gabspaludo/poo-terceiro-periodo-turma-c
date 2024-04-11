@@ -9,7 +9,7 @@ public class Calculadora {
         while (true) {
             int opcao = menu();
     
-            switch (opcao)) {
+            switch (opcao) {
                 case 1 -> calcularTotal();
 
 
