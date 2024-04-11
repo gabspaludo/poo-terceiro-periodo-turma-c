@@ -7,13 +7,13 @@ public class Main {
     float qntdPlanta;
     float valorPlanta;
     float valorFinal;
-    // String escolha2;
     Scanner scanner;
     float recebido;
     float produto;
     float trocoFalta;
     float trocoSobra;
     String escolha;
+    float desconto;
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -22,7 +22,8 @@ public class Main {
         do{
             System.out.println("[1] - Calcular Preço Total");
             System.out.println("[2] - Calcular Troco");
-            System.out.println("[3] - Sair");
+            System.out.println("[3] - Histórico de vendas");
+            System.out.println("[4] - Sair");
             main.escolha = main.scanner.nextLine();
             
             if (main.escolha.equals("1")) {
@@ -39,10 +40,17 @@ public class Main {
 
             main.valorFinal = main.qntdPlanta * main.valorPlanta;
 
-            System.out.println("O valor da(o) " + main.qualPlanta + " é " + main.valorFinal + " reais");
+                if(main.qntdPlanta > 10) {
+                    main.valorFinal = (float) (main.valorFinal - (main.valorFinal * 0.05));
+                    System.out.println("Parabéns, por comprar mais de 10 plantas você recebeu um desconto! ");
+                    System.out.println("O valor das(os) " + main.qualPlanta + " com desconto é de " + main.valorFinal + " reais");
+                } else {
 
+                    System.out.println("O valor das(os) " + main.qualPlanta + " é de " + main.valorFinal + " reais");
+                  }
             System.out.println("[2] - Calcular Troco");
-            System.out.println("[3] - Sair");
+            System.out.println("[3] - Histórico de vendas");
+            System.out.println("[4] - Sair");
             main.escolha = main.scanner.nextLine();
 
             if (main.escolha.equals("2")) {
@@ -59,7 +67,7 @@ public class Main {
                     System.out.println("O troco é de: " + troco1 + " reais!");
                 }
                 
-            } else if (main.escolha.equals("3")) {
+            } else if (main.escolha.equals("4")) {
                 System.out.println("Obrigado por usar a calculadora! Saindo...");
                 
             } else {
@@ -83,11 +91,11 @@ public class Main {
                     main.trocoSobra = main.recebido - main.produto;
                     System.out.println("O troco é de " + main.trocoSobra + " reais!");
                 }
-            } else if (main.escolha.equals("3")){
-                System.out.println("Saindo...");
+            } else if (main.escolha.equals("4")){
+                System.out.println("Obrigado por usar a calculadora, saindo...");
             } else {
                 System.out.println("Opção inválida");
             }
-        } while (!main.escolha.equals("3"));
+        } while (!main.escolha.equals("4"));
     }
 }

@@ -3,7 +3,7 @@ package lista_01.classes.menu;
 import java.util.Locale;
 import java.util.Scanner;
 
-import lista_01.classes.calculadora.Calculadora;
+import lista_01.classes.calculadora.*;
 
 public class Menu {
 
