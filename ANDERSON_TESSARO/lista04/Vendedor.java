@@ -1,19 +1,19 @@
-package lista04;
+package ANDERSON_TESSARO.lista04;
 
 public class Vendedor {
   String nome;
   Integer idade;
   Loja loja = new Loja();
   String cidade;
-  String bairro;
+  String bairo;
   String rua;
   Float salarioBase;
   Float[] salarioRecebido = new Float[3];
 
   public void apresentarse() {
-    String msg = "opa me chamo ".concat(nome)
-    .concat(", tem ").concat(idade.toString()).concat(" Anos ")
-    .concat("trahabalho la ").concat(loja.nome);
+    String msg = "opa bão eu o ".concat(nome)
+    .concat(", tem ").concat(idade.toString()).concat(" ano ")
+    .concat("trabalho no lugar ").concat(loja.nome);
     System.out.println(msg);
   }
 
@@ -22,7 +22,7 @@ public class Vendedor {
     for (int i = 0; i < salarioRecebido.length; i++) { salarioTotal += salarioRecebido[i]; }
 
     Float media = salarioTotal / salarioRecebido.length;
-    System.out.println("meu salario e mais o menos: R$ " + media);
+    System.out.println("o salario vai ser nessa media: R$ " + media);
   }
 
   public void calcularBonus() {

@@ -1,4 +1,4 @@
-package lista04;
+package ANDERSON_TESSARO.lista04;
 
 public class Main {
   public static void main(String[] args) {
@@ -12,39 +12,39 @@ public class Main {
     Cliente clienteB = new Cliente();
 
     // Vendedores
-    vendedorA.nome = "vendedor A";
-    vendedorA.idade = 25;
+    vendedorA.nome = "Vendedor A";
+    vendedorA.idade = 96;
     vendedorA.loja = lojaA;
-    vendedorA.cidade = "cidade A";
-    vendedorA.bairro = "bairro A";
-    vendedorA.rua = "rua A";
+    vendedorA.cidade = "Cidade A";
+    vendedorA.bairo = "Bairro A";
+    vendedorA.rua = "Rua A";
     vendedorA.salarioBase = 1150.0f;
     vendedorA.salarioRecebido[0] = 1200.0f;
     vendedorA.salarioRecebido[1] = 1350.0f;
     vendedorA.salarioRecebido[2] = 1450.0f;
 
-    vendedorB.nome = "vendedor B";
-    vendedorB.idade = 30;
+    vendedorB.nome = "Vendedor B";
+    vendedorB.idade = 76;
     vendedorB.loja = lojaB;
-    vendedorB.cidade = "cidade B";
-    vendedorB.bairro = "bairo B";
-    vendedorB.rua = "rua B";
+    vendedorB.cidade = "Cidade B";
+    vendedorB.bairo = "Bairro B";
+    vendedorB.rua = "Rua B";
     vendedorB.salarioBase = 1450.0f;
     vendedorB.salarioRecebido[0] = 1500.0f;
     vendedorB.salarioRecebido[1] = 1700.0f;
     vendedorB.salarioRecebido[2] = 1850.0f;
 
     // Clientes
-    clienteA.nome = "cliente A";
-    clienteA.idade = 30;
+    clienteA.nome = "clinte A";
+    clienteA.idade = 58;
     clienteA.cidade = "cidade A";
-    clienteA.bairo = "bairo A";
+    clienteA.bairro = "bairo A";
     clienteA.rua = "rua A";
 
-    clienteB.nome = "cliente B";
+    clienteB.nome = "clinte B";
     clienteB.idade = 35;
     clienteB.cidade = "cidade B";
-    clienteB.bairo = "bairo B";
+    clienteB.bairro = "bairo B";
     clienteB.rua = "rua B";
 
     // Lojas
@@ -54,16 +54,16 @@ public class Main {
     lojaA.cidade = "cidade A";
     lojaA.bairo = "bairo A";
     lojaA.rua = "rua A";
-    lojaA.vendedores[0] = vendedorA;    
+    lojaA.vendedor[0] = vendedorA;    
     lojaA.clientes[0] = clienteA;
 
     lojaB.nome = "loja B";
     lojaB.Social = "loja B LTDS";
-    lojaB.cnpj = 40302010;
+    lojaB.cnpj = 235689784;
     lojaB.cidade = "cidade B";
     lojaB.bairo = "bairo B";
     lojaB.rua = "rua B";
-    lojaB.vendedores[0] = vendedorB;
+    lojaB.vendedor[0] = vendedorB;
     lojaB.clientes[0] = clienteB;
 
     // Métodos
