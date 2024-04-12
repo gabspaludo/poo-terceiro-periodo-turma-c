@@ -10,9 +10,12 @@
 
 ## Abordagens
 
-- Paradigma imperativo: Direciona a execução do programa como ma sequencia de instruções executadas uma a uma. Declara como e o que deve ser feito.
+- Paradigma imperativo: Direciona a execução do programa como uma sequencia de instruções executadas uma a uma. Declara como e o que deve ser feito.
+
+  > Imperativo: foco em **como** executar
 
 - Paradigmas declarativos: Focado na lógica do programa em si e em resultados. O fluxo deixa de ser o elemento mais importante do programa e o foco é alcançar o resultado almejado. Resmido, tira o foco do como e deixa um foco maior no "que"
+  > Declarativo: foco em **o que** executar
 
 ### Exemplos Imperativa
 
@@ -53,6 +56,7 @@ Imperativo:
 4. Coloque isso em um copo e traga para mim
 
 Declarativo
+
 1. Chá, Mate leao, Quente
 
 # Programação Orientada a Objetos (POO)
@@ -79,8 +83,9 @@ Declarativo
 
 # Extra sobre Java
 
-Java é uma linguagem que aceita multiplos paradigmas de programação, como exemplo: 
+Java é uma linguagem que aceita multiplos paradigmas de programação, como exemplo:
+
 - Procedural
 - Estruturado
 - POO
-Portanto vemos que java é uma linguagem ampla em que podemos trabalhar de formas diferentes e conforme a necessidade do projeto.
+  Portanto vemos que java é uma linguagem ampla em que podemos trabalhar de formas diferentes e conforme a necessidade do projeto.
