@@ -10,11 +10,11 @@ public class ClienteTest {
     @Test
     public void testarApresentarse() {
         Cliente cliente = Cliente.ClienteBuilder.builder()
-                .NomePessoa("Joao")
-                .Idade(35)
-                .Cidade("Sta Lucia")
-                .Bairro("Centro")
-                .Rua("Av OLZ")
+                .nomePessoa("Joao")
+                .idade(35)
+                .cidade("Sta Lucia")
+                .bairro("Centro")
+                .rua("Av OLZ")
                 .build();
 
         String resultadoEsperado = "Meu nome é: Joao, minha idade é: 35.";

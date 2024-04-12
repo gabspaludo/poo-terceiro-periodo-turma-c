@@ -1,5 +1,7 @@
 package Lista05.domain;
 
+import java.util.Arrays;
+
 public class Vendedor extends Pessoa {
     Loja loja;
     double salarioBase;
@@ -78,42 +80,42 @@ public class Vendedor extends Pessoa {
             return new VendedorBuilder();
         }
 
-        public VendedorBuilder NomePessoa(String nomePessoa) {
+        public VendedorBuilder nomePessoa(String nomePessoa) {
             this.nomePessoa = nomePessoa;
             return this;
         }
 
-        public VendedorBuilder Cidade(String cidade) {
+        public VendedorBuilder cidade(String cidade) {
             this.cidade = cidade;
             return this;
         }
 
-        public VendedorBuilder Bairro(String bairro) {
+        public VendedorBuilder bairro(String bairro) {
             this.bairro = bairro;
             return this;
         }
 
-        public VendedorBuilder Rua(String rua) {
+        public VendedorBuilder rua(String rua) {
             this.rua = rua;
             return this;
         }
 
-        public VendedorBuilder Idade(Integer idade) {
+        public VendedorBuilder idade(Integer idade) {
             this.idade = idade;
             return this;
         }
 
-        public VendedorBuilder Loja(Loja loja) {
+        public VendedorBuilder loja(Loja loja) {
             this.loja = loja;
             return this;
         }
 
-        public VendedorBuilder SalarioBase(double salarioBase) {
+        public VendedorBuilder salarioBase(double salarioBase) {
             this.salarioBase = salarioBase;
             return this;
         }
 
-        public VendedorBuilder SalarioRecebido(double[] salarioRecebido) {
+        public VendedorBuilder salarioRecebido(double[] salarioRecebido) {
             this.salarioRecebido = salarioRecebido;
             return this;
         }
