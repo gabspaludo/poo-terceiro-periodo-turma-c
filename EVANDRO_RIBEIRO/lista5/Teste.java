@@ -9,7 +9,7 @@ public class Teste {
         salarioRecebidoVendedor.add(1500.0);
         salarioRecebidoVendedor.add(1700.0);
         salarioRecebidoVendedor.add(1600.0);
-        Vendedor vendedor = new Vendedor("João", 30, "Loja A", "Cidade A", "Bairro A", "Rua A", 2000.0, salarioRecebidoVendedor);
+        Vendedor vendedor = new Vendedor("Luiz", 30, "Loja A", "Cidade A", "Bairro A", "Rua A", 2000.0, salarioRecebidoVendedor);
 
         System.out.println("Vendedor:");
         vendedor.apresentarSe();

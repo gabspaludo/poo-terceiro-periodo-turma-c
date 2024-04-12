@@ -6,8 +6,6 @@ public class Professor {
 
     String materia;
 
-    Arma arma;
-
     public void aprenstarse() {
         String msg = "Olá! Sou o professor"
                 .concat(nome)

@@ -18,14 +18,6 @@ public class AulaSeisTest {
         profeUm.aprenstarse();
         oMelhorProfe.aprenstarse();
 
-        Arma awp = new Arma();
-
-        awp.nome = "AWP - Fever Dream";
-        awp.tipo = "Rifle";
-        awp.dano = 110;
-
-        profeUm.arma = awp;
-
-   }
+    }
 
 }
