@@ -1,8 +1,8 @@
-package main;
+package lista1;
 
 import java.util.Scanner;
 
-public class Lista1{
+public class MainLista1{
 
     public static float calcularValorCliente(int qtd,float valor,Vendas armazemDeVendas[],int qtdVendas, float desconto){
         if (qtd>10){
