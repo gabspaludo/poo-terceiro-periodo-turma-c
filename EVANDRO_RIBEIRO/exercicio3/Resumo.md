@@ -120,7 +120,13 @@ public class Main {
                 for (int i = 0; i < vetor_index; i++) {
                     System.out.println(vetorNomes[i]);
                 }
+
 **Se a pessoa escolher ver o histórico de vendas**
+
+---
+
+**Se a pessoa escolher ver as vendas de determinado dia e mês**
+
 
             } else if (main.escolha.equals("4")) {
                 System.out.println("Digite o dia e mês para verificar as vendas (no formato dd/mm): ");
@@ -129,11 +135,31 @@ public class Main {
                 int dia = Integer.parseInt(partes[0]);
                 int mes = Integer.parseInt(partes[1]);
                 System.out.println("As vendas totais para o dia " + dia + " do mês " + mes + " foram de: " + vendasPorDia[dia][mes] + " reais");
+
+**Se a pessoa escolher ver as vendas de determinado dia e mês**
+
+---
+
+**Se a pessoa escolher sair**
+
             } else if (main.escolha.equals("5")) {
+
                 System.out.println("Saindo...");
+**Se a pessoa escolher sair**
+
+---
+
+**Se a pessoa escolher uma opçõa que não tem no menu**
+
             } else {
                 System.out.println("Opção inválida");
             }
-        } while (!main.escolha.equals("5"));
+**Se a pessoa escolher uma opçõa que não tem no menu**
+
+---
+        } while (!main.escolha.equals("5")); 
+        
+**continuação do "do", se a pessoa escolher uma opção que não seja o 5 ira fazer (do) alguma coisa, po exemplo: opção 1 = calcular preço / opção 2 = calcular troco / opção 3 = ver o histórico / opção 4 = ver o historico de um dia e mês especifico / opção diferente de qualquer uma desseas = opção invalida / e se a pessoa escolher 5 vai sair / ou seja do(faça o codigo) while(com o "!" que é para dizer (enquanto não for)) a opção  cinco**
+
     }
 }
