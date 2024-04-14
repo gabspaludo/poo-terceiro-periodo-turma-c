@@ -1,4 +1,4 @@
-package GUILHERME_DUDU_BERTI.Lista03;
+package Lista03;
 
 import java.text.NumberFormat;
 import java.util.Scanner;
