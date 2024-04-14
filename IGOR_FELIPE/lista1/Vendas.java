@@ -1,4 +1,4 @@
-package main;
+package lista1;
 
 public class Vendas{
     private int qtd;
