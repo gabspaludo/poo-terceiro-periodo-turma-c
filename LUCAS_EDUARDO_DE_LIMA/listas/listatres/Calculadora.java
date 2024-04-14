@@ -1,4 +1,4 @@
-package LUCAS_EDUARDO_DE_LIMA.Lista3;
+package LUCAS_EDUARDO_DE_LIMA.listas.listatres;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class Calculadora {
         while (true) {
             int opcao = menu();
     
-            switch (opcao)) {
+            switch (opcao) {
                 case 1 -> calcularTotal();
 
 

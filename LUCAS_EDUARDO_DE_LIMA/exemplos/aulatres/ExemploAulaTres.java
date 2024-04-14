@@ -1,4 +1,4 @@
-package LUCAS_EDUARDO_DE_LIMA.Aula3;
+package LUCAS_EDUARDO_DE_LIMA.exemplos.aulatres;
 
 import java.util.Scanner;
 
