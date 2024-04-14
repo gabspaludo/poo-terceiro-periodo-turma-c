@@ -1,5 +1,4 @@
-package com.fag.calculadora;
-
+package KAUE_ORLANDINI.Lista1;
 
 import java.util.Scanner;
 
@@ -138,6 +137,3 @@ public static void removervenda(Scanner scanner) {
     vendas[mes][dia] = 0;
 }
 }
-
-
- 
