@@ -1,5 +1,7 @@
 package lista_05.classes.pedido;
 
+import java.util.Date;
+
 import lista_05.classes.cliente.Cliente;
 import lista_05.classes.item.Item;
 import lista_05.classes.loja.Loja;
@@ -7,31 +9,33 @@ import lista_05.classes.vendedor.Vendedor;
 
 public class Pedido {
   public int id;
-  public String dataCriacao;
-  public String dataPagamento;
-  public String dataVencimentoReserva;
+  public Date dataCriacao;
+  public Date dataPagamento;
+  public Date dataVencimentoReserva;
   public Cliente cliente;
   public Vendedor vendedor;
   public Loja loja;
   public Item[] itens;
+  public Date date = new Date();
+  public Long umDiaEmMs = 86400000l; 
 
-  public Pedido(int id, String dataCriacao, String dataPagamento, String dataVencimentoReserva, Cliente cliente,
+  public Pedido(int id, Long dataCriacao, Long dataPagamento, Cliente cliente,
       Vendedor vendedor, Loja loja, Item... itens) {
     this.id = id;
-    this.dataCriacao = dataCriacao;
-    this.dataPagamento = dataPagamento;
-    this.dataVencimentoReserva = dataVencimentoReserva;
+    this.dataCriacao = new Date(dataCriacao);
+    this.dataPagamento = new Date(dataCriacao);
+    this.dataVencimentoReserva = new Date(dataCriacao + (this.umDiaEmMs * 3));
     this.cliente = cliente;
     this.vendedor = vendedor;
     this.loja = loja;
     this.itens = itens;
   }
 
-  public String getDataVencimentoReserva() {
+  public Date getDataVencimentoReserva() {
     return dataVencimentoReserva;
   }
 
-  public String getDataPagamento() {
+  public Date getDataPagamento() {
     return dataPagamento;
   }
 
@@ -44,8 +48,8 @@ public class Pedido {
   }
 
   public void gerarDescricaoVenda() {
-    System.out
-        .println(
-            "Data de criação: ".concat(this.dataCriacao) + String.format(" - Valor %.2f", this.calcularValorTotal()));
+    // System.out
+    //     .println(
+    //         "Data de criação: ".concat(this.dataCriacao) + String.format(" - Valor %.2f", this.calcularValorTotal()));
   }
 }

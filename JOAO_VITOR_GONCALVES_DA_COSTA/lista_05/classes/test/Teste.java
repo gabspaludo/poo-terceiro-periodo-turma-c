@@ -1,5 +1,7 @@
 package lista_05.classes.test;
 
+import java.util.Date;
+
 import lista_05.classes.cliente.Cliente;
 import lista_05.classes.gerente.Gerente;
 import lista_05.classes.item.Item;
@@ -9,6 +11,11 @@ import lista_05.classes.processa_pedido.ProcessaPedido;
 import lista_05.classes.vendedor.Vendedor;
 
 public class Teste {
+
+    public static  Long diaDeHoje = new Date().getTime();
+    public static Long umDiaEmMs = 86400000l; 
+
+
     public static void run() {
         // Criação dos clientes
         Cliente cliente_01 = new Cliente("Sandro", 44, "Tropical", "Cascavel", "Amor", "Paraná", "apto 1215", "441");
@@ -96,19 +103,18 @@ public class Teste {
 
         // Criando pedidos
 
-        Pedido pedido_01 = new Pedido(0, "12/01/2024", "13/01/2024", "15/01/2024", cliente_01, vendedores_01, loja_01,
-                item_01, item_01, item_01);
+        Pedido pedido_01 = new Pedido(0, diaDeHoje, diaDeHoje + umDiaEmMs,  cliente_01, vendedores_01, loja_01, item_01, item_01, item_01);
 
-        Pedido pedido_02 = new Pedido(0, "12/01/2024", "19/01/2024", "15/01/2024", cliente_02, vendedores_02, loja_01,
+        Pedido pedido_02 = new Pedido(0,  diaDeHoje, diaDeHoje + umDiaEmMs, cliente_02, vendedores_02, loja_01,
                 item_02, item_02, item_02);
 
-        Pedido pedido_03 = new Pedido(0, "28/02/2024", "02/03/2024", "03/03/2024", cliente_03, vendedores_03, loja_02,
+        Pedido pedido_03 = new Pedido(0,  diaDeHoje, diaDeHoje + umDiaEmMs, cliente_03, vendedores_03, loja_02,
                 item_03, item_03, item_03);
 
-        Pedido pedido_04 = new Pedido(0, "28/02/2024", "04/03/2024", "03/03/2024", cliente_04, vendedores_03, loja_02,
+        Pedido pedido_04 = new Pedido(0,  diaDeHoje, diaDeHoje + umDiaEmMs, cliente_04, vendedores_03, loja_02,
                 item_01);
 
-        Pedido pedido_05 = new Pedido(0, "28/02/2024", "03/03/2024", "03/03/2024", cliente_05, vendedores_05, loja_03,
+        Pedido pedido_05 = new Pedido(0,  diaDeHoje, diaDeHoje + umDiaEmMs, cliente_05, vendedores_05, loja_03,
                 item_02);
 
         // Fim da criação dos pedidos
@@ -258,7 +264,7 @@ public class Teste {
         pedido_05.gerarDescricaoVenda();
         System.out.println("\n");
 
-        System.out.println("<-----------Pedidos Processados----------->");
+        // System.out.println("<-----------Pedidos Processados----------->");
 
         processaPedido_01.processar();
         System.out.println("\n");
