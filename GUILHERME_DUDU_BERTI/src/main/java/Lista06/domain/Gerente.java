@@ -115,8 +115,10 @@ public class Gerente extends Pessoa {
         }
 
         public Gerente build() {
-            return new Gerente(nomePessoa, idade, estado, cidade, bairro, rua, numero, complemento,
-                    loja, salarioBase, salarioRecebido);
+            return new Gerente(
+                    nomePessoa, idade, estado, cidade, bairro, rua, numero, complemento,
+                    loja, salarioBase, salarioRecebido
+            );
         }
     }
 }
