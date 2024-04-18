@@ -1,11 +1,16 @@
 package lista5;
 
-public class Infos {
-    public String nome;
-    public Integer idade;
+public class Endereco {
+    public String estado;
     public String cidade;
     public String bairro;
-    public String rua;
+    public String logradouro;
+    public String numero;
+    public String complemento;
+
+    public String apresentarLogradouro(){
+        return cidade+"-"+estado+" "+bairro+" "+logradouro+","+numero+" "+complemento;
+    }
 
     /*/public Infos(String nome,Integer idade, String cidade, String bairro, String rua){
         this.nome = nome;
