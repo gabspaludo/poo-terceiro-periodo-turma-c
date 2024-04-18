@@ -4,7 +4,6 @@ import Lista06.domain.*;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -169,7 +168,7 @@ public class ListaSeisTest {
         System.out.println(item2.gerarDescricao());
         System.out.println(item3.gerarDescricao());
         System.out.println(item4.gerarDescricao());
-        System.out.println(item5.gerarDescricao());
+        System.out.println(item5.gerarDescricao() + "\n\n");
 
         processador.processar(pedido1);
         Pedido pedido = processador.processar(cliente1, vendedor1, loja, List.of(item1, item3, item4, item5));
