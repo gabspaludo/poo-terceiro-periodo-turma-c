@@ -1,4 +1,4 @@
-package lista04;
+package lista06;
 
 public class Loja {
     
@@ -27,7 +27,7 @@ public class Loja {
         System.out.println("Loja: " + nome);
         System.out.println("CNPJ: " + cnpj);
         System.out.print("Endereço: ");
-        endereco.apresentarEndereco();
+        endereco.apresentarLogradouro();
     }
 
     public void addClientes(Cliente cliente) {

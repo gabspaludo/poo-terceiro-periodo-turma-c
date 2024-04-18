@@ -1,7 +1,7 @@
-package lista04;
+package lista06;
 
 public class Cliente {
-    private String nome;
+    String nome;
     private int idade;
     private Endereco endereco;
 
@@ -14,6 +14,6 @@ public class Cliente {
     public void apresentarse() {
         System.out.print("Me chamo " + nome);
         System.out.print(" e tenho " + idade + " anos. Moro na rua ");
-        endereco.apresentarEndereco();
+        endereco.apresentarLogradouro();
     }
 }

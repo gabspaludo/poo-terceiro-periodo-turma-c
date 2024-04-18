@@ -1,4 +1,4 @@
-package lista04;
+package lista06;
 
 public class Vendedor {
     
@@ -16,7 +16,7 @@ public class Vendedor {
         this.loja = loja;
         this.salarioBase = salarioBase;
         this.endereco = endereco;
-        this.salarioRecebido = new double[]{1800.00, 2100.00, 2500.00};;
+        this.salarioRecebido = new double[]{1800.00, 2100.00, 2500.00};
 
     }
 
