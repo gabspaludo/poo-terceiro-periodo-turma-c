@@ -1,26 +1,50 @@
-package MARIA_EDUARDA_KOLITSKI.Dona_Gabi.MYY_PLANT;
+package Dona_Gabi.MYY_PLANT;
 
 public class Loja {
     String nomeFantasia;
     String razaoSocial;
     String cnpj;
-    String cidade;
-    String bairro;
-    String rua;
+
     Vendedor[] vendedores;
     Cliente[] clientes;
 
-    void contarClientes() {
-        System.out.println("Quantidade de clientes: " + clientes.length);
+    public String getNomeFantasia() {
+        return nomeFantasia;
     }
 
-    void contarVendedores() {
-        System.out.println("Quantidade de vendedores: " + vendedores.length);
+    public void setNomeFantasia(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
     }
 
-    void apresentarSe() {
-        System.out.println("Nome Fantasia: " + nomeFantasia);
-        System.out.println("CNPJ: " + cnpj);
-        System.out.println("Endereço: " + cidade + ", " + bairro + ", " + rua);
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
+
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public Vendedor[] getVendedores() {
+        return vendedores;
+    }
+
+    public void setVendedores(Vendedor[] vendedores) {
+        this.vendedores = vendedores;
+    }
+
+    public Cliente[] getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(Cliente[] clientes) {
+        this.clientes = clientes;
     }
 }

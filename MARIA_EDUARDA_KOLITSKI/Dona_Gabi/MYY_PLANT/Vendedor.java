@@ -1,62 +1,31 @@
-package MARIA_EDUARDA_KOLITSKI.Dona_Gabi.MYY_PLANT;
+package Dona_Gabi.MYY_PLANT;
 
-public class Vendedor {
-    String nome;
-    int idade;
-    String loja;
-    String cidade;
-    String bairro;
-    String rua;
-    float salarioBase;
-    float salarioRecebido1;
-    float salarioRecebido2;
-    float salarioRecebido3;
+public class Vendedor extends Pessoa {
+    private Loja loja;
+    private Double salarioBase;
 
-    float calcularMedia() {
-        return (salarioRecebido1 + salarioRecebido2 + salarioRecebido3) / 3;
+    public Vendedor(String nome, Integer idade, Endereco endereco) {
+        super(nome, idade, endereco);
     }
 
-    float calcularBonus() {
-        return salarioBase * 0.2f;
+    public Loja getLoja() {
+        return loja;
     }
 
-    void apresentarSe() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Idade: " + idade);
-        System.out.println("Loja: " + loja);
-        System.out.println("Cidade: " + cidade);
-        System.out.println("Bairro: " + bairro);
-        System.out.println("Rua: " + rua);
+    public void setLoja(Loja loja) {
+        this.loja = loja;
     }
 
-    void lerSalarioRecebido1(float salario) {
-        salarioRecebido1 = salario;
+    public Double getSalarioBase() {
+        return salarioBase;
     }
 
-    void lerSalarioRecebido2(float salario) {
-        salarioRecebido2 = salario;
+    public void setSalarioBase(Double salarioBase) {
+        this.salarioBase = salarioBase;
     }
 
-    void lerSalarioRecebido3(float salario) {
-        salarioRecebido3 = salario;
-    }
-
-    public static void main(String[] args) {
-        Vendedor vendedor = new Vendedor();
-        vendedor.nome = "João";
-        vendedor.idade = 30;
-        vendedor.loja = "Loja ABC";
-        vendedor.cidade = "Cidade X";
-        vendedor.bairro = "Bairro Y";
-        vendedor.rua = "Rua Z";
-        vendedor.salarioBase = 2000f;
-        vendedor.lerSalarioRecebido1(2200f);
-        vendedor.lerSalarioRecebido2(2300f);
-        vendedor.lerSalarioRecebido3(2400f);
-
-        System.out.println("\n>>> Informações do Vendedor <<<");
-        vendedor.apresentarSe();
-        System.out.println("Média Salarial: " + vendedor.calcularMedia());
-        System.out.println("Bônus: " + vendedor.calcularBonus());
+    public void apresentarSe() {
+        System.out.println("Nome: " + getNome());
+        System.out.println("Idade: " + getIdade());
     }
 }
