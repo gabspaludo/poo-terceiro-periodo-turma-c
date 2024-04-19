@@ -1,6 +1,5 @@
 package segunda_versao.model;
 
-import java.util.ArrayList;
 
 public class Loja {
     private String nomeFantasia;
