@@ -1,6 +1,11 @@
 package KAUE_ORLANDINI.Lista2;
 
+import java.util.Date;
+import java.util.Scanner;
+
 public class Pedido extends Item {
+
+    Scanner scanner = new Scanner(System.in);
 
     double[] itens = new double[5];
 
@@ -8,29 +13,33 @@ public class Pedido extends Item {
 
     public String nome;
     
-    public String dataCriacao;
+    Date dataCriacao = new Date();
     
-    public String dataPagamento;
+    Date dataPagamento = new Date();
     
-    public double dataVencimentoReserva;
+    Date dataVencimentoReserva = new Date(); 
     
     public String cliente;
     
     public String loja;
 
-    public String valor;
+    public double valor;
     
     public String vendedor;
 
     void calcularValorTotal(){
-        System.out.println("valor total: ".concat(valor));
+        System.out.println("valor total: " + String.valueOf(valor));
+    }
+    
+    void criarPedido(){
+        System.out.println("qual o valor do pedido?");
+        double valorPedido = scanner.nextInt();
+        System.out.println("data de criacao "+ String.valueOf(dataCriacao) + ", valor: " + String.valueOf(valorPedido));
     }
     
     
-    
-    
     void gerarDescricaoVenda() {
-        System.out.println("data de criacao: ".concat(dataCriacao).concat(", valor: ").concat(valor));
+        System.out.println("data de criacao "+ String.valueOf(dataCriacao) + ", valor: " + String.valueOf(valor));
     }
     
 }

@@ -61,14 +61,13 @@ public class Main {
         Pedido primeiroPedido = new Pedido();
 
         primeiroPedido.id = "a1";
-        primeiroPedido.dataCriacao = "1804";
-        primeiroPedido.dataPagamento = "1804";
-        primeiroPedido.dataVencimentoReserva = 2104;
         primeiroPedido.cliente = "gufens";
         primeiroPedido.vendedor = "marecelo";
         primeiroPedido.loja = "prisma";
         primeiroPedido.itens = new double[] {1};
-        primeiroPedido.valor = "12,50";
+        primeiroPedido.valor = 12.50;
+
+        Pedido novoPpedido = new Pedido();
 
         
 
@@ -83,8 +82,7 @@ public class Main {
         
         ProcessaPedido pedidoA = new ProcessaPedido();
 
-        pedidoA.valor = "12,50";
-        pedidoA.dataCriacao = "1804";
+        pedidoA.valor = 12.50;
         pedidoA.nome = "garrafa";
         pedidoA.cliente = "mega";
 
@@ -146,6 +144,9 @@ public class Main {
                 pedidoA.processar();
                     break;
                 case 16:
+                novoPpedido.criarPedido();
+                    break;
+                case 17:
                     System.out.println("software encerrado");
                     return;         
                 default:
@@ -172,6 +173,7 @@ public class Main {
         System.out.println("[13]: gerar descricao de venda pedido");
         System.out.println("[14]: gerar descricao item");
         System.out.println("[15]: processar pedido");
-        System.out.println("[16]:sair");
+        System.out.println("[16]: criar pedido");
+        System.out.println("[17]:sair");
     }  
  }
