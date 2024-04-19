@@ -1,9 +1,7 @@
 package com.orders.util;
-
 import java.util.Date;
 
 public class Order {
-
     Integer id;
     Date creationDate;
     Date paymentDate;
