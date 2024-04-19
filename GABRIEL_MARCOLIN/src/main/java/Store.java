@@ -1,23 +1,80 @@
-package mercadinhov2;
+public class Loja {
+    private String nomeFantasia;
 
-/*array vendedores, array de clientes.
-contarClientes, mosta a quantidade de clientes
-contarVendedores, mosta a quantidade de vendedores.
-.*/
+    private String razaoSocial;
 
+    private String cnpj;
 
-public class Store extends Information {
-    private String fantasyName = "Marcolin LTDA";
-    private String companyName = "Marcolin e Marcinho";
-    private String cnpj = "13.204.347/0001-97";
-    private String city = "Curitiba";
-    private String district = "Aliança";
-    private String street = "José Almeida";
+    private Endereco endereco;
 
-    @Override
-    public void apresentarse() {
-        System.out.println("Nome fantasia da Loja: " + fantasyName);
-        System.out.println("CNPJ da loja: " + cnpj);
-        System.out.println("Endereço da loja: Rua " + street + ", Bairro " + district + ", Cidade " + city);
+    private Vendedor[] vendedor;
+
+    private Cliente[] cliente;
+
+    public Loja(){
+        this.endereco = endereco;
+    }
+
+    public String getNomeFantasia() {
+        return nomeFantasia;
+    }
+
+    public void setNomeFantasia(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
+    }
+
+    public Cliente[] getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente[] cliente) {
+        this.cliente = cliente;
+    }
+
+    public Vendedor[] getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Vendedor[] vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
+
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
+    }
+
+    public String apresentarse() {
+        String apresentandoLoja = "\nNome fantasia da loja: " + getNomeFantasia() +
+                "\nCNPJ da loja: " + getCnpj() +
+                "\nEndereco da loja: " + getEndereco().apresentarLogradouro();
+        return apresentandoLoja;
+    }
+
+    public void contarClientes() {
+        System.out.println("A quantidade de clientes desta loja é " + cliente.length);
+    }
+
+    public void contarVendedores() {
+        System.out.println("A quantidade de vendedores desta loja é " + vendedor.length);
     }
 }
