@@ -1,6 +1,6 @@
 package com.orders.util;
 
-public class Address { // Nome da classe em inglês
+public class Address { 
 
   String state; 
   String city; 
