@@ -22,13 +22,15 @@ public class ProcessaPedido {
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.loja = loja;
-        this.itens.add(item);
+        for(int i = 0;i<itens.size();i++){
+            this.itens.add(itens.get(i));
+        }
     }
 
-    public Pedidos processarPedido(){
+    public Pedidos processarPedido(ArrayList<Item> teste){
         if(confirmarPagamento()==true){
             System.out.println("Pedido criado com sucesso");
-            Pedidos pedido = new Pedidos(this.id,this.dataCriacao,this.dataPagamento,this.dataVencimentoReserva,this.cliente,this.vendedor,this.loja,this.itens);
+            Pedidos pedido = new Pedidos(this.id,this.dataCriacao,this.dataPagamento,this.dataVencimentoReserva,this.cliente,this.vendedor,this.loja,teste);
             return pedido;
         }else{
             System.out.println("Pedido não criado, pagamento não efetuado");

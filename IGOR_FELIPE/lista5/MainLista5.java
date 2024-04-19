@@ -58,7 +58,7 @@ public class MainLista5 {
             };
         }
 
-        ProcessaPedido processaPedido = new ProcessaPedido(null,dataCompra,dataPagamento,clienteObject,vendedorObject,loja,itemObject);
+        ProcessaPedido processaPedido = new ProcessaPedido(1,dataCompra,dataPagamento,clienteObject,vendedorObject,loja,itemObject);
     
         read.close();
         return processaPedido;
@@ -132,18 +132,15 @@ public class MainLista5 {
 
         item1.gerarDescricao();
 
-        ProcessaPedido processaPedido1 = new ProcessaPedido(1,"02/10/2024","02/15/2024",cliente1,vendedor1,loja1,item1);
+        ProcessaPedido processaPedido1 = criarPedido(loja1, itens);
         allProcessaPedidos.add(processaPedido1);
-        Pedidos pedido1 = processaPedido1.processarPedido();
+        Pedidos pedido1 = processaPedido1.processarPedido(processaPedido1.itens);
 
 
         cliente1.apresentarse();
 
         loja1.contarVendedores();
         loja1.contarClientes();
-
-        criarPedido(loja1, itens);
-
     }
 }
 
