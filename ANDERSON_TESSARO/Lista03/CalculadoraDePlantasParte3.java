@@ -1,10 +1,13 @@
+package ANDERSON_TESSARO.Lista03;
+
 import java.util.Scanner;
 
-public class CalculadoraDePlantasParte2 {
+public class CalculadoraDePlantasParte3 {
 
     private static int quantidadeTotalVendida = 0;
     private static double valorTotalVendas = 0;
     private static double totalDescontos = 0;
+    private static int[][] vendasPorDiaEMes = new int[31][12]; // Matriz para armazenar as vendas por dia e mês
 
     @SuppressWarnings("resource")
     public static void main(String[] args) {
@@ -12,7 +15,7 @@ public class CalculadoraDePlantasParte2 {
 
         do {
             exibirMenu();
-            System.out.print("Escolha uma opção (1, 2, 3 ou 4): ");
+            System.out.print("Escolha uma opção (1, 2, 3, 4 ou 5): ");
             opcao = new Scanner(System.in).nextInt();
 
             switch (opcao) {
@@ -26,13 +29,19 @@ public class CalculadoraDePlantasParte2 {
                     exibirRegistrosVendas();
                     break;
                 case 4:
+                    registrarVendasDiaMes();
+                    break;
+                case 5:
+                    buscarVendasDiaMes();
+                    break;
+                case 6:
                     System.out.println("Tchau brigado!");
                     break;
                 default:
-                    System.out.println("Esse numero não. Por favor, escolha 1, 2, 3 ou 4.");
+                    System.out.println("Esse número não. Por favor, escolha 1, 2, 3, 4 ou 5.");
             }
 
-        } while (opcao != 4);
+        } while (opcao != 6);
     }
 
     private static void exibirMenu() {
@@ -40,7 +49,9 @@ public class CalculadoraDePlantasParte2 {
         System.out.println("[1] - Calcular Preço Total");
         System.out.println("[2] - Calcular Troco");
         System.out.println("[3] - Exibir Registros de Vendas");
-        System.out.println("[4] - Sair");
+        System.out.println("[4] - Registrar Vendas do Dia e Mês");
+        System.out.println("[5] - Buscar Vendas por Dia e Mês");
+        System.out.println("[6] - Sair");
     }
 
     private static void calcularPrecoTotal() {
@@ -92,5 +103,51 @@ public class CalculadoraDePlantasParte2 {
         System.out.println("Quantidade total vendida: " + quantidadeTotalVendida);
         System.out.println("Valor total das vendas: R$" + valorTotalVendas);
         System.out.println("Total de descontos aplicados: R$" + totalDescontos);
+    }
+
+    private static void registrarVendasDiaMes() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o dia (1-31): ");
+        int dia = lerNumero(scanner, 1, 31);
+
+        System.out.print("Digite o mês (1-12): ");
+        int mes = lerNumero(scanner, 1, 12);
+
+        System.out.print("Digite a quantidade de vendas: ");
+        int quantidade = scanner.nextInt();
+
+        vendasPorDiaEMes[dia - 1][mes - 1] += quantidade;
+
+        System.out.println("Vendas registradas com sucesso para o dia " + dia + " do mês " + mes + ".");
+    }
+
+    private static void buscarVendasDiaMes() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o dia (1-31): ");
+        int dia = lerNumero(scanner, 1, 31);
+
+        System.out.print("Digite o mês (1-12): ");
+        int mes = lerNumero(scanner, 1, 12);
+
+        int vendas = vendasPorDiaEMes[dia - 1][mes - 1];
+
+        System.out.println("Quantidade de vendas para o dia " + dia + " do mês " + mes + ": " + vendas);
+    }
+
+    private static int lerNumero(Scanner scanner, int min, int max) {
+        int numero;
+        do {
+            while (!scanner.hasNextInt()) {
+                System.out.println("Entrada inválida. Digite um número.");
+                scanner.next();
+            }
+            numero = scanner.nextInt();
+            if (numero < min || numero > max) {
+                System.out.println("Número fora do intervalo válido [" + min + ", " + max + "]. Tente novamente.");
+            }
+        } while (numero < min || numero > max);
+        return numero;
     }
 }

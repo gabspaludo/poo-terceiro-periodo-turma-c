@@ -1,12 +1,19 @@
-package ANDERSON_TESSARO.lista04;
+package ANDERSON_TESSARO.Lista06;
+
+import java.util.Vector;
 
 public class Main {
+  /**
+   * @param args
+   */
   public static void main(String[] args) {
     Loja lojaA = new Loja();
     Loja lojaB = new Loja();
 
-    Vendedor vendedorA = new Vendedor();
-    Vendedor vendedorB = new Vendedor();
+    @SuppressWarnings("rawtypes")
+    Vector vendedorA = new Vector();
+    @SuppressWarnings("rawtypes")
+    Vector vendedorB = new Vector();
 
     Cliente clienteA = new Cliente();
     Cliente clienteB = new Cliente();
@@ -70,8 +77,8 @@ public class Main {
     lojaA.apresentarse();
     lojaB.apresentarse();
 
-    vendedorA.apresentarse();
-    vendedorB.apresentarse();
+    ((Loja) vendedorA).apresentarse();
+    ((Loja) vendedorB).apresentarse();
 
     clienteA.apresentarse();
     clienteB.apresentarse();
@@ -82,10 +89,10 @@ public class Main {
     lojaA.contarClientes();
     lojaB.contarClientes();
 
-    vendedorA.calcularMedia();
-    vendedorB.calcularMedia();
+    ((Object) vendedorA).calcularMedia();
+    ((Object) vendedorB).calcularMedia();
 
-    vendedorA.calcularBonus();
-    vendedorB.calcularBonus();
+    ((Object) vendedorA).calcularBonus();
+    ((Object) vendedorB).calcularBonus();
   }
 }

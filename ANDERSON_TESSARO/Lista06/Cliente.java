@@ -1,4 +1,4 @@
-package ANDERSON_TESSARO.lista04;
+package ANDERSON_TESSARO.Lista06;
 
 public class Cliente {
   String nome;
