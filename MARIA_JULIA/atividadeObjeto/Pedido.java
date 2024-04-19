@@ -37,6 +37,9 @@ public class Pedido {
         itens.add(item);
     }
 
+    public ArrayList<Item> returnItems() {
+        return itens;
+    }
     public int calcularValorTotal() {
         int total = 0;
         for (Item item : itens) {

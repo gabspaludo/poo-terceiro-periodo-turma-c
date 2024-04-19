@@ -16,10 +16,11 @@ public class Gerente extends Endereco {
     double salarioRecebido[] = { 1000.00, 1002.00, 1082.00 };
 
     public Gerente(String estado, String cidade, String bairro, String numero, String complemento, String nome,
-            int idade) {
+            int idade, String loja) {
         super(estado, cidade, bairro, numero, complemento);
         this.nome = nome;
         this.idade = idade;
+        this.loja = loja;
     }
 
     public void apresentarse() {
