@@ -10,6 +10,7 @@ public class Cliente {
    
     public String bairro;
    
+    
     public String rua;
     
     void apresentarse() {
