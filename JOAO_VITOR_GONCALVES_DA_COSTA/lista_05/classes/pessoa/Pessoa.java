@@ -12,7 +12,6 @@ public class Pessoa {
     this.endereco = new Endereco(rua, estado, cidade, bairro, numero, complemento);
     this.idade = idade;
     this.nome = nome;
-    this.idade = idade;
   }
 
   public void apresentarse() {

@@ -17,13 +17,14 @@ public class Pedido {
   public Loja loja;
   public Item[] itens;
   public Date date = new Date();
-  public Long umDiaEmMs = 86400000l; 
+  public Long umDiaEmMs = 86400000l;
 
   public Pedido(int id, Long dataCriacao, Long dataPagamento, Cliente cliente,
       Vendedor vendedor, Loja loja, Item... itens) {
     this.id = id;
     this.dataCriacao = new Date(dataCriacao);
-    this.dataPagamento = new Date(dataCriacao);
+
+    this.dataPagamento = new Date(dataPagamento);
     this.dataVencimentoReserva = new Date(dataCriacao + (this.umDiaEmMs * 3));
     this.cliente = cliente;
     this.vendedor = vendedor;
@@ -31,12 +32,12 @@ public class Pedido {
     this.itens = itens;
   }
 
-  public Date getDataVencimentoReserva() {
-    return dataVencimentoReserva;
+  public Long getDataVencimentoReserva() {
+    return dataVencimentoReserva.getTime();
   }
 
-  public Date getDataPagamento() {
-    return dataPagamento;
+  public Long getDataPagamento() {
+    return dataPagamento.getTime();
   }
 
   public double calcularValorTotal() {
@@ -48,8 +49,9 @@ public class Pedido {
   }
 
   public void gerarDescricaoVenda() {
-    // System.out
-    //     .println(
-    //         "Data de criação: ".concat(this.dataCriacao) + String.format(" - Valor %.2f", this.calcularValorTotal()));
+    System.out
+        .println(
+            "Data de criação: ".concat(this.dataCriacao.toString())
+                + String.format(" - Valor %.2f", this.calcularValorTotal()));
   }
 }
