@@ -10,7 +10,7 @@ public class CalduladoraLojaTest01 {
     private static ThreadLocalRandom random = ThreadLocalRandom.current();
 
     public static void main(String[] args) {
-        Loja loja01 = Loja.LojaBuilder.builder()
+        Loja loja01 = Loja.LojaBuilderLista05.builder()
                 .nomeFantasia("Primavera Flores")
                 .razaoSocial("Primavera Flores LTDA")
                 .cnpj(88765449000191L)
@@ -19,7 +19,7 @@ public class CalduladoraLojaTest01 {
                 .bairro("Centro")
                 .build();
 
-        Cliente cliente1 = Cliente.ClienteBuilder.builder()
+        Cliente cliente1 = Cliente.ClienteBuilderLista05.builder()
                 .nome("Cleber")
                 .idade(18)
                 .rua("Das balas")
@@ -27,7 +27,7 @@ public class CalduladoraLojaTest01 {
                 .bairro("Getos")
                 .build();
 
-        Cliente cliente2 = Cliente.ClienteBuilder.builder()
+        Cliente cliente2 = Cliente.ClienteBuilderLista05.builder()
                 .nome("Marcão do Pó")
                 .idade(18)
                 .rua("Das pedras")
@@ -35,7 +35,7 @@ public class CalduladoraLojaTest01 {
                 .bairro("Getos")
                 .build();
 
-        Vendedor vendedor01 = Vendedor.VendedorBuilder.builder()
+        Vendedor vendedor01 = Vendedor.VendedorBuilderLista05.builder()
                 .nome("Maria das Graças")
                 .idade(63)
                 .rua("Das flores")
@@ -49,7 +49,7 @@ public class CalduladoraLojaTest01 {
                 .loja(loja01)
                 .build();
 
-        Vendedor vendedor02 = Vendedor.VendedorBuilder.builder()
+        Vendedor vendedor02 = Vendedor.VendedorBuilderLista05.builder()
                 .nome("Joana da Silva")
                 .idade(57)
                 .rua("Das flores")
