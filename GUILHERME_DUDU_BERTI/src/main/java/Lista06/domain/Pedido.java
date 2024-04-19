@@ -14,18 +14,17 @@ public class Pedido {
     private Loja loja;
     private List<Item> itens;
 
-    public Pedido(Long id, LocalDate dataCriacao, LocalDate dataPagamento, LocalDate dataVencimentoReserva,
-                  Cliente cliente, Vendedor vendedor, Loja loja, List<Item> itens) {
+    public Pedido(Long id,
+                  Cliente cliente, Vendedor vendedor, LocalDate dataCriacao, Loja loja, List<Item> itens) {
         this.id = id;
-        this.dataCriacao = dataCriacao;
-        this.dataPagamento = dataPagamento;
-        this.dataVencimentoReserva = dataVencimentoReserva;
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.loja = loja;
         this.itens = itens;
+        this.dataCriacao = LocalDate.now();
+        this.dataPagamento = dataCriacao.plusDays(1);
+        this.dataVencimentoReserva = dataCriacao.plusDays(3);
     }
-
 
     public Long getId() {
         return id;
@@ -72,7 +71,7 @@ public class Pedido {
         descricao += "ID Pedido: " + id + "\n";
         descricao += "Data de Criação: " + dataCriacao.format(DateTimeFormatter.ISO_DATE) + "\n";
         descricao += "Cliente: " + cliente.getNomePessoa() + "\n";
-        descricao += "Vendedor(a): " + vendedor.getNomePessoa() + "\n";
+        descricao += "Vendedor: " + vendedor.getNomePessoa() + "\n";
         descricao += "Loja: " + loja.getNomeFantasia() + "\n";
         descricao += "\n";
         descricao += "Itens:\n";
@@ -113,16 +112,6 @@ public class Pedido {
             return this;
         }
 
-        public PedidoBuilder dataPagamento(LocalDate dataPagamento) {
-            this.dataPagamento = dataPagamento;
-            return this;
-        }
-
-        public PedidoBuilder dataVencimentoReserva(LocalDate dataVencimentoReserva) {
-            this.dataVencimentoReserva = dataVencimentoReserva;
-            return this;
-        }
-
         public PedidoBuilder cliente(Cliente cliente) {
             this.cliente = cliente;
             return this;
@@ -144,7 +133,7 @@ public class Pedido {
         }
 
         public Pedido build() {
-            return new Pedido(id, dataCriacao, dataPagamento, dataVencimentoReserva, cliente, vendedor, loja, itens);
+            return new Pedido(id, cliente, vendedor, dataCriacao, loja, itens);
         }
     }
 }

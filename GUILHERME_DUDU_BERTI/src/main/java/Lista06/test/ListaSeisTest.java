@@ -3,21 +3,20 @@ package Lista06.test;
 import Lista06.domain.*;
 
 import java.text.DecimalFormat;
-import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
 public class ListaSeisTest {
     public static void main(String[] args) {
-        DecimalFormat df = new DecimalFormat("0.00"); // Define duas casas decimais
+        DecimalFormat df = new DecimalFormat("0.00");
         ProcessarPedido processador = new ProcessarPedido();
 
         Gerente gerente = Gerente.GerenteBuilder.builder()
                 .nomePessoa("Vânia")
                 .idade(28)
-                .cidade("Santa Lúcia")
-                .bairro("Centro")
-                .rua("Avenida OLZ")
+                .endereco(new Endereco
+                        ("Paraná", "Santa Lucia", "Centro", "Avenida Brasil",
+                                345, "Casa"))
                 .loja(null)
                 .salarioBase(2200)
                 .salarioRecebido(Arrays.asList(2200.0, 2500.0, 2000.0))
@@ -27,9 +26,9 @@ public class ListaSeisTest {
                 .nomePessoa("Guilherme")
                 .idade(18)
                 .loja(null)
-                .cidade("Sta Lucia")
-                .bairro("Centro")
-                .rua("Av OLZ")
+                .endereco((new Endereco
+                        ("Paraná", "Santa Lucia", "Centro", "Avenida Brasil",
+                                35, "Casa")))
                 .salarioBase(1800)
                 .salarioRecebido(Arrays.asList(1800.0, 1700.0, 1850.0))
                 .build();
@@ -38,19 +37,19 @@ public class ListaSeisTest {
                 .nomePessoa("Talita")
                 .idade(23)
                 .loja(null)
-                .cidade("Sta Lucia")
-                .bairro("Centro")
-                .rua("Rua B")
+                .endereco((new Endereco
+                        ("Paraná", "Santa Lucia", "Centro", "Avenida Brasil",
+                                895, "Casa")))
                 .salarioBase(1900)
                 .salarioRecebido(Arrays.asList(1900.0, 1900.0, 2200.0))
                 .build();
         Vendedor vendedor3 = Vendedor.VendedorBuilder.builder()
                 .nomePessoa("Fran")
                 .idade(25)
+                .endereco((new Endereco
+                        ("Paraná", "Santa Lucia", "Centro", "Avenida Brasil",
+                                894, "Casa")))
                 .loja(null)
-                .cidade("Sta Lucia")
-                .bairro("Centro")
-                .rua("Rua B")
                 .salarioBase(2000)
                 .salarioRecebido(Arrays.asList(2000.0, 2000.0, 2300.0))
                 .build();
@@ -58,26 +57,25 @@ public class ListaSeisTest {
         Cliente cliente1 = Cliente.ClienteBuilder.builder()
                 .nomePessoa("Fátima")
                 .idade(54)
-                .cidade("Sta Lucia")
-                .bairro("Centro")
-                .rua("Av OLZ")
+                .endereco((new Endereco
+                        ("Paraná", "Santa Lucia", "Centro", "Avenida Brasil",
+                                22, "Casa")))
                 .build();
 
         Cliente cliente2 = Cliente.ClienteBuilder.builder()
                 .nomePessoa("Dalci")
                 .idade(62)
-                .cidade("Sta Lucia")
-                .bairro("Centro")
-                .rua("Av Brasil")
+                .endereco((new Endereco
+                        ("Paraná", "Santa Lucia", "Centro", "Avenida Brasil",
+                                123, "Casa")))
                 .build();
 
         Loja loja = Loja.LojaBuilder.builder()
-                .cidade("Santa Lúcia")
-                .bairro("Centro")
-                .rua("Avenida OLZ")
-                .nomeFantasia("Magazine Móveis")
-                .razaoSocial("magamo")
-                .cnpj(17235604000110L)
+                .nomeFantasia("Myy Plants")
+                .razaoSocial("mypla")
+                .cnpj("17235604000110")
+                .endereco(new Endereco("Paraná", "Santa Lúcia", "Centro", "Avenida OLZ",
+                        455, "Loja de Esquina"))
                 .vendedores(Arrays.asList(vendedor1, vendedor2, vendedor3))
                 .clientes(Arrays.asList(cliente1, cliente2))
                 .build();
@@ -121,18 +119,6 @@ public class ListaSeisTest {
                 .valor(129.00)
                 .build();
 
-
-        Pedido pedido1 = Pedido.PedidoBuilder.builder()
-                .id(1L)
-                .dataCriacao(LocalDate.of(2024, 4, 25))
-                .dataPagamento(LocalDate.of(2024, 4, 30))
-                .dataVencimentoReserva(LocalDate.of(2024, 4, 28))
-                .cliente(cliente1)
-                .vendedor(vendedor1)
-                .loja(loja)
-                .itens(List.of(item1, item2))
-                .build();
-
         System.out.println("\n==================== LOJA =======================");
         System.out.println(loja.apresentarse());
         System.out.println("Quantidade de clientes: " + loja.contarClientes());
@@ -168,10 +154,10 @@ public class ListaSeisTest {
         System.out.println(item2.gerarDescricao());
         System.out.println(item3.gerarDescricao());
         System.out.println(item4.gerarDescricao());
-        System.out.println(item5.gerarDescricao() + "\n\n");
+        System.out.println(item5.gerarDescricao());
 
-        processador.processar(pedido1);
-        Pedido pedido = processador.processar(cliente1, vendedor1, loja, List.of(item1, item3, item4, item5));
-
+        System.out.println("\n==================== PEDIDOS PROCESSADOS =======================");
+        Pedido pedido1 = processador.processar(cliente1, vendedor1, loja, List.of(item1, item3, item4, item5));
+        Pedido pedido2 = processador.processar(cliente2, vendedor3, loja, List.of(item5, item2));
     }
 }
