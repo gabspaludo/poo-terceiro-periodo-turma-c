@@ -14,10 +14,10 @@ public class Teste {
         Loja lojaEx = new Loja("MyyPlant", "Myy Plant LTDA", "1234567890", enderecoLoja);
 
         Cliente cliente1 = new Cliente("Joana", 33, enderecoCliente);
-        Vendedor vendedor1 = new Vendedor("Jorge", 39, lojaEx, 2500.00, enderecoVendedor);
+        Vendedor vendedor1 = new Vendedor("Jorge", 39, enderecoVendedor, lojaEx, 2500.00);
 
         Cliente cliente2 = new Cliente("Joao", 40, enderecoJoao);
-        Vendedor vendedor2 = new Vendedor("Luiza", 23, lojaEx, 2700.00, enderecoLuiza);
+        Vendedor vendedor2 = new Vendedor("Luiza", 23, enderecoLuiza, lojaEx, 2700.00);
         
         lojaEx.addClientes(cliente1);
         lojaEx.addVendedores(vendedor1);

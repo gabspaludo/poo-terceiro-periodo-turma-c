@@ -1,28 +1,22 @@
 package lista06;
 
-public class Vendedor {
+public class Vendedor extends Pessoa {
     
-    String nome;
-    int idade;
     Loja loja;
-    Endereco endereco;
     double salarioBase;
     double[] salarioRecebido;
 
-    public Vendedor (String nome, int idade, Loja loja, double salarioBase, Endereco endereco) {
-
-        this.nome = nome;
-        this.idade = idade;
+    public Vendedor(String nome, int idade, Endereco endereco, Loja loja, double salarioBase) {
+        
+        super(nome, idade, endereco);
         this.loja = loja;
         this.salarioBase = salarioBase;
-        this.endereco = endereco;
         this.salarioRecebido = new double[]{1800.00, 2100.00, 2500.00};
-
     }
 
     public void apresentarse() {
-        System.out.print("Sou o " + nome);
-        System.out.print(", tenho " + idade);
+        System.out.print("Sou o " + getNome());
+        System.out.print(", tenho " + getIdade());
         System.out.println(" anos e trabalho na " + loja.nome);
     }
 

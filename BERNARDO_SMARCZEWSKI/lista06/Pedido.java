@@ -23,9 +23,9 @@ public class Pedido {
     }
 
     private void calcularDataVencimentoReserva() {
-        long tresDiasEmMilissegundos = 3 * 24 * 60 * 60 * 1000;
-        long dataCriacaoEmMilissegundos = dataCriacao.getTime();
-        dataVencimento = new Date(dataCriacaoEmMilissegundos + tresDiasEmMilissegundos);
+        long tresDiasMs = 3 * 24 * 60 * 60 * 1000;
+        long dataCriacaoMs = dataCriacao.getTime();
+        dataVencimento = new Date(dataCriacaoMs + tresDiasMs);
     }
 
     public double calcularValorTotal() {
@@ -42,8 +42,8 @@ public class Pedido {
         System.out.println("Data de Criação: " + dataCriacao);
         System.out.println("Data de Pagamento: " + dataPagamento);
         System.out.println("Data de Vencimento da Reserva: " + dataVencimento);
-        System.out.println("Vendedor: " + vendedor.nome);
-        System.out.println("Comprador: " + cliente.nome);
+        System.out.println("Vendedor: " + vendedor.getNome());
+        System.out.println("Comprador: " + cliente.getNome());
         System.out.println("Valor Total: " + calcularValorTotal());
     }
 

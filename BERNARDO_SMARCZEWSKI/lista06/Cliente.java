@@ -1,19 +1,14 @@
 package lista06;
 
-public class Cliente {
-    String nome;
-    private int idade;
-    private Endereco endereco;
+public class Cliente extends Pessoa {
 
     public Cliente(String nome, int idade, Endereco endereco) {
-        this.nome = nome;
-        this.idade = idade;
-        this.endereco = endereco;
+        super(nome, idade, endereco);
     }
 
     public void apresentarse() {
-        System.out.print("Me chamo " + nome);
-        System.out.print(" e tenho " + idade + " anos. Moro na rua ");
+        System.out.print("Me chamo " + getNome());
+        System.out.print(" e tenho " + getIdade() + " anos. ");
         endereco.apresentarLogradouro();
     }
 }
