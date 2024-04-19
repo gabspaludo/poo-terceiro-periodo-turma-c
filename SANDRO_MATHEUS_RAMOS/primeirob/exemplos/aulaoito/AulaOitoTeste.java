@@ -18,6 +18,8 @@ public class AulaOitoTeste {
         salvar(pg);
         salvar(oracle);
         salvar(mongo);
+
+        System.out.println(Math.random() * 100);
     }
     
     public static void salvar(IBancoDados db) {
