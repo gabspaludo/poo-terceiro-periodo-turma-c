@@ -1,6 +1,7 @@
 package list5.domain;
 
 import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.Logger;
 
 @Log4j2
 public class Cliente extends Pessoa {
@@ -21,47 +22,55 @@ public class Cliente extends Pessoa {
                 "Endereço: " + rua + ", " + bairro + " - " + cidade + "\n";
     }
 
-    public static final class ClienteBuilder {
-        private String nome;
-        private Integer idade;
+
+    public static final class ClienteBuilderLista05 {
+        private Logger log;
         private String cidade;
         private String bairro;
         private String rua;
+        private String nome;
+        private Integer idade;
 
-        private ClienteBuilder() {
+        private ClienteBuilderLista05() {
         }
 
-        public static ClienteBuilder builder() {
-            return new ClienteBuilder();
+        public static ClienteBuilderLista05 builder() {
+            return new ClienteBuilderLista05();
         }
 
-        public ClienteBuilder nome(String nome) {
-            this.nome = nome;
+        public ClienteBuilderLista05 log(Logger log) {
+            this.log = log;
             return this;
         }
 
-        public ClienteBuilder idade(Integer idade) {
-            this.idade = idade;
-            return this;
-        }
-
-        public ClienteBuilder cidade(String cidade) {
+        public ClienteBuilderLista05 cidade(String cidade) {
             this.cidade = cidade;
             return this;
         }
 
-        public ClienteBuilder bairro(String bairro) {
+        public ClienteBuilderLista05 bairro(String bairro) {
             this.bairro = bairro;
             return this;
         }
 
-        public ClienteBuilder rua(String rua) {
+        public ClienteBuilderLista05 rua(String rua) {
             this.rua = rua;
             return this;
         }
 
+        public ClienteBuilderLista05 nome(String nome) {
+            this.nome = nome;
+            return this;
+        }
+
+        public ClienteBuilderLista05 idade(Integer idade) {
+            this.idade = idade;
+            return this;
+        }
+
         public Cliente build() {
-            return new Cliente(nome, idade, cidade, bairro, rua);
+            Cliente cliente = new Cliente(nome, idade, cidade, bairro, rua);
+            return cliente;
         }
     }
 }

@@ -62,7 +62,7 @@ public class Loja extends Endereco{
     }
 
 
-    public static final class LojaBuilder {
+    public static final class LojaBuilderLista05 {
         private String cidade;
         private String bairro;
         private String rua;
@@ -70,39 +70,39 @@ public class Loja extends Endereco{
         private String razaoSocial;
         private Long cnpj;
 
-        private LojaBuilder() {
+        private LojaBuilderLista05() {
         }
 
-        public static LojaBuilder builder() {
-            return new LojaBuilder();
+        public static LojaBuilderLista05 builder() {
+            return new LojaBuilderLista05();
         }
 
-        public LojaBuilder cidade(String cidade) {
+        public LojaBuilderLista05 cidade(String cidade) {
             this.cidade = cidade;
             return this;
         }
 
-        public LojaBuilder bairro(String bairro) {
+        public LojaBuilderLista05 bairro(String bairro) {
             this.bairro = bairro;
             return this;
         }
 
-        public LojaBuilder rua(String rua) {
+        public LojaBuilderLista05 rua(String rua) {
             this.rua = rua;
             return this;
         }
 
-        public LojaBuilder nomeFantasia(String nomeFantasia) {
+        public LojaBuilderLista05 nomeFantasia(String nomeFantasia) {
             this.nomeFantasia = nomeFantasia;
             return this;
         }
 
-        public LojaBuilder razaoSocial(String razaoSocial) {
+        public LojaBuilderLista05 razaoSocial(String razaoSocial) {
             this.razaoSocial = razaoSocial;
             return this;
         }
 
-        public LojaBuilder cnpj(Long cnpj) {
+        public LojaBuilderLista05 cnpj(Long cnpj) {
             this.cnpj = cnpj;
             return this;
         }

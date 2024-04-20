@@ -53,7 +53,7 @@ public class Vendedor extends Pessoa {
         return salarioBase * 0.2;
     }
 
-    public static final class VendedorBuilder {
+    public static final class VendedorBuilderLista05 {
         private String cidade;
         private String bairro;
         private String rua;
@@ -63,49 +63,49 @@ public class Vendedor extends Pessoa {
         private Double salarioBase;
         private List<Double> salarioRecebido = new ArrayList<>();
 
-        private VendedorBuilder() {
+        private VendedorBuilderLista05() {
         }
 
-        public static VendedorBuilder builder() {
-            return new VendedorBuilder();
+        public static VendedorBuilderLista05 builder() {
+            return new VendedorBuilderLista05();
         }
 
-        public VendedorBuilder cidade(String cidade) {
+        public VendedorBuilderLista05 cidade(String cidade) {
             this.cidade = cidade;
             return this;
         }
 
-        public VendedorBuilder bairro(String bairro) {
+        public VendedorBuilderLista05 bairro(String bairro) {
             this.bairro = bairro;
             return this;
         }
 
-        public VendedorBuilder rua(String rua) {
+        public VendedorBuilderLista05 rua(String rua) {
             this.rua = rua;
             return this;
         }
 
-        public VendedorBuilder nome(String nome) {
+        public VendedorBuilderLista05 nome(String nome) {
             this.nome = nome;
             return this;
         }
 
-        public VendedorBuilder idade(Integer idade) {
+        public VendedorBuilderLista05 idade(Integer idade) {
             this.idade = idade;
             return this;
         }
 
-        public VendedorBuilder loja(Loja loja) {
+        public VendedorBuilderLista05 loja(Loja loja) {
             this.loja = loja;
             return this;
         }
 
-        public VendedorBuilder salarioBase(Double salarioBase) {
+        public VendedorBuilderLista05 salarioBase(Double salarioBase) {
             this.salarioBase = salarioBase;
             return this;
         }
 
-        public VendedorBuilder salarioRecebido(Double value1, Double value2, Double value3) {
+        public VendedorBuilderLista05 salarioRecebido(Double value1, Double value2, Double value3) {
             salarioRecebido.add(value1);
             salarioRecebido.add(value2);
             salarioRecebido.add(value3);
