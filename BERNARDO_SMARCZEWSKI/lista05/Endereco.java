@@ -1,4 +1,4 @@
-package lista04;
+package lista05;
 
 public class Endereco {
     private String cidade;
