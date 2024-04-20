@@ -1,51 +1,49 @@
-package MARIA_EDUARDA_KOLITSKI.Dona_Gabi.MYY_PLANT;
+package Dona_Gabi.MYY_PLANT;
 
 public class Teste {
     public static void main(String[] args) {
-        Vendedor vendedor = new Vendedor();
-        vendedor.nome = "João";
-        vendedor.idade = 30;
-        vendedor.loja = "Loja ABC";
-        vendedor.cidade = "Cidade X";
-        vendedor.bairro = "Bairro Y";
-        vendedor.rua = "Rua Z";
-        vendedor.salarioBase = 2000f;
-        vendedor.lerSalarioRecebido1(2200f);
-        vendedor.lerSalarioRecebido2(2300f);
-        vendedor.lerSalarioRecebido3(2400f);
+        Endereco endereco = new Endereco("PR", "Cascavel", "Neva", "Rua Marechal Floriano", 1748, "casa");
 
-        System.out.println(">>> Informações do Vendedor <<<");
-        vendedor.apresentarSe();
-        System.out.println("Média Salarial: " + vendedor.calcularMedia());
-        System.out.println("Bônus: " + vendedor.calcularBonus());
+        Cliente cliente = new Cliente("Maria", 18, endereco);
 
-
-        Cliente cliente = new Cliente();
-        cliente.nome = "Maria";
-        cliente.idade = 25;
-        cliente.cidade = "Cidade X";
-        cliente.bairro = "Bairro A";
-        cliente.rua = "Rua B";
-
-        System.out.println("\n>>> Informações do Cliente <<<");
-        cliente.apresentarSe();
-
+        Vendedor vendedor = new Vendedor("Célia", 28, endereco);
 
         Loja loja = new Loja();
-        loja.nomeFantasia = "Loja ABC";
-        loja.razaoSocial = "ABC LTDA";
-        loja.cnpj = "12345678901234";
-        loja.cidade = "Cidade X";
-        loja.bairro = "Bairro Y";
-        loja.rua = "Rua Z";
-        loja.vendedores = new Vendedor[]{vendedor}; 
-        loja.clientes = new Cliente[]{cliente}; 
+        loja.setCnpj("2343243243");
+        loja.setNomeFantasia("Nubank");
+        loja.setRazaoSocial("NU Pagamentos S.A");
+        loja.setClientes(new Cliente[]{cliente});
+        loja.setVendedores(new Vendedor[]{vendedor});
 
-        System.out.println("\n>>> Informações da Loja <<<");
-        loja.apresentarSe();
-        
-        System.out.println(">>> Contagem <<<");
-        loja.contarClientes();
-        loja.contarVendedores();
+        Item item1 = new Item(1, "Samambaia", "Planta", 25d);
+        Item item2 = new Item(2, "Espada de São Jorge", "Planta", 25d);
+        Item[] items = new Item[]{item1, item2};
+
+        ProcessaPedido processaPedido = new ProcessaPedido();
+        Pedido pedido = processaPedido.processaPedido(cliente, items);
+        processaPedido.confirmarPagamento(pedido);
+
+        System.out.println("==== informações do pedido ====");
+        System.out.println("Valor Total do Pedido: " + pedido.calcularValorTotal());
+        System.out.println("Data de Vencimento da Reserva: " + pedido.getDataVencimentoReserva());
+        System.out.println("Data de Pagamento: " + pedido.getDataPagamento());
+        System.out.println();
+
+        System.out.println("==== informações do Cliente ====");
+        cliente.apresentarSe();
+        System.out.print("Endereço: ");
+        endereco.apresentarLogradouro();
+        System.out.println();
+
+        System.out.println("==== informações do Vendedor ====");
+        vendedor.apresentarSe();
+        System.out.print("Endereço: ");
+        endereco.apresentarLogradouro();
+        System.out.println();
+
+        System.out.println("==== informações da Loja ====");
+        System.out.println("Nome Fantasia: " + loja.getNomeFantasia());
+        System.out.println("Razão Social: " + loja.getRazaoSocial());
+        System.out.println("CNPJ: " + loja.getCnpj());
     }
 }

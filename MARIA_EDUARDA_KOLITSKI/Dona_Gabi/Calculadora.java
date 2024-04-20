@@ -1,4 +1,4 @@
-package MARIA_EDUARDA_KOLITSKI.Dona_Gabi;
+package Dona_Gabi;
 
 import java.util.Scanner;
 
