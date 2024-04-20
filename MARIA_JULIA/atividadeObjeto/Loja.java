@@ -1,4 +1,5 @@
 package atividadeObjeto;
+
 import java.util.ArrayList;
 
 // 3. Crie uma classe Loja com:
@@ -7,42 +8,49 @@ import java.util.ArrayList;
 // contarVendedores, mosta a quantidade de vendedores.
 // Método apresentarse, printa nomeFantasia, cnpj e endereco.
 
-public class Loja {
+public class Loja extends Endereco {
     String nomeFantasia;
     String razaoSocial;
     String cnpj;
-    String cidade;
-    String bairro;
-    String rua;
     ArrayList<String> vendedores = new ArrayList<>();
     ArrayList<String> clientes = new ArrayList<>();
-    
+
+    public Loja(String estado, String cidade, String bairro, String numero, String complemento, String nomeFantasia,
+            String razaoSocial, String cnpj) {
+        super(estado, cidade, bairro, numero, complemento);
+        this.nomeFantasia = nomeFantasia;
+        this.razaoSocial = razaoSocial;
+        this.cnpj = cnpj;
+    }
+
     public void contarClientes() {
         int contador = 0;
-        for (String i : clientes){
+        for (String i : clientes) {
             contador = contador + 1;
             String apresentar = "Cliente - " + i;
             System.out.println(apresentar);
         }
         String contadorString = String.valueOf(contador);
-        System.out.println(contadorString); 
+        System.out.println(contadorString);
 
     }
+
     public void contarVendedores() {
         int contador = 0;
-        for (String i : vendedores){
+        for (String i : vendedores) {
             contador = contador + 1;
             String apresentar = "Vendedor - " + i;
             System.out.println(apresentar);
         }
         String contadorString = String.valueOf(contador);
-        System.out.println(contadorString); 
-
+        System.out.println(contadorString);
 
     }
+
     public void apresentarse() {
-        String apresentar = "Nome fantasia: "+ nomeFantasia +"\nCNPJ: "+cnpj+"\nEndereço: " + rua + ", " + bairro+" - "+cidade;
+        String apresentar = "Nome fantasia: " + nomeFantasia + "\nCNPJ: " + cnpj;
         System.out.println(apresentar);
+        super.apresentarLogradouro();
 
     }
 
