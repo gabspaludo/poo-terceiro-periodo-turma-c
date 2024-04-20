@@ -1,26 +1,10 @@
 package KAUE_ORLANDINI.Lista2;
 
-
-
-public class Vendedor {
+public class Gerente extends Vendedor {
     double[] salarioR = new double[2];
-
-    public String nome;
     
-    public String idade;
-
-    public String loja;
+    public Gerente(String nome, String idade, String loja, String bairro, String cidade, String rua, Double salarioB, Double mediaSalarios, double salarioR) {}
     
-    public String bairro;
-    
-    public String cidade;
-
-    public String rua;
-
-    public Double salarioB;
-
-    public Double mediaSalarios;
-
     void apresentarse() {
         System.out.println("nome: ".concat(nome).concat(", idade: ").concat(idade).concat(", loja: ").concat(loja));
     }
@@ -30,9 +14,9 @@ public class Vendedor {
         System.out.println(mediaSalarios);
     }
 
-   
     void calcularBonus() {
-        double salarioR = salarioB * 0.2;
+        double salarioR = salarioB * 0.35;
         System.out.println(salarioR);
     }
 }
+
