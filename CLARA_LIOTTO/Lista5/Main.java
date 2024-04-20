@@ -1,36 +1,32 @@
 package CLARA_LIOTTO.Lista5;
 
-public class Main {
-    public static void main(String[] args) {
-        
-        Loja loja = new Loja("Myy Plant", "Myy Plant LTDA", "12123123/0001-13", "Ubiratã PR", "Centro", "Avenida Joao Medeiros");
-        
-        Vendedor vendedor = new Vendedor();
-        vendedor.loja = loja; 
-        
-        loja.arrayVendedores.add(vendedor);
-        
-        Cliente cliente = new Cliente();
-        
-        loja.arrayClientes.add(cliente);
+class Vendedor {
+    
+    public String nome = "João";
+    public int idade = 30;
+    public Loja loja;
+    public String cidade = "São Paulo";
+    public String bairro = "Centro";
+    public String rua = "Rua das Flores";
+    public double salarioBase = 2000.0;
+    public double[] salarioRecebido = {2100.0, 2200.0, 2300.0};
 
-        System.out.println("Vendedores :");
+    public void apresentarSe() {
+        System.out.println("Nome: " + nome + ", Idade: " + idade + ", Loja: " + loja.nomeFantasia);
+    }
 
-        vendedor.apresentarSe();
+    public double calcularMedia() {
+        double soma = 0;
+        for (double salario : salarioRecebido) {
+            soma += salario;
+        }
+        return soma / salarioRecebido.length;
+    }
 
-        System.out.println("Média salarial :"+ vendedor.calcularMedia());
-        System.out.println("Bônus salarial :"+ vendedor.calcularBonus());
-
-        System.out.println("Clientes :");
-
-        cliente.apresentarSe();
-        
-        loja.contarVendedores();
-        loja.contarClientes();
-
-        System.out.println("Loja :");
-
-        loja.apresentarSe();
+    public double calcularBonus() {
+        return salarioBase * 0.2;
     }
 }
+        
+
 
