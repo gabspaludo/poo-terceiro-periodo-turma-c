@@ -27,7 +27,7 @@ public class Gerente extends Pessoa {
     }
 
     public void apresentarse() {
-        System.out.println("Olá meu nome é " + nome + " tenho " + idade + "e trabalho na loja " + loja.nomeFantasia);
+        System.out.println("Olá meu nome é " + nome + " tenho " + idade + " anos e trabalho na loja " + loja.nomeFantasia);
     }
 
     public void calcularMedia() {
@@ -40,6 +40,6 @@ public class Gerente extends Pessoa {
     }
 
     public void calcularBonus() {
-        System.out.println("Bonus: " + salarioBase * 0.35);
+        System.out.println("Meu bonus de salário é: " + salarioBase * 0.35);
     }
 }

@@ -23,7 +23,7 @@ public class AulaSeisTest {
         awp.tipo = "Rifle";
         awp.dano = 110;
 
-        profeUm.arma = awp;
+       
 
     }
 }

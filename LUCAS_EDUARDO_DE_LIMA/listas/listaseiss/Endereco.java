@@ -1,4 +1,7 @@
+package LUCAS_EDUARDO_DE_LIMA.listas.listaseiss;
+
 public class Endereco {
+
     String estado;
     String cidade;
     String bairro;
