@@ -1,9 +1,29 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listaseiss;
+package LUCAS_EDUARDO_DE_LIMA.listas.listasete;
 
 import java.util.List;
 
 public class MyyPlantTest {
     public static void main(String[] args) {
+
+        while (true){
+            System.out.println("1 - Cadastrar itens ");
+            System.out.println("2 - Listar itens ");
+            System.out.println("3 - ");
+        }
+
+    switch (opcao) {
+
+    
+        case value:
+            
+            break;
+    
+        default:
+            break;
+    }
+
+
+
         Endereco endereco = new Endereco("Parana", "Cascavel", "Nova Cidade", 123, "Casa");
 
 
