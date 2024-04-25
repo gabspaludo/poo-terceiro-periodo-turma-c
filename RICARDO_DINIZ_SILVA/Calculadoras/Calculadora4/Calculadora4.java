@@ -1,4 +1,4 @@
-package RICARDO_DINIZ_SILVA.Calculadoras.calculadora2.Calculadora4;
+package RICARDO_DINIZ_SILVA.Calculadoras.Calculadora4;
 
 import java.util.Scanner;
 
