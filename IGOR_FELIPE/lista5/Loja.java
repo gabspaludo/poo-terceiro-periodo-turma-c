@@ -1,45 +1,41 @@
 package lista5;
 
-public class Loja extends Infos{
+import java.util.ArrayList;
+
+public class Loja extends Endereco{
+    public int id;
+    public String nomeFantasia;
     public String razao;
     public String cnpj;
     public int armazenamentoVendedores = 5;
     public int armazenamentoClientes = 5;
-    public Vendedor[] vendedores = new Vendedor[armazenamentoVendedores];    //ArrayList<Vendedor> vendedores = new ArrayList<>();
-    public Cliente[] clientes = new Cliente[armazenamentoVendedores];
+    ArrayList<Vendedor> vendedores = new ArrayList<>();
+    ArrayList<Cliente> clientes = new ArrayList<>();
     int qtdVendedores;
     int qtdClientes;
 
-    public Loja(String nome, Integer idade, String cidade, String bairro, String rua,String razao,String cnpj){
-        this.nome = nome;
-        this.idade = null;
+    public Loja(int id,String nomeFantasia, String estado, String cidade, String bairro, String logradouro, String numero, String complemento, String razao,String cnpj){
+        this.id = id;
+        this.nomeFantasia = nomeFantasia;
+        this.estado = estado;
         this.cidade = cidade;
         this.bairro = bairro;
-        this.rua = rua;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.complemento = complemento;
         this.razao = razao;
         this.cnpj = cnpj;
     }
 
     public void contarClientes(){
-        int qtdClientes = 0;
-        for(int i=0;i<clientes.length;i++){
-            if(clientes[i] != null){
-                qtdClientes += 1;
-            }
-        }
-        System.out.println("Quantidade de clientes: "+qtdClientes); 
+        System.out.println("Quantidade de clientes: "+clientes.size()); 
     }
     public void contarVendedores(){
-        int qtdVendedores = 0;
-        for(int i=0;i<vendedores.length;i++){
-            if(vendedores[i] != null){
-                qtdVendedores += 1;
-            }
-        }
-        System.out.println("Quantidade de vendedores: "+qtdVendedores);
+        System.out.println("Quantidade de vendedores: "+vendedores.size());
     }
-    public void apresentarse(){
-        System.out.println("Empresa: "+nome+" CNPJ: "+cnpj+" Endereço: "+rua);
+    public String apresentarse(){
+        return "Empresa: "+nomeFantasia+"\nCNPJ: "+cnpj+"\nEndereço: " + apresentarLogradouro();
+        //System.out.println("Empresa: "+nomeFantasia+" CNPJ: "+cnpj+" Endereço: "+apresentarLogradouro());
     }
 }
 //VERIFICAR QUESTÃO DO ENDEREÇO E RUA DEPOIS.

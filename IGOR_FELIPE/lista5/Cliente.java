@@ -1,13 +1,21 @@
 package lista5;
 
-public class Cliente extends Infos{
+public class Cliente extends Endereco{
+    public int id;
+    public String nome;
+    public Integer idade;
+    
     public Loja loja;
-    public Cliente(String nome, Integer idade, String cidade, String bairro, String rua,Loja loja){
+    public Cliente(int id,String nome, Integer idade,String estado, String cidade, String bairro, String logradouro, String numero, String complemento,Loja loja){
+        this.id = id;
         this.nome = nome;
         this.idade = idade;
+        this.estado = estado;
         this.cidade = cidade;
         this.bairro = bairro;
-        this.rua = rua;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.complemento = complemento;
         this.loja = loja;
     };
 
