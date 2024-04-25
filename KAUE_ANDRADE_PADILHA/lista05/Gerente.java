@@ -24,4 +24,6 @@ public class Gerente extends Pessoa {
     Float bonus = salarioBase * 0.35f;
     System.out.println("O bônus do salário base é: R$ " + bonus);
   }
+
+
 }
