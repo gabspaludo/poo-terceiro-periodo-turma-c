@@ -24,7 +24,6 @@ public class Loja {
         this.clientes = new ArrayList<>();
     }
 
-    // Método para contar clientes
     public int contarClientes() {
         return clientes.size();
     }
