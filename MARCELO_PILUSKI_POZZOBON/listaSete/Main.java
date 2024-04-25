@@ -54,6 +54,7 @@ public class Main {
         sandro.salarioRecebido[1] = 16000;
         sandro.salarioRecebido[2] = 17001; */
         // Cria Item
+        Item item = new Item();
         Item apostila = new Item();
         apostila.id = 1;
         apostila.nome = "Apostila";
@@ -62,20 +63,22 @@ public class Main {
 
         // Cria Pedido
         Pedido pedido = new Pedido();
+        Pedido pedidoTeste = new Pedido();
         pedido.dataCriacao = pedido.data.getTime();
         pedido.dataPagamento = pedido.data.getTime(); // Como é pra teste coloquei a data atual.
         // Alimenta ProcessaPedido
         ProcessaPedido processo = new ProcessaPedido();
+        ProcessaPedido processoTeste = new ProcessaPedido();
         processo.valorPago = 15;
 
-        exibirMenu(option, optionMenu, prisma, marcelo, kaue, sandro, pedido, processo);
+        exibirMenu(option, optionMenu, prisma, marcelo, kaue, sandro, item, pedido, processo);
     }
 
     public static void exibirMenu(Scanner opcao, int varOpcao, Loja varLoja, Vendedor varVendedor, Cliente varCliente,
-            Gerente varGerente, Pedido varPedido, ProcessaPedido varProcessaPedido) {
+            Gerente varGerente, Item varItem, Pedido varPedido, ProcessaPedido varProcessaPedido) {
         do {
             System.out.println(
-                    "[1] - Dados empresa \n[2] - Dados Vendedor \n[3] - Dados Cliente \n[4] - Dados Gerente \n[5] - Criar Pedido \n[6] - Sair");
+                    "[1] - Dados empresa \n[2] - Dados Vendedor \n[3] - Dados Cliente \n[4] - Dados Gerente \n[5] - Cadastrar Item \n[6] - Listar Itens \n[7] - Criar Pedido\n[8] - Sair");
             varOpcao = opcao.nextInt();
 
             switch (varOpcao) {
@@ -103,14 +106,23 @@ public class Main {
                     varGerente.calcularMedia();
                     varGerente.calcularBonus();
                     break;
-
+                
                 case 5:
+                    varItem.cadastrarItem();
+                    break;
+
+                case 6:
+                    varItem.gerarDescricao();
+                    break;
+
+                case 7:
+                    varPedido.criarPedido();
                     varPedido.calcularValorTotal();
                     varPedido.gerarDescricaoVenda();
                     varProcessaPedido.processar();
                     break;
                     
-                case 6:
+                case 8:
                     System.out.println("Calculadora encerrada!");
                     break;
 
@@ -118,6 +130,6 @@ public class Main {
                     System.out.println("Erro de digitação, escolha uma das opções novamente.");
                     break;
             }
-        } while (varOpcao != 6);
+        } while (varOpcao != 8);
     }
 }

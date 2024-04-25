@@ -1,6 +1,7 @@
 package listaSete.src;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public class Pedido {
     public int id;
@@ -16,6 +17,10 @@ public class Pedido {
     public int lojaId = loja.id;
     public int vendedorId = vendedor.idVendedor;
     public int totalVenda;
+    public Scanner option = new Scanner(System.in);
+    public Scanner pedidoScanner = new Scanner(System.in);
+    public Scanner itemScanner = new Scanner(System.in);
+    public Scanner quantidade = new Scanner(System.in);
 
     public Item[] itens = new Item[99];
 
@@ -32,7 +37,18 @@ public class Pedido {
         return totalVenda;
     }
 
-   public void gerarDescricaoVenda() {
+    public void gerarDescricaoVenda() {
         System.out.println("Pedido: " + id + "\nData da Criação: " + dataCriacao.toString());
+    }
+
+    public void criarPedido() {
+        System.out.print("Pedido: ");
+        pedidoScanner.nextInt();
+        System.out.print("Id do Item: ");
+        itemScanner.nextInt();
+        System.out.print("Quantidade: ");
+        quantidade.nextInt();
+        gerarDescricaoVenda();
+        calcularValorTotal();
     }
 }
