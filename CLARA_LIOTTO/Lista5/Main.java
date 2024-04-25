@@ -1,30 +1,38 @@
 package CLARA_LIOTTO.Lista5;
 
-class Vendedor {
-    
-    public String nome = "João";
-    public int idade = 30;
-    public Loja loja;
-    public String cidade = "São Paulo";
-    public String bairro = "Centro";
-    public String rua = "Rua das Flores";
-    public double salarioBase = 2000.0;
-    public double[] salarioRecebido = {2100.0, 2200.0, 2300.0};
+import java.util.ArrayList;
 
-    public void apresentarSe() {
-        System.out.println("Nome: " + nome + ", Idade: " + idade + ", Loja: " + loja.nomeFantasia);
-    }
 
-    public double calcularMedia() {
-        double soma = 0;
-        for (double salario : salarioRecebido) {
-            soma += salario;
-        }
-        return soma / salarioRecebido.length;
-    }
+public class Main {
+    public static void main(String[] args) {
+        
+        Endereco endereco = new Endereco("Paraná", "Ubiratã", "Centro", 111, "Casa");
+        Cliente cliente = new Cliente();
+        Gerente gerente = new Gerente();
+        Item item = new Item(1, "Cacto", "Planta", 5.00);
+        Loja loja = new Loja("Loja A", "Razão Social A", "123456789", "São Paulo", "Centro", "Rua A");
+        Pedido pedido = new Pedido(1, "Cliente A", "Vendedor A", "Loja B", new ArrayList<Item>());
 
-    public double calcularBonus() {
-        return salarioBase * 0.2;
+        
+        endereco.apresentarLogradouro();
+        cliente.apresentarSe();
+        gerente.apresentarSe();
+        item.gerarDescricao();
+        loja.apresentarSe();
+
+        
+        ProcessarPedido processador = new ProcessarPedido();
+        processador.processar(pedido);
+
+       
+        System.out.println("Média dos salários do Gerente: " + gerente.calcularMedia());
+        System.out.println("Bônus do Gerente: " + gerente.calcularBonus());
+        
+        
+        ArrayList<Item> itensPedido = new ArrayList<>();
+        itensPedido.add(item);
+        pedido.setItens(itensPedido);
+        System.out.println("Valor total do pedido: " + pedido.calcularValorTotal());
     }
 }
         

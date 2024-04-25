@@ -8,12 +8,12 @@ public class Pedido {
     private Date dataCriacao;
     private Date dataPagamento;
     private Date dataVencimentoReserva;
-    private String cliente;
-    private String vendedor;
-    private String loja;
+    private Cliente cliente;
+    private Vendedor vendedor;
+    private Loja loja;
     private ArrayList<Item> itens;
 
-    public Pedido(int id, String cliente, String vendedor, String loja, ArrayList<Item> itens) {
+    public Pedido(int id, Cliente cliente, Vendedor vendedor, Loja loja, ArrayList<Item> itens) {
         this.id = id;
         this.cliente = cliente;
         this.vendedor = vendedor;
@@ -24,6 +24,11 @@ public class Pedido {
     }
 
     
+
+    public Pedido(int id2, String string, String string2, String string3, ArrayList<Item> itens2) {
+    }
+
+
 
     public int getId() {
         return id;
@@ -73,37 +78,37 @@ public class Pedido {
 
 
 
-    public String getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
 
 
-    public void setCliente(String cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
 
 
-    public String getVendedor() {
+    public Vendedor getVendedor() {
         return vendedor;
     }
 
 
 
-    public void setVendedor(String vendedor) {
+    public void setVendedor(Vendedor vendedor) {
         this.vendedor = vendedor;
     }
 
 
 
-    public String getLoja() {
+    public Loja getLoja() {
         return loja;
     }
 
 
 
-    public void setLoja(String loja) {
+    public void setLoja(Loja loja) {
         this.loja = loja;
     }
 
@@ -128,4 +133,15 @@ public class Pedido {
         }
         return total;  
     }
+
+
+
+    public int size() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'size'");
+    }
+
+
+
+    
 }

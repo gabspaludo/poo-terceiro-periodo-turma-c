@@ -1,10 +1,10 @@
 package CLARA_LIOTTO.Lista5;
 
 public class Item {
-    public int id = 01;
-    public String nome = "cacto";
-    public String tipo = "planta";
-    public double valor = 5.00 ;
+    public int id;
+    public String nome;
+    public String tipo;
+    public double valor;
 
     public Item(int id, String nome, String tipo, double valor) {
         this.id = id;
