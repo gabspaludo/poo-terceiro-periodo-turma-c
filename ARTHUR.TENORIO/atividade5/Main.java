@@ -1,30 +1,31 @@
-package atividade5;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
-        ArrayList<Double> salarioRecebido = new ArrayList<>();
-        salarioRecebido.add(1500.0);
-        salarioRecebido.add(1600.0);
-        salarioRecebido.add(1700.0);
-        
-        vendedor vendedor = new vendedor("João", 30, "Myy Plant", "São Paulo", "Centro", "Rua A", 2000.0, salarioRecebido);
-        vendedor.apresentarSe();
-        System.out.println("Média salarial: " + vendedor.calcularMedia());
-        System.out.println("Bônus: " + vendedor.calcularBonus());
+        Loja loja = new Loja("Myy Plant", "Myy Plant Ltda", "123456789", "São Paulo", "Centro", "Rua C");
+        List<Item> itensCadastrados = new ArrayList<>();
+        ProcessaPedido processador = new ProcessaPedido();
 
-        cliente cliente = new cliente("Maria", 25, "São Paulo", "Centro", "Rua B");
-        cliente.apresentarSe();
+        // Cadastro de itens
+        itensCadastrados.add(new Item(1, "Planta A", "Planta", 50.0));
+        itensCadastrados.add(new Item(2, "Planta B", "Planta", 70.0));
 
-        ArrayList<vendedor> vendedores = new ArrayList<>();
-        vendedores.add(vendedor);
+        // Listagem de itens
+        System.out.println("Itens cadastrados:");
+        for (Item item : itensCadastrados) {
+            item.gerarDescricao();
+        }
 
-        ArrayList<cliente> clientes = new ArrayList<>();
-        clientes.add(cliente);
+        // Cliente seleciona item desejado
+        Item itemSelecionado = itensCadastrados.get(0); // Supondo que o cliente selecionou o primeiro item
 
-        loja loja = new loja("Myy Plant", "Myy Plant Ltda", "123456789", "São Paulo", "Centro", "Rua C", vendedores, clientes);
-        loja.contarClientes();
-        loja.contarVendedores();
-        loja.apresentarSe();
+        // Cliente cria pedido
+        Cliente cliente = new Cliente("Maria", 25, "São Paulo", "Centro", "Rua B");
+        Vendedor vendedor = new Vendedor("João", 30, "Myy Plant", "São Paulo", "Centro", "Rua A", 2000.0);
+        ArrayList<Item> itensPedido = new ArrayList<>();
+        itensPedido.add(itemSelecionado);
+        processador.processar(1, new Date(), cliente, vendedor, loja, itensPedido);
     }
 }
