@@ -1,4 +1,4 @@
-package Dona_Gabi.MYY_PLANT;
+package Dona_Gabi.Myy_Plant;
 
 public class Endereco {
     private String estado;

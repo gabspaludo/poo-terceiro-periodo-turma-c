@@ -1,4 +1,4 @@
-package Dona_Gabi.MYY_PLANT;
+package Dona_Gabi.Myy_Plant;
 
 public class Item {
     private Integer id;
@@ -15,6 +15,14 @@ public class Item {
 
     public void gerarDescricao() {
         System.out.println("ID: " + id + ", Nome: " + nome + ", Tipo: " + tipo + ", Valor: " + valor);
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -41,4 +49,5 @@ public class Item {
         this.valor = valor;
     }
 
+    
 }

@@ -1,4 +1,4 @@
-package Dona_Gabi.MYY_PLANT;
+package Dona_Gabi.Myy_Plant;
 
 import java.util.Date;
 
@@ -6,8 +6,8 @@ public class ProcessaPedido {
 
     private Integer sequence = 0;
 
-    public Pedido processaPedido(Cliente cliente, Item[] items) {
-        Pedido pedido = new Pedido(sequence++, cliente, items);
+    public Pedido processaPedido(Cliente cliente, Item[] itens, String empresaParceira) {
+        Pedido pedido = new Pedido(sequence++, cliente, itens, empresaParceira);
         return pedido;
     }
 
@@ -15,10 +15,11 @@ public class ProcessaPedido {
         Date dataAtual = new Date();
 
         if (dataAtual.getTime() > pedido.getDataVencimentoReserva().getTime()) {
-            System.out.println("Não foi possível!");
+            System.out.println("Não foi possível realizar o pagamento. Pedido expirado.");
             return;
         }
 
         pedido.setDataPagamento(new Date());
+        System.out.println("Pagamento confirmado com sucesso!");
     }
 }
