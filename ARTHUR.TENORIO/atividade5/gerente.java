@@ -1,5 +1,4 @@
 package atividade5;
-
 import java.util.ArrayList;
 
 class gerente {
@@ -12,7 +11,7 @@ class gerente {
     double salarioBase;
     ArrayList<Double> salarioRecebido;
 
-    public Gerente(String nome, int idade, String loja, String cidade, String bairro, String rua, double salarioBase, ArrayList<Double> salarioRecebido) {
+    public gerente(String nome, int idade, String loja, String cidade, String bairro, String rua, double salarioBase, ArrayList<Double> salarioRecebido) {
         this.nome = nome;
         this.idade = idade;
         this.loja = loja;
