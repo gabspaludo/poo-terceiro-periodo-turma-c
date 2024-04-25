@@ -1,4 +1,4 @@
-package Lista06.domain;
+package Lista07.domain;
 
 public abstract class Pessoa {
     protected String nomePessoa;

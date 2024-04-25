@@ -1,4 +1,4 @@
-package Lista06.domain;
+package Lista07.domain;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -29,7 +29,6 @@ public class ProcessarPedido {
             return;
         }
 
-        LocalDate dataAtual = LocalDate.now();
 
         if (verificarPagamento()) {
             System.out.println("Pedido processado com sucesso!");
@@ -44,3 +43,4 @@ public class ProcessarPedido {
                 !pedido.getDataPagamento().isAfter(pedido.getDataVencimentoReserva());
     }
 }
+

@@ -1,4 +1,4 @@
-package Lista06.domain;
+package Lista07.domain;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -15,7 +15,7 @@ public class Pedido {
     private List<Item> itens;
     private String empresaParceira;
 
-    public Pedido(Long id,
+    private Pedido(Long id,
                   Cliente cliente, Vendedor vendedor, LocalDate dataCriacao, Loja loja, List<Item> itens,
                   String empresaParceira) {
         this.id = id;
