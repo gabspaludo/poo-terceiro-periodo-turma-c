@@ -1,12 +1,19 @@
-package Dona_Gabi.MYY_PLANT;
+package Dona_Gabi.Myy_Plant;
 
 public class Loja {
-    String nomeFantasia;
-    String razaoSocial;
-    String cnpj;
+    private String nomeFantasia;
+    private String razaoSocial;
+    private String cnpj;
+    private Vendedor[] vendedores;
+    private Cliente[] clientes;
 
-    Vendedor[] vendedores;
-    Cliente[] clientes;
+    public Loja(String nomeFantasia, String razaoSocial, String cnpj, Vendedor[] vendedores, Cliente[] clientes) {
+        this.nomeFantasia = nomeFantasia;
+        this.razaoSocial = razaoSocial;
+        this.cnpj = cnpj;
+        this.vendedores = vendedores;
+        this.clientes = clientes;
+    }
 
     public String getNomeFantasia() {
         return nomeFantasia;

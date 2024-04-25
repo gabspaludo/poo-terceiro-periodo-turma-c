@@ -1,4 +1,4 @@
-package Dona_Gabi.MYY_PLANT;
+package Dona_Gabi.Myy_Plant;
 
 import java.util.Date;
 
@@ -9,16 +9,19 @@ public class Pedido {
     private Date dataVencimentoReserva;
     private Cliente cliente;
     private Item[] itens;
+    private String empresaParceira; // Adicionando atributo para armazenar o nome da empresa parceira
 
-    public Pedido(Integer id, Cliente cliente, Item[] itens) {
-        Long diaMs = 86400000L;
-        Long msAgora = new Date().getTime();
-        Long msDaquiTresDias = msAgora + (3 * diaMs);
-
+    public Pedido(Integer id, Cliente cliente, Item[] itens, String empresaParceira) {
         this.id = id;
         this.cliente = cliente;
         this.itens = itens;
         this.dataCriacao = new Date();
+        this.empresaParceira = empresaParceira;
+
+        // Definindo a data de vencimento da reserva baseada na data de criação do pedido
+        Long diaMs = 86400000L; // Milissegundos em um dia
+        Long msAgora = this.dataCriacao.getTime();
+        Long msDaquiTresDias = msAgora + (3 * diaMs);
         this.dataVencimentoReserva = new Date(msDaquiTresDias);
     }
 
@@ -68,6 +71,14 @@ public class Pedido {
 
     public void setItens(Item[] itens) {
         this.itens = itens;
+    }
+
+    public String getEmpresaParceira() {
+        return empresaParceira;
+    }
+
+    public void setEmpresaParceira(String empresaParceira) {
+        this.empresaParceira = empresaParceira;
     }
 
     public Double calcularValorTotal() {
