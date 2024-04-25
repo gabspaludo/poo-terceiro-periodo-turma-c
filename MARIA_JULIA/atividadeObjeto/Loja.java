@@ -8,16 +8,75 @@ import java.util.ArrayList;
 // contarVendedores, mosta a quantidade de vendedores.
 // Método apresentarse, printa nomeFantasia, cnpj e endereco.
 
-public class Loja extends Endereco {
-    String nomeFantasia;
-    String razaoSocial;
-    String cnpj;
-    ArrayList<String> vendedores = new ArrayList<>();
-    ArrayList<String> clientes = new ArrayList<>();
+public class Loja{
+    private String rua;
+    private String bairro;
+    private String cidade;
+    private String estado;
+    private String nomeFantasia;
+    private String razaoSocial;
+    private String cnpj;
+    public String getRua() {
+        return rua;
+    }
 
-    public Loja(String estado, String cidade, String bairro, String numero, String complemento, String nomeFantasia,
-            String razaoSocial, String cnpj) {
-        super(estado, cidade, bairro, numero, complemento);
+    public String getBairro() {
+        return bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public String getNomeFantasia() {
+        return nomeFantasia;
+    }
+
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public ArrayList<Vendedor> getVendedores() {
+        return vendedores;
+    }
+
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public  void apresentarse() {
+        System.out.println("Loja [rua=" + rua + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado
+                + ", nomeFantasia=" + nomeFantasia + ", razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + ", vendedores="
+                + vendedores + ", clientes=" + clientes + "]");
+    }
+
+    ArrayList<Vendedor> vendedores = new ArrayList<>();
+    ArrayList<Cliente> clientes = new ArrayList<>();
+
+
+
+    public void setVendedores(Vendedor vendedor) {
+        this.vendedores.add(vendedor);
+    }
+
+    public void setClientes(Cliente cliente) {
+        this.clientes.add(cliente);
+    }
+
+    public Loja(String rua, String bairro, String cidade, String estado, String nomeFantasia, String razaoSocial,
+            String cnpj) {
+        this.rua = rua;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
         this.nomeFantasia = nomeFantasia;
         this.razaoSocial = razaoSocial;
         this.cnpj = cnpj;
@@ -25,7 +84,7 @@ public class Loja extends Endereco {
 
     public void contarClientes() {
         int contador = 0;
-        for (String i : clientes) {
+        for (Cliente i : clientes) {
             contador = contador + 1;
             String apresentar = "Cliente - " + i;
             System.out.println(apresentar);
@@ -37,7 +96,7 @@ public class Loja extends Endereco {
 
     public void contarVendedores() {
         int contador = 0;
-        for (String i : vendedores) {
+        for (Vendedor i : vendedores) {
             contador = contador + 1;
             String apresentar = "Vendedor - " + i;
             System.out.println(apresentar);
@@ -47,18 +106,5 @@ public class Loja extends Endereco {
 
     }
 
-    public void apresentarse() {
-        String apresentar = "Nome fantasia: " + nomeFantasia + "\nCNPJ: " + cnpj;
-        System.out.println(apresentar);
-        super.apresentarLogradouro();
 
-    }
-
-    public void adicionarCliente(String cliente) {
-        clientes.add(cliente);
-    }
-
-    public void adicionarVendedor(String vendedor) {
-        vendedores.add(vendedor);
-    }
 }

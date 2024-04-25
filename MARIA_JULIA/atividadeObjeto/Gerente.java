@@ -7,31 +7,43 @@ package atividadeObjeto;
 // - Método apresentarse deve printar o nome, idade e Loja.
 // - calcularMedia deve trazer a média dos salários.
 // - calcularBonus onde a fórmula é [salarioBase * 0.35].
-public class Gerente extends Endereco {
-    String nome;
-    int idade;
-    String loja;
-    String cidade;
-    double salarioBase;
-    double salarioRecebido[] = { 1000.00, 1002.00, 1082.00 };
+public class Gerente extends Pessoa {
 
-    public Gerente(String estado, String cidade, String bairro, String numero, String complemento, String nome,
-            int idade, String loja) {
-        super(estado, cidade, bairro, numero, complemento);
-        this.nome = nome;
-        this.idade = idade;
-        this.loja = loja;
+    private String loja;
+    private double salarioBase;
+    private double salarioRecebido[] = { 1000.00, 1002.00, 1082.00 };
+
+    public String getLoja() {
+        return loja;
     }
 
+
+    public double getSalarioBase() {
+        return salarioBase;
+    }
+
+
+    public double[] getSalarioRecebido() {
+        return salarioRecebido;
+    }
+
+
+    public Gerente(String nome, int idade, String estado, String cidade, String bairro, String rua, String loja, double salarioBase) {
+        super(nome, idade, estado, cidade, bairro, rua);
+        this.loja = loja;
+        this.salarioBase = salarioBase;
+    }
+    
+
     public void apresentarse() {
-        String apresentar = "Vendedor: " + nome + "\nIdade: " + idade + "\nLoja: " + loja;
+        String apresentar = "Vendedor: " + getNome() + "\nIdade: " + getIdade() + "\nLoja: " + getLoja();
         System.out.println(apresentar);
 
     }
 
     public void calcularMedia() {
         double media = 0;
-        for (double i : salarioRecebido) {
+        for (double i : getSalarioRecebido()) {
             media = media + i;
         }
         media = media / 3;
@@ -40,7 +52,7 @@ public class Gerente extends Endereco {
     }
 
     public void calcularBonus() {
-        System.out.println(salarioBase * 0.35);
+        System.out.println(getSalarioBase() * 0.35);
 
     }
 }
