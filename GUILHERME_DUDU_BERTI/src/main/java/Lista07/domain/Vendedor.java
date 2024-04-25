@@ -1,14 +1,14 @@
-package Lista06.domain;
+package Lista07.domain;
 
 import java.util.List;
 
-public class Gerente extends Pessoa {
+public class Vendedor extends Pessoa {
     private Endereco endereco;
     private Loja loja;
     private double salarioBase;
     private List<Double> salarioRecebido;
 
-    private Gerente(String nomePessoa, Integer idade, Endereco endereco, Loja loja, double salarioBase, List<Double> salarioRecebido) {
+    private Vendedor(String nomePessoa, Integer idade, Endereco endereco, Loja loja, double salarioBase, List<Double> salarioRecebido) {
         super(nomePessoa, idade, endereco);
         this.endereco = endereco;
         this.loja = loja;
@@ -20,29 +20,13 @@ public class Gerente extends Pessoa {
         this.loja = loja;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public Loja getLoja() {
-        return loja;
-    }
-
-    public double getSalarioBase() {
-        return salarioBase;
-    }
-
-    public List<Double> getSalarioRecebido() {
-        return salarioRecebido;
-    }
-
     @Override
     public String apresentarse() {
         return ("Nome: "
-                .concat(nomePessoa)
-                .concat(", idade: ")
-                .concat(String.valueOf(idade))
-                .concat(", gerente da loja: ")
+                .concat(nomePessoa + ", ")
+                .concat("idade: ")
+                .concat(idade + ", ")
+                .concat("vendedor(a) da loja: ")
                 .concat((loja == null) ? "null" : loja.getNomeFantasia())
                 .concat("."));
     }
@@ -53,10 +37,11 @@ public class Gerente extends Pessoa {
     }
 
     public double calcularBonus() {
-        return salarioBase * 0.35;
+        return salarioBase * 0.2;
     }
 
-    public static final class GerenteBuilder {
+
+    public static final class VendedorBuilder {
         private String nomePessoa;
         private Integer idade;
         private Endereco endereco;
@@ -64,45 +49,45 @@ public class Gerente extends Pessoa {
         private double salarioBase;
         private List<Double> salarioRecebido;
 
-        private GerenteBuilder() {
+        private VendedorBuilder() {
         }
 
-        public static GerenteBuilder builder() {
-            return new GerenteBuilder();
+        public static VendedorBuilder builder() {
+            return new VendedorBuilder();
         }
 
-        public GerenteBuilder nomePessoa(String nomePessoa) {
+        public VendedorBuilder nomePessoa(String nomePessoa) {
             this.nomePessoa = nomePessoa;
             return this;
         }
 
-        public GerenteBuilder idade(Integer idade) {
+        public VendedorBuilder idade(Integer idade) {
             this.idade = idade;
             return this;
         }
 
-        public GerenteBuilder endereco(Endereco endereco) {
+        public VendedorBuilder endereco(Endereco endereco) {
             this.endereco = endereco;
             return this;
         }
 
-        public GerenteBuilder loja(Loja loja) {
+        public VendedorBuilder loja(Loja loja) {
             this.loja = loja;
             return this;
         }
 
-        public GerenteBuilder salarioBase(double salarioBase) {
+        public VendedorBuilder salarioBase(double salarioBase) {
             this.salarioBase = salarioBase;
             return this;
         }
 
-        public GerenteBuilder salarioRecebido(List<Double> salarioRecebido) {
+        public VendedorBuilder salarioRecebido(List<Double> salarioRecebido) {
             this.salarioRecebido = salarioRecebido;
             return this;
         }
 
-        public Gerente build() {
-            return new Gerente(nomePessoa, idade, endereco, loja, salarioBase, salarioRecebido);
+        public Vendedor build() {
+            return new Vendedor(nomePessoa, idade, endereco, loja, salarioBase, salarioRecebido);
         }
     }
 }

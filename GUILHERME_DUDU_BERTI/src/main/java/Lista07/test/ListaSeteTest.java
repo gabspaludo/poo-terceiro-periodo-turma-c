@@ -1,13 +1,13 @@
-package Lista06.test;
+package Lista07.test;
 
-import Lista06.domain.*;
+import Lista07.domain.*;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
-public class ListaSeisTest {
+public class ListaSeteTest {
     public static void main(String[] args) {
         DecimalFormat df = new DecimalFormat("0.00");
         ProcessarPedido processador = new ProcessarPedido();

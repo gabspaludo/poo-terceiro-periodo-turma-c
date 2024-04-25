@@ -1,4 +1,4 @@
-package Lista06.domain;
+package Lista07.domain;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

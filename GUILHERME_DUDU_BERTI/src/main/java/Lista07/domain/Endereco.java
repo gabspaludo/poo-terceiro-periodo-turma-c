@@ -1,7 +1,6 @@
-package Lista06.domain;
+package Lista07.domain;
 
 public class Endereco {
-
     private String estado;
     private String cidade;
     private String bairro;
