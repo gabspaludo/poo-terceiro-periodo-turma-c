@@ -3,16 +3,16 @@ package CLARA_LIOTTO.Lista5;
 import java.util.ArrayList;
 
 public class Loja {
-    public String nomeFantasia;
-    public String razaoSocial;
-    public String cnpj;
-    public String cidade;
-    public String bairro;
-    public String rua;
-    public ArrayList<Vendedor> arrayVendedores;
-    public ArrayList<Cliente> arrayClientes;
+    private String nomeFantasia;
+    private String razaoSocial;
+    private String cnpj;
+    private String cidade;
+    private String bairro;
+    private String rua;
+    private ArrayList<Vendedor> arrayVendedores;
+    private ArrayList<Cliente> arrayClientes;
 
-    Loja(String nomeFantasia, String razaoSocial, String cnpj, String cidade, String bairro, String rua) {
+    public Loja(String nomeFantasia, String razaoSocial, String cnpj, String cidade, String bairro, String rua) {
         this.nomeFantasia = nomeFantasia;
         this.razaoSocial = razaoSocial;
         this.cnpj = cnpj;
@@ -22,6 +22,18 @@ public class Loja {
         this.arrayVendedores = new ArrayList<>();
         this.arrayClientes = new ArrayList<>();
         System.out.println("Loja criada: " + this.nomeFantasia);
+    }
+
+    public String getNomeFantasia() {
+        return nomeFantasia;
+    }
+
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
+
+    public String getCnpj() {
+        return cnpj;
     }
 
     public void contarClientes() {
@@ -36,4 +48,3 @@ public class Loja {
         System.out.println("Nome Fantasia: " + nomeFantasia + ", CNPJ: " + cnpj + ", Endereço: " + rua + ", " + bairro + ", " + cidade);
     }
 }
-

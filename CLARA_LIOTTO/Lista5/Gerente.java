@@ -1,7 +1,6 @@
 package CLARA_LIOTTO.Lista5;
 
-class Vendedor {
-    
+public class Gerente {
     private String nome;
     private int idade;
     private Loja loja;
@@ -12,7 +11,7 @@ class Vendedor {
     private double[] salarioRecebido;
 
     
-    public Vendedor(String nome, int idade, Loja loja, String cidade, String bairro, String rua, double salarioBase, double[] salarioRecebido) {
+    public Gerente(String nome, int idade, Loja loja, String cidade, String bairro, String rua, double salarioBase, double[] salarioRecebido) {
         this.nome = nome;
         this.idade = idade;
         this.loja = loja;
@@ -23,7 +22,10 @@ class Vendedor {
         this.salarioRecebido = salarioRecebido;
     }
 
-    
+    public Gerente() {
+       
+    }
+
     public void apresentarSe() {
         System.out.println("Nome: " + nome + ", Idade: " + idade + ", Loja: " + loja.getNomeFantasia());
     }
@@ -40,84 +42,69 @@ class Vendedor {
         return salarioBase * 0.2;
     }
 
-
     public String getNome() {
         return nome;
     }
-
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-
     public int getIdade() {
         return idade;
     }
-
 
     public void setIdade(int idade) {
         this.idade = idade;
     }
 
-
     public Loja getLoja() {
         return loja;
     }
-
 
     public void setLoja(Loja loja) {
         this.loja = loja;
     }
 
-
     public String getCidade() {
         return cidade;
     }
-
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
 
-
     public String getBairro() {
         return bairro;
     }
-
 
     public void setBairro(String bairro) {
         this.bairro = bairro;
     }
 
-
     public String getRua() {
         return rua;
     }
-
 
     public void setRua(String rua) {
         this.rua = rua;
     }
 
-
     public double getSalarioBase() {
         return salarioBase;
     }
-
 
     public void setSalarioBase(double salarioBase) {
         this.salarioBase = salarioBase;
     }
 
-
     public double[] getSalarioRecebido() {
         return salarioRecebido;
     }
 
-
     public void setSalarioRecebido(double[] salarioRecebido) {
         this.salarioRecebido = salarioRecebido;
     }
-    Vendedor vendedor = new Vendedor("João", 30, loja, "São Paulo", "Centro", "Rua das Flores", 2000.0, salarioRecebido);
+    double[] salarios = {2100.0, 2200.0, 2300.0};
+    Gerente gerente = new Gerente("João", 30, loja, "São Paulo", "Centro", "Rua das Flores", 2000.0, salarios);
 }
