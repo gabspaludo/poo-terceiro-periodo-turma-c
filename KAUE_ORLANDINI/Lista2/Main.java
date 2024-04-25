@@ -1,94 +1,36 @@
 package KAUE_ORLANDINI.Lista2;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
     
     public static void main(String[] args) {
 
-        Vendedor marcelo = new Vendedor();
-        
-        marcelo.nome = "Marcelo";
-        marcelo.idade = "18";
-        marcelo.bairro = "regiao do lago";
-        marcelo.cidade = "Cascavel";
-        marcelo.rua = "Bom Jesus";
-        marcelo.loja = "Prisma";
-        marcelo.salarioB = 1000.00;
-        marcelo.salarioR = new double [] {1000, 1000, 1200};
+        Vendedor marcelo = new Vendedor("Marcelo", 18.0, "regiao do lago", "Cascavel", "Bom Jesus", "Prisma", 1000.00, new double [] {1000, 1000, 1200}, 00.00 );
+     
 
-        
-        
-        Cliente goncalves = new Cliente();
+        Cliente goncalves = new Cliente("goncalves", 18.0, "Cascavel", "country", "Vincente Machado");
 
-        goncalves.nome = "goncalves";
-        goncalves.idade = "18";
-        goncalves.cidade = "Cascavel";
-        goncalves.bairro = "country";
-        goncalves.rua = "Vincente Machado";
 
-        ;
+        Loja pvcartes = new Loja("PVCartes", "pvcartes", "77.637.684/0001-01", "Cascavel", "consolata", "Francisco Alves", "Parana", "nao há", 2861.00, new double[] {1,1,1}, new double[] {1,1,1,1,1}, 00.0, 00.0);
 
-        Loja pvcartes = new Loja();
 
-        pvcartes.nomeFantasia = "PVCartes";
-        pvcartes.razaoSocial = "pvcartes";
-        pvcartes.cnpj = "77.637.684/0001-01";
-        pvcartes.cidade = "Cascavel";
-        pvcartes.bairro = "consolata";
-        pvcartes.rua = "Francisco Alves";
-        pvcartes.clientes = new double[] {1,1,1,1,1};
-        pvcartes.vendedores = new double[] {1,1,1};
-        pvcartes.estado = "Parana";
-        pvcartes.complemento = "nao há";
-        pvcartes.numero = "2861";
+        Gerente mega = new Gerente(new double[] {1200, 1620, 1200}, "mega", 19.00, "prisma", "asa norte", "Brasilia", "avenida das torres", 1200.00, 00.0);
 
-        
 
-        Gerente mega = new Gerente(null, null, null, null, null, null, null, null, 0);
+        Pedido primeiroPedido = new Pedido(new double[] {1}, "a1", "primeiro pedido", new Date(), new Date(), new Date(), "gufens", "prisma", 12.50,"marecelo");
 
-        mega.nome = "mega";
-        mega.idade = "19";
-        mega.loja = "prisma";
-        mega.bairro = "asa norte";
-        mega.cidade = "Brasilia";
-        mega.rua = "avenida das torres";
-        mega.salarioB = 1200.00;
-        mega.salarioR = new double[] {1200, 1620, 1200};
 
-        
+        @SuppressWarnings("deprecation")
+        Pedido novoPpedido = new Pedido(new double[] {1}, "a2", "novo pedido", new Date(), new Date(), new Date(124,26,05), null, null, 0, null);
 
-        Pedido primeiroPedido = new Pedido();
+        Item garrafa = new Item("aa", "garrafa", "garrafas", 12.50);
 
-        primeiroPedido.id = "a1";
-        primeiroPedido.cliente = "gufens";
-        primeiroPedido.vendedor = "marecelo";
-        primeiroPedido.loja = "prisma";
-        primeiroPedido.itens = new double[] {1};
-        primeiroPedido.valor = 12.50;
 
-        Pedido novoPpedido = new Pedido();
+        ProcessaPedido pedidoA = new ProcessaPedido(null, null, "garrafa", new Date(), new Date(), new Date(), "mega", null, 12.50, null, null);
 
-        
-
-        Item garrafa = new Item();
-
-        garrafa.id = "aa";
-        garrafa.nome = "garrafa";
-        garrafa.tipo = "garrafas";
-        garrafa.valor = "12.50";
-
-        
-        
-        ProcessaPedido pedidoA = new ProcessaPedido();
-
-        pedidoA.valor = 12.50;
-        pedidoA.nome = "garrafa";
-        pedidoA.cliente = "mega";
-
-        
-
-       
+        Item cadastrarItem = new Item(null, null, null, null);
 
             Scanner scanner = new Scanner(System.in);
     
@@ -147,6 +89,12 @@ public class Main {
                 novoPpedido.criarPedido();
                     break;
                 case 17:
+                    garrafa.cadastrarItem();
+                    return;         
+                case 18:
+                    garrafa.listarItens();
+                    return;         
+                case 19:
                     System.out.println("software encerrado");
                     return;         
                 default:
@@ -155,7 +103,7 @@ public class Main {
             }
         }
           
-        }
+    }
     
     public static void exibirMenu(){
         System.out.println("[1]: apresentarse vendedor");
@@ -174,6 +122,8 @@ public class Main {
         System.out.println("[14]: gerar descricao item");
         System.out.println("[15]: processar pedido");
         System.out.println("[16]: criar pedido");
-        System.out.println("[17]:sair");
+        System.out.println("[17]: cadastrar item");
+        System.out.println("[18]: listar itens");
+        System.out.println("[19]:sair");
     }  
- }
+}

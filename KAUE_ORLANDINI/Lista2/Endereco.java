@@ -2,22 +2,57 @@ package KAUE_ORLANDINI.Lista2;
 
 public class Endereco {
 
-    public String bairro;
+    private String bairro;
     
-    public String cidade;
+    private String cidade;
 
-    public String rua;
+    private String rua;
     
-    public String estado;
+    private String estado;
     
-    public String numero;
+    private Double numero;
     
-    public String complemento;
+    private String complemento;
 
-    void apresentarLogradouro() {
-        System.out.println("estado: ".concat(estado).concat(", cidade: ").concat(cidade).concat(", bairro: ").concat(bairro).concat(", rua: ").concat(rua).concat(", numero: ").concat(numero).concat(", complemento:").concat(complemento));
+    
+
+    public Endereco(String bairro, String cidade, String rua, String estado, Double numero, String complemento) {
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.rua = rua;
+        this.estado = estado;
+        this.numero = numero;
+        this.complemento = complemento;
     }
 
+    void apresentarLogradouro() {
+        System.out.println("estado: " + String.valueOf(estado) + String.valueOf(", cidade: ") + String.valueOf(cidade) + String.valueOf(", bairro: ") + String.valueOf(bairro) + String.valueOf(", rua: ") + String.valueOf(rua) + String.valueOf(", numero: ") + String.valueOf(numero).concat(", complemento:").concat(complemento));
+    }
 
+    public String getBairro() {
+        return bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public Double getNumero() {
+        return numero;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    
     
 }
