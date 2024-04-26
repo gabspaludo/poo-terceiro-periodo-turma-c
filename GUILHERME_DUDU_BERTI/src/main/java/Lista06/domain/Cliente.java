@@ -6,7 +6,6 @@ public class Cliente extends Pessoa {
         super(nomePessoa, idade, endereco);
     }
 
-    // Met add
     @Override
     public String apresentarse() {
         return ("Nome: "
@@ -19,7 +18,7 @@ public class Cliente extends Pessoa {
                 .concat(endereco.getRua() + ", ")
                 .concat(endereco.getNumero() + ", ")
                 .concat(endereco.getComplemento() + ", ")
-                .concat(endereco.getEstado() + ".\n")
+                .concat(endereco.getEstado() + ".")
         );
     }
 

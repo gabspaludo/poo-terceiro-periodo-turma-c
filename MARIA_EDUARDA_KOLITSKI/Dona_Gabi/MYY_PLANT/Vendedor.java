@@ -1,11 +1,13 @@
-package Dona_Gabi.MYY_PLANT;
+package Dona_Gabi.Myy_Plant;
 
 public class Vendedor extends Pessoa {
     private Loja loja;
     private Double salarioBase;
 
-    public Vendedor(String nome, Integer idade, Endereco endereco) {
+    public Vendedor(String nome, Integer idade, Endereco endereco, Loja loja, Double salarioBase) {
         super(nome, idade, endereco);
+        this.loja = loja;
+        this.salarioBase = salarioBase;
     }
 
     public Loja getLoja() {
@@ -27,5 +29,6 @@ public class Vendedor extends Pessoa {
     public void apresentarSe() {
         System.out.println("Nome: " + getNome());
         System.out.println("Idade: " + getIdade());
+        System.out.println("Loja: " + loja.getNomeFantasia()); // Adicionando apresentação da loja
     }
 }

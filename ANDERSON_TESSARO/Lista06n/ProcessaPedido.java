@@ -4,7 +4,7 @@ import java.sql.Date;
 import java.util.Calendar;
 
 public class ProcessaPedido {
-    public void processar(Cliente cliente, Vendedor vendedor, String loja, Item[] itens) {
+    public void processar(Lista07.Cliente cliente, Lista07.Vendedor vendedor, String loja, Lista07.Item[] itens) {
         Pedido pedido = new Pedido();
         pedido.setCliente(cliente);
         pedido.setVendedor(vendedor);

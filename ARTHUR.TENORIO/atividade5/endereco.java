@@ -1,13 +1,13 @@
 package atividade5;
 
-class Endereco {
+class endereco {
     String estado;
     String cidade;
     String bairro;
     int numero;
     String complemento;
 
-    public Endereco(String estado, String cidade, String bairro, int numero, String complemento) {
+    public endereco(String estado, String cidade, String bairro, int numero, String complemento) {
         this.estado = estado;
         this.cidade = cidade;
         this.bairro = bairro;

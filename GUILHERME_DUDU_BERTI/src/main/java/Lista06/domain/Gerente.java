@@ -20,6 +20,22 @@ public class Gerente extends Pessoa {
         this.loja = loja;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public Loja getLoja() {
+        return loja;
+    }
+
+    public double getSalarioBase() {
+        return salarioBase;
+    }
+
+    public List<Double> getSalarioRecebido() {
+        return salarioRecebido;
+    }
+
     @Override
     public String apresentarse() {
         return ("Nome: "

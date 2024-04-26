@@ -19,6 +19,9 @@ public abstract class Pessoa {
         return idade;
     }
 
-    // met add
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
     public abstract String apresentarse();
 }

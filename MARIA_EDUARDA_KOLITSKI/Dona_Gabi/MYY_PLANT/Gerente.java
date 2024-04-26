@@ -1,12 +1,12 @@
-package Dona_Gabi.MYY_PLANT;
+package Dona_Gabi.Myy_Plant;
 
 public class Gerente extends Pessoa {
     private String loja;
     private Double salarioBase;
-    private Double[] salarioRecebido = new Double[3]; // Array para armazenar os três últimos salários recebidos
+    private Double[] salarioRecebido = new Double[3];
 
     public Gerente(String nome, Integer idade, String loja, Double salarioBase, Double[] salarioRecebido) {
-        super(nome, idade, null); // Endereço não é mais necessário, removido da superclasse Pessoa
+        super(nome, idade, null);
         this.loja = loja;
         this.salarioBase = salarioBase;
         this.salarioRecebido = salarioRecebido;

@@ -1,13 +1,72 @@
 package CLARA_LIOTTO.Lista5;
 
 public class Cliente {
-    public String nome = "Eduardo";
-    public int idade = 25;
-    public String cidade = "Rio de Janeiro";
-    public String bairro = "Copacabana";
-    public String rua = "Avenida Atlântica";
+    private String nome;
+    private int idade;
+    private String cidade;
+    private String bairro;
+    private String rua;
     
-    public void apresentarSe() {
-            System.out.println("Nome: " + nome + ", Idade: " + idade);
-        }
+    
+    public Cliente(String nome, int idade, String cidade, String bairro, String rua) {
+        this.nome = nome;
+        this.idade = idade;
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.rua = rua;
     }
+
+    public Cliente() {
+        
+    }
+
+    public void apresentarSe() {
+        System.out.println("Nome: " + nome + ", Idade: " + idade);
+    }
+
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+    Cliente cliente = new Cliente("Eduardo", 25, "Rio de Janeiro", "Copacabana", "Avenida Atlântica");
+}
+
+
+    
+

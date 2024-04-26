@@ -32,7 +32,18 @@ public class Loja {
         return cnpj;
     }
 
-    // met add
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public List<Vendedor> getVendedores() {
+        return vendedores;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
     public int contarClientes() {
         return clientes.size();
     }
