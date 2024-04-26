@@ -12,7 +12,7 @@ public class ProcessaPedido {
         return pedido;
     }
 
-    public boolean confirmarPagamento(Pedido pedido) {
+    public static boolean confirmarPagamento(Pedido pedido) {
         if (pedido.getDataVencimentoReserva() != null && pedido.getDataVencimentoReserva().isBefore(LocalDate.now())) {
             return false;
         }

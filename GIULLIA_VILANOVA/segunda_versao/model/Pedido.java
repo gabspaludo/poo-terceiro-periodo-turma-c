@@ -10,12 +10,13 @@ public class Pedido {
     private Cliente cliente;
     private Vendedor vendedor;
     private Loja loja;
-    private Item[] itens;
+    private Item itens;
 
-    public Pedido(long id, Cliente cliente, Item[] itens) {
+    public Pedido(long id, Cliente cliente, Item itemEncontrado) {
         this.id = id;
         this.cliente = cliente;
-        this.itens = itens;
+        this.vendedor = vendedor;
+        this.itens = itemEncontrado;
         this.dataCriacao = LocalDate.now();
         this.dataVencimentoReserva = LocalDate.now().plusDays(3);
     }
