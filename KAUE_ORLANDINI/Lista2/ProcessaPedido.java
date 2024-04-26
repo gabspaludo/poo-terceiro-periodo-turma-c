@@ -10,9 +10,12 @@ public class ProcessaPedido extends Pedido {
     
 
     
-    public ProcessaPedido(double[] itens, String id, String nome, Date dataCriacao, Date dataPagamento,
-            Date dataVencimentoReserva, String cliente, String loja, double valor, String vendedor, Date dataAtual) {
-        super(itens, id, nome, dataCriacao, dataPagamento, dataVencimentoReserva, cliente, loja, valor, vendedor);
+    
+    public ProcessaPedido(double[] itens, String id, String nome, String tipo, Double valor, String[] itenss,
+            Date dataCriacao, Date dataPagamento, Date dataVencimentoReserva, String cliente, String loja,
+            String vendedor, Date dataAtual) {
+        super(itens, id, nome, tipo, valor, itenss, dataCriacao, dataPagamento, dataVencimentoReserva, cliente, loja,
+                vendedor);
         this.dataAtual = dataAtual;
     }
     void processar() {

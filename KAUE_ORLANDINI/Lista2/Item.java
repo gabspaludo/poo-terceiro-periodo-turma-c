@@ -5,11 +5,9 @@ import java.util.Scanner;
 public class Item {
     Scanner scanner = new Scanner(System.in);
 
-    private String[] itens = new String[2];
+    public String[] itenss = new String[3];
 
     private String id;
-
-    private int i;
 
     private String nome;
     
@@ -17,9 +15,8 @@ public class Item {
     
     private Double valor;
     
-    
-
-    public Item(String id, String nome, String tipo, Double valor) {
+    public Item(String[] itenss, String id, String nome, String tipo, Double valor) {
+        this.itenss = itenss;
         this.id = id;
         this.nome = nome;
         this.tipo = tipo;
@@ -32,12 +29,12 @@ public class Item {
 
     void cadastrarItem(){
         System.out.println("qual o nome do item");
-          itens [i] = scanner.toString();
+          itenss[2] = scanner.next();
         System.out.println("iten adicionado");
     }
 
     void listarItens(){
-        System.out.println(itens[i]);
+        System.out.println(itenss[0] + ", " + itenss[1] + ", " + itenss[2]);
     }
    
    
@@ -56,6 +53,12 @@ public class Item {
     public Double getValor() {
         return valor;
     }
+
+    public String[] getItenss() {
+        return itenss;
+    }
+
+    
     
     
 }

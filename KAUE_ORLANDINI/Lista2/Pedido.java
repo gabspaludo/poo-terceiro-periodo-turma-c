@@ -3,7 +3,7 @@ package KAUE_ORLANDINI.Lista2;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Pedido  {
+public class Pedido extends Item {
 
     Scanner scanner = new Scanner(System.in);
 
@@ -27,28 +27,36 @@ public class Pedido  {
     
     private String vendedor;
 
-    public Pedido(double[] itens, String id, String nome, Date dataCriacao, Date dataPagamento,
-            Date dataVencimentoReserva, String cliente, String loja, double valor, String vendedor) {
+    public String[] itenss = new String[3];
+
+    public Pedido(double[] itens, String id, String nome, String tipo, Double valor, String[] itenss,
+             Date dataCriacao, Date dataPagamento, Date dataVencimentoReserva, String cliente,
+            String loja,  String vendedor) {
+        super(itenss, id, nome, tipo, valor);
         this.itens = itens;
-        this.id = id;
-        this.nome = nome;
+        this.itenss = itenss;
         this.dataCriacao = dataCriacao;
         this.dataPagamento = dataPagamento;
         this.dataVencimentoReserva = dataVencimentoReserva;
         this.cliente = cliente;
         this.loja = loja;
-        this.valor = valor;
+        
         this.vendedor = vendedor;
     }
 
     void calcularValorTotal(){
         System.out.println("valor total: " + String.valueOf(valor));
     }
-    
+
     void criarPedido(){
+        System.out.println("qual item deseja comprar?");
+        
+        System.out.println(itenss[0] + itenss[1] + itenss[2]);
+        
         System.out.println("qual o valor do pedido?");
         double valorPedido = scanner.nextInt();
         System.out.println("data de criacao "+ String.valueOf(dataCriacao) + ", valor: " + String.valueOf(valorPedido));
+    
     }
     
     
@@ -92,9 +100,7 @@ public class Pedido  {
         return loja;
     }
 
-    public double getValor() {
-        return valor;
-    }
+  
 
     public String getVendedor() {
         return vendedor;

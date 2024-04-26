@@ -19,18 +19,21 @@ public class Main {
         Gerente mega = new Gerente(new double[] {1200, 1620, 1200}, "mega", 19.00, "prisma", "asa norte", "Brasilia", "avenida das torres", 1200.00, 00.0);
 
 
-        Pedido primeiroPedido = new Pedido(new double[] {1}, "a1", "primeiro pedido", new Date(), new Date(), new Date(), "gufens", "prisma", 12.50,"marecelo");
+        Pedido primeiroPedido = new Pedido(new double[] {1}, "a1", "primeiro pedido",null,12.50 ,null,new Date(), new Date(), new Date(), "gufens", "prisma", "marecelo");
 
+        
 
         @SuppressWarnings("deprecation")
-        Pedido novoPpedido = new Pedido(new double[] {1}, "a2", "novo pedido", new Date(), new Date(), new Date(124,26,05), null, null, 0, null);
+        Pedido novoPpedido = new Pedido(new double[] {1}, "a2", "novo pedido", null,null , null,new Date(), new Date(), new Date(124,26,05), null, null, null);
 
-        Item garrafa = new Item("aa", "garrafa", "garrafas", 12.50);
+        Item garrafa = new Item(new String[] {"garrafa" ,"livro" ,null},"aa", "garrafa", "garrafas", 12.50);
 
 
-        ProcessaPedido pedidoA = new ProcessaPedido(null, null, "garrafa", new Date(), new Date(), new Date(), "mega", null, 12.50, null, null);
+        ProcessaPedido pedidoA = new ProcessaPedido(null, null, "garrafa",null , 12.50,new String[] {"garrafa" ,"livro" ,null},new Date(), new Date(), new Date(), "mega", "prisma", "mega", new Date());
 
-        Item cadastrarItem = new Item(null, null, null, null);
+       
+
+        Item cadastrarItem = new Item(new String[] {"garrafa" ,"livro" ,null},null, null, null, null);
 
             Scanner scanner = new Scanner(System.in);
     
@@ -89,11 +92,11 @@ public class Main {
                 novoPpedido.criarPedido();
                     break;
                 case 17:
-                    garrafa.cadastrarItem();
-                    return;         
+                    cadastrarItem.cadastrarItem();
+                    break;         
                 case 18:
-                    garrafa.listarItens();
-                    return;         
+                    cadastrarItem.listarItens();
+                    break;         
                 case 19:
                     System.out.println("software encerrado");
                     return;         
