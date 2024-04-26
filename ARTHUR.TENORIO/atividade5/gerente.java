@@ -1,4 +1,4 @@
-package atividade5;
+package atividade7;
 import java.util.ArrayList;
 
 class gerente {

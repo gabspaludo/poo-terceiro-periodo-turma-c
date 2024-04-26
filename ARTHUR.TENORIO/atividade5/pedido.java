@@ -1,41 +1,44 @@
-package atividade5;
-
+package atividade7;
 import java.util.Date;
-import java.util.ArrayList;
 
 class Pedido {
-    int id;
-    Date dataCriacao;
-    Date dataPagamento;
-    Date dataVencimentoReserva;
-    Cliente cliente;
-    Vendedor vendedor;
-    Loja loja;
-    ArrayList<Item> itens;
+    private int id;
+    private Date dataCriacao;
+    private Cliente cliente;
+    private Vendedor vendedor;
+    private Loja loja;
+    private Item itemSelecionado;
 
-    public Pedido(int id, Date dataCriacao, Cliente cliente, Vendedor vendedor, Loja loja, ArrayList<Item> itens) {
+    public Pedido(int id, Date dataCriacao, Cliente cliente, Vendedor vendedor, Loja loja, Item itemSelecionado) {
         this.id = id;
         this.dataCriacao = dataCriacao;
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.loja = loja;
-        this.itens = itens;
-
-        // Definindo a data de vencimento da reserva (3 dias após a criação do pedido)
-        long tresDias = 3 * 24 * 60 * 60 * 1000; // Convertendo 3 dias em milissegundos
-        this.dataVencimentoReserva = new Date(dataCriacao.getTime() + tresDias);
+        this.itemSelecionado = itemSelecionado;
     }
 
-    public double calcularValorTotal() {
-        double total = 0;
-        for (Item item : itens) {
-            total += item.valor;
-        }
-        return total;
+    public int getId() {
+        return id;
     }
 
-    public void gerarDescricaoVenda() {
-        System.out.println("Pedido criado em: " + dataCriacao);
-        System.out.println("Valor total: " + calcularValorTotal());
+    public Date getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public Loja getLoja() {
+        return loja;
+    }
+
+    public Item getItemSelecionado() {
+        return itemSelecionado;
     }
 }

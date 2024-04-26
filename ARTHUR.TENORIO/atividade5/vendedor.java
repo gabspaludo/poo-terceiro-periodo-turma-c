@@ -1,17 +1,17 @@
-package atividade5;
+package atividade7;
 import java.util.ArrayList;
 
-public class vendedor {
-    String nome;
-    int idade;
-    String loja;
-    String cidade;
-    String bairro;
-    String rua;
-    double salarioBase;
-    ArrayList<Double> salarioRecebido;
+class Vendedor {
+    private String nome;
+    private int idade;
+    private String loja;
+    private String cidade;
+    private String bairro;
+    private String rua;
+    private double salarioBase;
+    private ArrayList<Double> salarioRecebido;
 
-    public vendedor(String nome, int idade, String loja, String cidade, String bairro, String rua, double salarioBase, ArrayList<Double> salarioRecebido) {
+    public Vendedor(String nome, int idade, String loja, String cidade, String bairro, String rua, double salarioBase, ArrayList<Double> salarioRecebido) {
         this.nome = nome;
         this.idade = idade;
         this.loja = loja;
@@ -22,10 +22,16 @@ public class vendedor {
         this.salarioRecebido = salarioRecebido;
     }
 
-    public void apresentarSe() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Idade: " + idade);
-        System.out.println("Loja: " + loja);
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public String getLoja() {
+        return loja;
     }
 
     public double calcularMedia() {

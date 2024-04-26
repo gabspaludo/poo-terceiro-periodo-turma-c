@@ -1,4 +1,4 @@
-package atividade5;
+package atividade7;
 
 class endereco {
     String estado;
