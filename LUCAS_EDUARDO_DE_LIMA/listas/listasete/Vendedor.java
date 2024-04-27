@@ -1,4 +1,4 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listasete;
+package listas.listasete;
  /*1. Crie uma classe Vendedor com:
 
 Com os atributos nome, idade, Loja, cidade, rua, bairro,  salarioBase e salarioRecebido.
@@ -8,7 +8,7 @@ Método apresentarse deve printar o nome, idade e Loja.
 calcularMedia deve trazer a média dos salários.
 calcularBonus onde a formulá é [salarioBase * 0.2]*/
 
-public class Vendedor extends Pessoa{
+public class Vendedor extends Pessoa {
 
     Loja loja;
     double salarioBase;
@@ -43,7 +43,7 @@ public class Vendedor extends Pessoa{
 
     @Override
     public void apresentarse() {
-        System.out.println("O meu nome é " +nome+ " eu tenho " +idade+ " anos e trabalho na loja " +loja.nomeFantasia);
+        System.out.println("O meu nome é " + nome + " eu tenho " + idade + " anos e trabalho na loja " + loja.getNomeFantasia());
     }
 
 }

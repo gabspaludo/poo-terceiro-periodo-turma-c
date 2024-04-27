@@ -1,8 +1,8 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listaquatro;
+package listas.listaseis;
+
 
 public class MyyPlantTest {
-
-    public static void main(String[] args) {
+     public static void main(String[] args) {
 
         Cliente cliente1 = new Cliente("Cleverson ", 55, "Cascacity", "Cidade Vova", "Rua das aves");
         Cliente cliente2 = new Cliente("Juvenildo", 25, "Foz do Jordão", "7 de Outubro", "Rua agusta");

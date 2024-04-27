@@ -1,7 +1,6 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listasete;
+package listas.listasete;
 
 public class Item {
-
     private long id;
     private String nome;
     private String tipo;
@@ -9,6 +8,12 @@ public class Item {
 
     public Item(long id, String nome, String tipo, double valor) {
         this.id = id;
+        this.nome = nome;
+        this.tipo = tipo;
+        this.valor = valor;
+    }
+
+    public Item(String nome, String tipo, double valor) {
         this.nome = nome;
         this.tipo = tipo;
         this.valor = valor;
@@ -50,5 +55,3 @@ public class Item {
         System.out.println("Id: " + id + ", Nome: " + nome + ", Tipo: " + tipo + ", Valor: " + valor);
     }
 }
-    
-

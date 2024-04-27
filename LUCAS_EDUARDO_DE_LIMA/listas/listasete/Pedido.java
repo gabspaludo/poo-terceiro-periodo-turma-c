@@ -1,4 +1,4 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listasete;
+package listas.listasete;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -15,7 +15,7 @@ public class Pedido {
     private List<Item> itens;
 
     public Pedido(long id, LocalDate dataCriacao, LocalDate dataPagamento, LocalDate dataVencimentoReserva,
-                  Cliente cliente, Vendedor vendedor, Loja loja, List<Item> itens) {
+                  Cliente cliente, Vendedor vendedor, Loja loja, List<Item> itens, String lojaParceira) {
         this.id = id;
         this.dataCriacao = dataCriacao;
         this.dataPagamento = dataPagamento;
@@ -100,5 +100,10 @@ public class Pedido {
 
     public void setItens(List<Item> itens) {
         this.itens = itens;
+    }
+
+    public String getLojaParceira() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getLojaParceira'");
     }
 }

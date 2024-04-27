@@ -1,4 +1,4 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listasete;
+package listas.listasete;
 
 import java.util.List;
 
@@ -78,6 +78,16 @@ public class Loja {
 
     public void setVendedors(List<Vendedor> vendedors) {
         this.vendedors = vendedors;
+    }
+
+    public Item selecionarItem(int id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'selecionarItem'");
+    }
+
+    public void listarItens() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'listarItens'");
     }
 }
 

@@ -1,4 +1,5 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listasete;
+package listas.listasete;
+
 
 public class Endereco {
 

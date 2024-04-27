@@ -1,4 +1,4 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listasete;
+package listas.listasete;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ public class Gerente extends Pessoa {
     }
 
     public void apresentarse() {
-        System.out.println("Olá meu nome é " + nome + " tenho " + idade + " anos e trabalho na loja " + loja.nomeFantasia);
+        System.out.println("Olá meu nome é " + nome + " tenho " + idade + " anos e trabalho na loja " + loja.getNomeFantasia());
     }
 
     public void calcularMedia() {

@@ -1,4 +1,4 @@
-package listas.listasete;
+package listas.listaseis;
 
 public class Cliente extends Pessoa {
   
@@ -12,5 +12,3 @@ public class Cliente extends Pessoa {
         System.out.println("Olá eu sou o " + nome + " tenho " + idade + " anos.");
     }
 }
-
-
