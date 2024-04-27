@@ -1,13 +1,14 @@
-package atividade5;
+import java.util.Date;
+package atividade7;
 
-public class cliente {
-    String nome;
-    int idade;
-    String cidade;
-    String bairro;
-    String rua;
+class Cliente {
+    private String nome;
+    private int idade;
+    private String cidade;
+    private String bairro;
+    private String rua;
 
-    public cliente(String nome, int idade, String cidade, String bairro, String rua) {
+    public Cliente(String nome, int idade, String cidade, String bairro, String rua) {
         this.nome = nome;
         this.idade = idade;
         this.cidade = cidade;
@@ -15,8 +16,23 @@ public class cliente {
         this.rua = rua;
     }
 
-    public void apresentarSe() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Idade: " + idade);
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public String getRua() {
+        return rua;
     }
 }
