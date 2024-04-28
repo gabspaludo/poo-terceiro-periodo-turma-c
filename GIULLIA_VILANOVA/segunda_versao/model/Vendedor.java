@@ -6,6 +6,12 @@ import java.util.List;
 public class Vendedor extends Colaborador {
     private double bonus = 0.2;
 
+    public Vendedor(String nome, int idade, Endereco endereco) {
+        super.nome = nome;
+        super.idade = idade;
+        super.endereco = endereco;
+    }
+
     public void calcularSalario() {
         double salarioTotal = super.calcularMedia() + super.calcularBonus(this.bonus);
         System.out.println("Salário total do vendedor: " + salarioTotal);

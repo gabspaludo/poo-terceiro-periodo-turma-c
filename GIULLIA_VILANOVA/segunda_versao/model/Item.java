@@ -6,6 +6,12 @@ public class Item {
     private String tipo;
     private double valor;
 
+    public Item(String nome, String tipo, double valor) {
+        this.nome = nome;
+        this.tipo = tipo;
+        this.valor = valor;
+    }
+
     public long getId() {
         return this.id;
     }
