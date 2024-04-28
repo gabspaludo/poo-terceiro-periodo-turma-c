@@ -1,4 +1,4 @@
-package listaSeis.src;
+package listaSete.src;
 
 public class Empregado {
     public int id;
