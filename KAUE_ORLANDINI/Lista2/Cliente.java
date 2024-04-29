@@ -2,18 +2,48 @@ package KAUE_ORLANDINI.Lista2;
 
 public class Cliente {
 
-    public String nome;
+    private String nome;
     
-    public String idade;
+    private Double idade;
    
-    public String cidade;
+    private String cidade;
    
-    public String bairro;
-   
+    private String bairro;
+
+    private String rua;
+
+    public Cliente(String nome, Double idade, String cidade, String bairro, String rua) {
+        this.nome = nome;
+        this.idade = idade;
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.rua = rua;
+    }
+
     
-    public String rua;
     
     void apresentarse() {
-        System.out.println("nome: ".concat(nome).concat(", idade: ").concat(idade));
+        System.out.println("nome: " + String.valueOf(nome) + String.valueOf(", idade: ") + String.valueOf(idade));
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Double getIdade() {
+        return idade;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
 }
