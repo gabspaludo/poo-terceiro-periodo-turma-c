@@ -1,4 +1,4 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listaquatro;
+package listas.listacinco;
 
 /*2. Criar classe Cliente:
 com os atributos nome, idade, cidade, bairro e rua.

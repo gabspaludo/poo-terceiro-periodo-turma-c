@@ -10,7 +10,7 @@ public class MyyPlantTest {
         Cliente cliente01 = new Cliente("Maria", 82, endereco);
         Cliente cliente02 = new Cliente("Joana", 76, endereco);
 
-        Loja loja = Loja("Flores do Amanhecer", "FLORES D. A. LTDA", 123400011, endereco, List.of(cliente01, cliente02), null);
+        Loja loja = new Loja ("Flores do Amanhecer", "FLORES D. A. LTDA", 123400011, endereco, List.of(cliente01, cliente02), null);
 
         Vendedor vendedor = new Vendedor("Claudia", 55, endereco, loja, 1500, new double[]{1550, 1600, 1650});
 
@@ -23,9 +23,26 @@ public class MyyPlantTest {
         ProcessaPedido processaPedido = new ProcessaPedido(loja);
 
         Pedido pedido = processaPedido.processar(null, cliente01, List.of(item01, item02));
-        processaPedido.confirmarPagamento(pedido);
 
-        System.out.println();
+        System.out.println("\n");
+        gerente1.apresentarse();
+        gerente1.calcularBonus();
+        gerente1.calcularMedia();
+        gerente1.setLoja(loja);
+        gerente1.endereco.apresentarLogradouro();
+        System.out.println("\n");
+        gerente2.apresentarse();
+        gerente2.calcularBonus();
+        gerente2.calcularMedia();
+        gerente2.setLoja(loja);
+        gerente2.endereco.apresentarLogradouro();
+        System.out.println("\n");
+        item01.gerarDescricao();
+        item02.gerarDescricao();
+        System.out.println("\n");
+        pedido.gerarDescricaoVenda();
+        processaPedido.confirmarPagamento(pedido);
+        System.out.println("\n");
     }
 }
 

@@ -1,7 +1,12 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listaseiss;
+package LUCAS_EDUARDO_DE_LIMA.listas.listasete;
+
+
+/*Crie uma classe Endereco com:
+- Com os atributos estado, cidade, bairro, numero e complemento.
+- Método apresentarLogradouro, printa de uma maneira interessante os dados de endereço concatenados.
+- Refatorar locais que utilizavam endereço.*/
 
 public class Endereco {
-
     String estado;
     String cidade;
     String bairro;
@@ -26,3 +31,4 @@ public class Endereco {
         );
     }
 }
+    

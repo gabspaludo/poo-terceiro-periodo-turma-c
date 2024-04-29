@@ -1,13 +1,13 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listaseiss;
+package LUCAS_EDUARDO_DE_LIMA.listas.listasete;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Gerente extends Pessoa {
    
-    Loja loja;
-    double salarioBase;
-    List<Double> salarioRecibido = new ArrayList<>();
+    private Loja loja;
+    private double salarioBase;
+    private List<Double> salarioRecibido = new ArrayList<>();
 
     public Gerente(String nome, Integer idade, Endereco endereco, Loja loja, double salarioBase, List<Double> salarioRecibido) {
         super(nome, idade, endereco);
@@ -27,7 +27,7 @@ public class Gerente extends Pessoa {
     }
 
     public void apresentarse() {
-        System.out.println("Olá meu nome é " + nome + " tenho " + idade + " anos e trabalho na loja " + loja.nomeFantasia);
+        System.out.println("Olá meu nome é " + nome + " tenho " + idade + " anos e trabalho na loja " + loja.getNomeFantasia());
     }
 
     public void calcularMedia() {
@@ -41,5 +41,25 @@ public class Gerente extends Pessoa {
 
     public void calcularBonus() {
         System.out.println("Meu bonus de salário é: " + salarioBase * 0.35);
+    }
+
+    public Loja getLoja() {
+        return loja;
+    }
+
+    public double getSalarioBase() {
+        return salarioBase;
+    }
+
+    public void setSalarioBase(double salarioBase) {
+        this.salarioBase = salarioBase;
+    }
+
+    public List<Double> getSalarioRecibido() {
+        return salarioRecibido;
+    }
+
+    public void setSalarioRecibido(List<Double> salarioRecibido) {
+        this.salarioRecibido = salarioRecibido;
     }
 }

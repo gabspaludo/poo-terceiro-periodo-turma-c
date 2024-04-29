@@ -1,6 +1,6 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listaquatro;
+package LUCAS_EDUARDO_DE_LIMA.listas.listasete;
 
-/*1. Crie uma classe Vendedor com:
+ /*1. Crie uma classe Vendedor com:
 
 Com os atributos nome, idade, Loja, cidade, rua, bairro,  salarioBase e salarioRecebido.
 Atributo salarioRecebido DEVE armazenar no mínimo três valores de lançamentos de salário.(Pode colocar no código os valores*)
@@ -9,19 +9,17 @@ Método apresentarse deve printar o nome, idade e Loja.
 calcularMedia deve trazer a média dos salários.
 calcularBonus onde a formulá é [salarioBase * 0.2]*/
 
-
 public class Vendedor extends Pessoa {
 
     Loja loja;
-
     double salarioBase;
-
     double[] salarioRecebido = new double[3];
 
-
-    public Vendedor(String nome, Integer idade, String cidade, String bairro, String rua, double salarioBase) {
-        super(nome, idade, cidade, bairro, rua);
+    public Vendedor(String nome, Integer idade, Endereco endereco, Loja loja, double salarioBase, double[] salarioRecebido) {
+        super(nome, idade, endereco);
+        this.loja = loja;
         this.salarioBase = salarioBase;
+        this.salarioRecebido = salarioRecebido;
     }
 
     public void setLoja(Loja loja) {
@@ -46,9 +44,7 @@ public class Vendedor extends Pessoa {
 
     @Override
     public void apresentarse() {
-        System.out.println("O meu nome é " +nome+ " eu tenho " +idade+ " anos e trabalho na loja " +loja.nomeFantasia);
+        System.out.println("O meu nome é " + nome + " eu tenho " + idade + " anos e trabalho na loja " + loja.getNomeFantasia());
     }
 
 }
-
-

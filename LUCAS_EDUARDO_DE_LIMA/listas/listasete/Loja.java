@@ -1,7 +1,6 @@
-package LUCAS_EDUARDO_DE_LIMA.listas.listaseiss;
+package LUCAS_EDUARDO_DE_LIMA.listas.listasete;
 
 import java.util.List;
-
 
 public class Loja {
     String nomeFantasia;
@@ -30,5 +29,13 @@ public class Loja {
 
     public void apresentarse() {
         System.out.println(nomeFantasia + " do CNPJT " + cnpj + " no endereço: " + endereco);
+    }
+
+    public String getNomeFantasia() {
+        return nomeFantasia;
+    }
+
+    public void setNomeFantasia(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
     }
 }
