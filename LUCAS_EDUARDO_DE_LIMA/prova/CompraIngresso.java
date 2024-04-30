@@ -1,4 +1,4 @@
-package prova;
+package LUCAS_EDUARDO_DE_LIMA.prova;
 
 public class CompraIngresso {
     private final EventoShow evento;
